@@ -1,6 +1,6 @@
 /*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
+  Josh Comeau's Custom CSS Reset
+  Source: https://www.joshwcomeau.com/css/custom-css-reset/
 */
 *,
 *::before,
@@ -46,9 +46,7 @@ h6 {
   isolation: isolate;
 }
 
-/*
-My addition
-*/
+/* Mine */
 #__next {
   height: 100%;
 }
