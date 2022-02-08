@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         fontFamily='body'
         padding={4}
       >
-        <Heading as='h1' color='peachpuff' fontSize='3xl'>
+        <Heading as='h1' color='primary' fontSize='3xl'>
           Next TS starter
         </Heading>
         <Text color='text' fontSize='lg'>
