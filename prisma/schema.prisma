@@ -16,7 +16,7 @@ model Book {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAp DateTime @default(now()) @map("updated_at")
 
-  authors BookAuthor[]
+  authors Author[]
 
   @@map("book")
 }
@@ -27,17 +27,7 @@ model Author {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAp DateTime @default(now()) @map("updated_at")
 
-  books BookAuthor[]
+  books Book[]
 
   @@map("author")
-}
-
-model BookAuthor {
-  book     Book   @relation(fields: [bookId], references: [id])
-  author   Author @relation(fields: [authorId], references: [id])
-  bookId   Int
-  authorId Int
-
-  @@id([authorId, bookId])
-  @@map("book_author")
 }

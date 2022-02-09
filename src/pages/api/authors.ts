@@ -13,12 +13,7 @@ const authors = async (request: NextApiRequest, reply: NextApiResponse) => {
             name: true,
             books: {
               select: {
-                book: {
-                  select: {
-                    id: true,
-                    title: true,
-                  },
-                },
+                title: true,
               },
             },
           },
@@ -36,13 +31,7 @@ const authors = async (request: NextApiRequest, reply: NextApiResponse) => {
           data: {
             name,
             books: {
-              create: books.map(({ title }: { title: string }) => ({
-                book: {
-                  create: {
-                    title,
-                  },
-                },
-              })),
+              create: books,
             },
           },
         });

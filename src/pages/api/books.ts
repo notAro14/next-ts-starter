@@ -13,12 +13,8 @@ const books = async (request: NextApiRequest, reply: NextApiResponse) => {
             title: true,
             authors: {
               select: {
-                author: {
-                  select: {
-                    id: true,
-                    name: true,
-                  },
-                },
+                id: true,
+                name: true,
               },
             },
           },
