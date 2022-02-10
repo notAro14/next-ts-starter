@@ -10,7 +10,8 @@ const authors = async (request: NextApiRequest, reply: NextApiResponse) => {
         const authors = await prisma.author.findMany({
           select: {
             id: true,
-            name: true,
+            first_name: true,
+            last_name: true,
             books: {
               select: {
                 title: true,
@@ -25,11 +26,12 @@ const authors = async (request: NextApiRequest, reply: NextApiResponse) => {
     }
 
     case 'POST': {
-      const { name, books } = request.body;
+      const { first_name, last_name, books } = request.body;
       try {
         const createdAuthor = await prisma.author.create({
           data: {
-            name,
+            first_name,
+            last_name,
             books: {
               create: books,
             },
