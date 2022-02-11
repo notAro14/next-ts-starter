@@ -5,10 +5,10 @@ const space = [
 ];
 
 const colors = {
-  primary: '#001858',
-  accent: '#f582ae',
-  background: '#fef6e4',
-  text: '#172c66',
+  primary: 'yellowgreen',
+  accent: 'dodgerblue',
+  background: 'white',
+  text: 'black',
 };
 
 const fontSizes = {
@@ -36,7 +36,7 @@ const buttons = {
 const theme: Theme = {
   colors,
   fonts: {
-    body: '"Lato", sans-serif',
+    body: '"Poppins", sans-serif',
   },
   fontSizes,
   space,

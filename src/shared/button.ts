@@ -19,9 +19,11 @@ import {
   system,
   typography,
   TypographyProps,
+  variant,
 } from 'styled-system';
 import styled from '@emotion/styled';
 import shouldForwardProp from '@styled-system/should-forward-prop';
+import css from '@styled-system/css';
 
 import { Gap, TextTransform } from '../types/ui';
 
@@ -37,15 +39,23 @@ export interface ButtonProps
     TypographyProps {
   gap?: Gap;
   textTransform?: TextTransform;
+  variant?: string;
 }
 
 const Button = styled('button', { shouldForwardProp })<ButtonProps>(
-  {
-    border: 'none',
+  css({
+    paddingX: 4,
+    paddingY: 1,
+    borderRadius: '2px',
+    width: '100%',
+    ':disabled': {
+      cursor: 'not-allowed',
+      opacity: 0.5,
+    },
     ':hover': {
       cursor: 'pointer',
     },
-  },
+  }),
   compose(
     background,
     border,
@@ -62,7 +72,10 @@ const Button = styled('button', { shouldForwardProp })<ButtonProps>(
       },
       textTransform: true,
     }),
-    typography
+    typography,
+    variant({
+      scale: 'buttons',
+    })
   )
 );
 
