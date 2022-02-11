@@ -15,3 +15,9 @@ npm run dev
 # run build
 npm run build && npm start
 ```
+
+## Generate types
+
+```bash
+npx openapi-typescript https://your-project.supabase.co/rest/v1/?apikey=your-anon-key --output types/supabase.ts
+```

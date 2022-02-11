@@ -33,7 +33,7 @@ interface LabelProps
   textTransform?: TextTransform;
 }
 
-const Label = styled('p', { shouldForwardProp })<LabelProps>(
+const Label = styled('label', { shouldForwardProp })<LabelProps>(
   css({
     color: 'text',
   }),

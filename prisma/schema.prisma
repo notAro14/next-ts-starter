@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -22,10 +22,11 @@ model Book {
 }
 
 model Author {
-  id        Int      @id @default(autoincrement())
-  name      String
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAp DateTime @default(now()) @map("updated_at")
+  id         Int      @id @default(autoincrement())
+  first_name String
+  last_name  String
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAp  DateTime @default(now()) @map("updated_at")
 
   books Book[]
 

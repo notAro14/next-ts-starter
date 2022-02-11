@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import prisma from '../../client/prisma';
+import prisma from '../../utils/prisma-client';
 
 const books = async (request: NextApiRequest, reply: NextApiResponse) => {
   const { method } = request;
@@ -14,7 +14,8 @@ const books = async (request: NextApiRequest, reply: NextApiResponse) => {
             authors: {
               select: {
                 id: true,
-                name: true,
+                last_name: true,
+                first_name: true,
               },
             },
           },

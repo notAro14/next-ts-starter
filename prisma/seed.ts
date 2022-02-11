@@ -4,7 +4,8 @@ const prisma = new PrismaClient();
 async function main() {
   const savedAuthor = await prisma.author.create({
     data: {
-      name: 'Nietzsche',
+      last_name: 'Nietzsche',
+      first_name: 'Friedrich',
       books: {
         create: [
           {
