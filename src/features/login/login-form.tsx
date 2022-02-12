@@ -42,6 +42,7 @@ const LoginForm: FC<LoginFormProps> = ({ onLoginSuccess, onLoginFailure }) => {
         variant='filled'
         color='text'
         backgroundColor='accent'
+        borderColor='accent'
         disabled={isLoading}
       >
         Send magic link

@@ -17,7 +17,6 @@ import {
   typography,
   TypographyProps,
 } from 'styled-system';
-import css from '@styled-system/css';
 import shouldForwardProp from '@styled-system/should-forward-prop';
 
 import { TextTransform } from '../types/ui';
@@ -31,13 +30,10 @@ interface LinkProps
     SpaceProps,
     TypographyProps {
   textTransform?: TextTransform;
+  textDecoration?: string;
 }
 
 const Link = styled('a', { shouldForwardProp })<LinkProps>(
-  css({
-    color: 'text',
-    textDecoration: 'none',
-  }),
   compose(
     border,
     color,
@@ -47,6 +43,7 @@ const Link = styled('a', { shouldForwardProp })<LinkProps>(
     space,
     system({
       textTransform: true,
+      textDecoration: true,
     }),
     typography
   )

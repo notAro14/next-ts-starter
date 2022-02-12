@@ -17,7 +17,6 @@ import {
   typography,
   TypographyProps,
 } from 'styled-system';
-import css from '@styled-system/css';
 import shouldForwardProp from '@styled-system/should-forward-prop';
 
 import { TextTransform } from '../types/ui';
@@ -34,9 +33,6 @@ interface TextProps
 }
 
 const Text = styled('p', { shouldForwardProp })<TextProps>(
-  css({
-    color: 'text',
-  }),
   compose(
     border,
     color,
