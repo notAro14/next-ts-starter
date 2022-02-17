@@ -1,23 +1,16 @@
 import '../styles/reset.css';
-import '../styles/font.css';
 import type { AppProps } from 'next/app';
 import toast from 'react-hot-toast';
-import { useCallback, useEffect, useState } from 'react';
+import { useState, useCallback } from 'react';
 import { ThemeProvider } from '@emotion/react';
 import { QueryCache, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
-import ToggleThemeProvider from '../theme/switch-theme';
+import allThemes, { getTheme, ColorModeContext } from 'theme';
+import type { ColorMode } from 'theme';
+import Font from 'shared/font';
 
-import defaultTheme from '../theme/default';
-import lightTheme from '../theme/light';
-
-const ALL_THEME = {
-  default: defaultTheme,
-  light: lightTheme,
-};
-
-type ThemeKey = keyof typeof ALL_THEME;
+const blueTheme = allThemes.blue;
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -32,40 +25,29 @@ function MyApp({ Component, pageProps }: AppProps) {
       })
   );
 
-  const [themeKey, setThemeKey] = useState<ThemeKey>('default');
-  useEffect(() => {
-    const initial = localStorage.getItem('theme') as
-      | ThemeKey
-      | null
-      | undefined;
-    if (!initial) return;
-    if (Object.keys(ALL_THEME).includes(initial)) setThemeKey(initial);
-  }, []);
-
-  const toggleTheme = useCallback(() => {
-    setThemeKey((prev) => {
+  const [colorMode, setColorMode] = useState<ColorMode>('light');
+  const theme = getTheme(blueTheme, colorMode);
+  const switchColorMode = useCallback(() => {
+    setColorMode((prev) => {
       switch (prev) {
-        case 'default': {
-          localStorage.setItem('theme', 'light');
+        case 'dark':
           return 'light';
-        }
-        case 'light': {
-          localStorage.setItem('theme', 'default');
-          return 'default';
-        }
+        case 'light':
+          return 'dark';
         default:
-          return 'default';
+          return 'light';
       }
     });
   }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ToggleThemeProvider toggleTheme={toggleTheme}>
-        <ThemeProvider theme={ALL_THEME[themeKey]}>
+      <ColorModeContext.Provider value={switchColorMode}>
+        <ThemeProvider theme={theme}>
+          <Font href={theme.fonts.src} />
           <Component {...pageProps} />
         </ThemeProvider>
-      </ToggleThemeProvider>
+      </ColorModeContext.Provider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
