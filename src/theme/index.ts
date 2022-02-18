@@ -1,10 +1,7 @@
 import merge from 'lodash.merge';
 import get from 'lodash.get';
-import { createContext } from 'react';
 
 import { theme as blue } from './blue';
-
-export const ColorModeContext = createContext<(() => void) | null>(null);
 
 const allThemes = {
   blue,

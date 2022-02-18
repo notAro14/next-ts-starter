@@ -1,20 +1,24 @@
-const colors = {
+export const colors = {
   background: '#ffe',
   primary: 'dodgerblue',
   text: '#333',
   modes: {
-    dark: {
-      background: '#333',
-      primary: 'dodgerblue',
+    black: {
+      background: 'black',
       text: '#ffe',
     },
     light: {
       background: '#ffe',
-      primary: 'dodgerblue',
       text: '#333',
+    },
+    dark: {
+      background: '#333',
+      text: '#ffe',
     },
   },
 };
+
+export const colorModes = Object.keys(colors.modes);
 
 const fonts = {
   primary: '"Lato", serif',

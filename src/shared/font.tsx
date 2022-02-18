@@ -5,6 +5,11 @@ interface FontProps {
   href: string;
 }
 
+/*
+DO NOT USE DYNAMICALLY
+STYLESHEET LINK MUST ONLY BE USED INSIDE CUSTOM DOCUMENT
+*/
+
 const Font: FC<FontProps> = ({ href }) => {
   return (
     <Head>
