@@ -3,10 +3,9 @@ import Head from 'next/head';
 
 import Box from 'shared/box';
 import Heading from 'shared/heading';
-import { useColorMode } from 'theme/use-color-mode.hook';
+import { useColorMode, useToggleColorMode } from 'theme/color-mode';
 
 const IndexPage: NextPage = () => {
-  const [colorMode, toggle] = useColorMode();
   return (
     <>
       <Head>
@@ -16,10 +15,16 @@ const IndexPage: NextPage = () => {
         <Heading as='h1' color='primary' fontFamily='primary'>
           Hello
         </Heading>
-        <button onClick={toggle}>{colorMode}</button>
+        <ToggleThemeBtn />
       </Box>
     </>
   );
+};
+
+const ToggleThemeBtn = () => {
+  const colorMode = useColorMode();
+  const toggle = useToggleColorMode();
+  return <button onClick={toggle}>{colorMode}</button>;
 };
 
 export default IndexPage;

@@ -1,3 +1,5 @@
+import { ColorModeReducer, COLOR_MODE_KEY } from './color-mode';
+
 export const colors = {
   background: '#ffe',
   primary: 'dodgerblue',
@@ -16,6 +18,43 @@ export const colors = {
       text: '#ffe',
     },
   },
+};
+
+export type ColorMode = keyof typeof colors.modes;
+
+export const colorModeReducer: ColorModeReducer<ColorMode> = (
+  state,
+  action
+) => {
+  //return colorModeMachine.states[state].on[action.type] || state;
+  switch (action.type) {
+    case 'TOGGLE': {
+      switch (state) {
+        case 'light': {
+          const next = 'dark';
+          localStorage.setItem(COLOR_MODE_KEY, next);
+          return next;
+        }
+        case 'dark': {
+          const next = 'black';
+          localStorage.setItem(COLOR_MODE_KEY, next);
+          return next;
+        }
+        case 'black': {
+          const next = 'light';
+          localStorage.setItem(COLOR_MODE_KEY, next);
+          return next;
+        }
+        default:
+          return state;
+      }
+    }
+    case 'SET': {
+      const next = action.payload;
+      localStorage.setItem(COLOR_MODE_KEY, next);
+      return next;
+    }
+  }
 };
 
 export const colorModes = Object.keys(colors.modes);

@@ -1,17 +1,21 @@
 import merge from 'lodash.merge';
 import get from 'lodash.get';
 
-import { theme as blue } from './blue';
+import {
+  theme as blue,
+  colorModeReducer as blueColorModeReducer,
+} from './blue';
 
 const allThemes = {
-  blue,
+  blue: {
+    reducer: blueColorModeReducer,
+    theme: blue,
+  },
 } as const;
 
-export type ColorMode = keyof typeof allThemes.blue.colors.modes;
-
-export const getTheme = (theme: typeof blue, mode: ColorMode) =>
+export const getTheme = (theme: typeof blue, mode: string) =>
   merge({}, theme, {
-    colors: get(theme.colors.modes, mode, theme.colors),
+    colors: get(theme.colors?.modes, mode, theme.colors),
   });
 
 export default allThemes;
