@@ -1,8 +1,9 @@
 import { ColorModeReducer, COLOR_MODE_KEY } from './color-mode';
 
 export const colors = {
+  accent: 'cyan',
   background: '#ffe',
-  primary: 'dodgerblue',
+  primary: 'peachpuff',
   text: '#333',
   modes: {
     black: {
@@ -10,7 +11,9 @@ export const colors = {
       text: '#ffe',
     },
     light: {
+      accent: 'dodgerblue',
       background: '#ffe',
+      primary: 'hotpink',
       text: '#333',
     },
     dark: {

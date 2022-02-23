@@ -1,30 +1,39 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
+import { ReactElement } from 'react';
 
-import Box from 'shared/box';
 import Heading from 'shared/heading';
 import { useColorMode, useToggleColorMode } from 'theme/color-mode';
+import { NextPageWithLayout } from 'types';
+import GlobalLayout from 'shared/layouts/global-layout';
+import VStack from 'shared/v-stack';
+import BaseButton from 'shared/button/base-button';
 
-const IndexPage: NextPage = () => {
+const IndexPage: NextPageWithLayout = () => {
   return (
     <>
       <Head>
         <title>Next and styled system starter</title>
       </Head>
-      <Box as='main' p={4} minHeight='100%' backgroundColor='background'>
-        <Heading as='h1' color='primary' fontFamily='primary'>
-          Hello
-        </Heading>
-        <ToggleThemeBtn />
-      </Box>
+      <Heading as='h1' color='primary' fontFamily='primary'>
+        Hello world
+      </Heading>
+      <ToggleThemeBtn />
     </>
   );
 };
 
+IndexPage.getLayout = (page: ReactElement) => (
+  <GlobalLayout>
+    <VStack as='main' p={4} maxWidth='fit-content' mx='auto'>
+      {page}
+    </VStack>
+  </GlobalLayout>
+);
+
 const ToggleThemeBtn = () => {
   const colorMode = useColorMode();
   const toggle = useToggleColorMode();
-  return <button onClick={toggle}>{colorMode}</button>;
+  return <BaseButton onClick={toggle}>{colorMode}</BaseButton>;
 };
 
 export default IndexPage;
