@@ -1,11 +1,3 @@
-# Next TS starter code
+# Never skip leg day
 
-Next typescript app starter code
-
-```shell
-# dev
-npm run dev
-
-# run build
-npm run build && npm start
-```
+It is a work-in-progress

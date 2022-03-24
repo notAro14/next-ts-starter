@@ -1,21 +1,9 @@
-import type { ReactElement, ReactNode } from 'react';
-import type { NextPage } from 'next';
-import type { AppProps } from 'next/app';
-
-import '../styles/reset.css';
-
-type NextPageWithLayout = NextPage & {
-  // eslint-disable-next-line no-unused-vars
-  getLayout?: (page: ReactElement) => ReactNode;
-};
-
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
-};
+import type { AppPropsWithLayout } from 'types'
+import '../styles/reset.css'
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout ?? ((page) => page);
+  const getLayout = Component.getLayout ?? ((page) => page)
 
-  return getLayout(<Component {...pageProps} />);
+  return getLayout(<Component {...pageProps} />)
 }

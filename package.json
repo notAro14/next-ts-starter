@@ -1,5 +1,6 @@
 {
-  "name": "nextjs-starter",
+  "name": "never-skip-leg-day",
+  "description": "Workout tracking app that helps you plan your routines so you never skip leg day again",
   "private": true,
   "scripts": {
     "dev": "next dev -p 4000",

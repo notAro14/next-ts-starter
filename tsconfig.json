@@ -3,8 +3,10 @@
     "baseUrl": "./src",
     "paths": {
       "api/*": ["api/*"],
+      "components/*": ["components/*"],
       "features/*": ["features/*"],
       "shared/*": ["shared/*"],
+      "styles/*": ["styles/*"],
       "types/*": ["types/*"]
     },
     "target": "es5",

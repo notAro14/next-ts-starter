@@ -1,12 +1,10 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import SEO from 'shared/seo'
+import type { NextPageWithLayout } from 'types'
 
-const IndexPage: NextPage = () => {
+const IndexPage: NextPageWithLayout = () => {
   return (
     <>
-      <Head>
-        <title>Vanilla next</title>
-      </Head>
+      <SEO title='Never Skip Leg Day' />
       <main
         style={{
           backgroundColor: '#333',
@@ -19,7 +17,7 @@ const IndexPage: NextPage = () => {
         <h1>Hello</h1>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage
