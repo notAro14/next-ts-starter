@@ -1,3 +1,3 @@
-# Never skip leg day
+# Next Typescript Starter Code
 
-It is a work-in-progress
+Vanilla Next Typescript

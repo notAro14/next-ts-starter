@@ -1,6 +1,6 @@
 {
-  "name": "never-skip-leg-day",
-  "description": "Workout tracking app that helps you plan your routines so you never skip leg day again",
+  "name": "next-ts-starter",
+  "description": "Next Typescript Starter Code",
   "private": true,
   "scripts": {
     "dev": "next dev -p 4000",
