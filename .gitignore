@@ -39,3 +39,6 @@ yarn-error.log*
 
 # prisma
 *.db
+
+# eslint
+.eslintcache

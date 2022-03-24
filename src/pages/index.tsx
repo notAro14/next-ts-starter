@@ -1,25 +1,23 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import SEO from 'shared/seo'
+import type { NextPageWithLayout } from 'types'
 
-import Box from '../shared/box';
-import Heading from '../shared/heading';
-import PageLayout from '../layout/page.layout';
-import ReadingList from '../features/book/reading-list';
-
-const Home: NextPage = () => {
+const IndexPage: NextPageWithLayout = () => {
   return (
-    <PageLayout>
-      <Head>
-        <title>Next TS starter | Styled system | Emotion</title>
-      </Head>
-      <Box as='main' p={4} minHeight='calc(100% - 100px)'>
-        <Heading as='h1' color='primary' fontSize='3xl'>
-          To Read
-        </Heading>
-        <ReadingList />
-      </Box>
-    </PageLayout>
-  );
-};
+    <>
+      <SEO title='Never Skip Leg Day' />
+      <main
+        style={{
+          backgroundColor: '#333',
+          color: 'white',
+          fontFamily: 'sans-serif',
+          height: '100%',
+          padding: '1rem',
+        }}
+      >
+        <h1>Hello</h1>
+      </main>
+    </>
+  )
+}
 
-export default Home;
+export default IndexPage
