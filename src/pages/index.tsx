@@ -1,6 +1,6 @@
-import Hello from 'components/hello'
-import SEO from 'shared/seo'
-import type { NextPageWithLayout } from 'types'
+import Hello from 'src/components/hello'
+import SEO from 'src/shared/seo'
+import type { NextPageWithLayout } from 'src/types'
 
 const IndexPage: NextPageWithLayout = () => {
   return (

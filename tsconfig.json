@@ -1,13 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "api/*": ["api/*"],
-      "components/*": ["components/*"],
-      "features/*": ["features/*"],
-      "shared/*": ["shared/*"],
-      "styles/*": ["styles/*"],
-      "types/*": ["types/*"]
+      "src/*": ["src/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
