@@ -1,3 +1,4 @@
+import Hello from 'components/hello'
 import SEO from 'shared/seo'
 import type { NextPageWithLayout } from 'types'
 
@@ -15,6 +16,7 @@ const IndexPage: NextPageWithLayout = () => {
         }}
       >
         <h1>Hello</h1>
+        <Hello />
       </main>
     </>
   )
