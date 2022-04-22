@@ -20,6 +20,8 @@
     ]
   },
   "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
+    "@stitches/react": "^1.2.7",
     "next": "^12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0"

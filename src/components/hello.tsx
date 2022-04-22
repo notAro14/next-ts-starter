@@ -1,10 +1,26 @@
 import { FC, useEffect, useState } from 'react'
 
-const Loading = () => <p role='progressbar'>Loading...</p>
-const Error = () => <p role='alert'>Failed to fetch data</p>
+import { styled } from 'src/styles/stitches.config'
+
+const Text = styled('p', {
+  color: '$blue12',
+  fontFamily: 'sans-serif',
+})
+
+const Loading = () => <Text role='progressbar'>Loading...</Text>
+const Error = () => (
+  <Text
+    css={{
+      color: '$red9',
+    }}
+    role='alert'
+  >
+    Failed to fetch data
+  </Text>
+)
 const Success: FC<{
   data: string
-}> = ({ data }) => <p>{data}</p>
+}> = ({ data }) => <Text>API message: {data}</Text>
 
 const Hello: FC = () => {
   const [state, setState] = useState<{
