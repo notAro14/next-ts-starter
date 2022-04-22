@@ -1,11 +1,19 @@
+import Head from 'next/head'
 import Hello from 'src/components/hello'
-import SEO from 'src/shared/seo'
 import type { NextPageWithLayout } from 'src/types'
+
+const MetaTags = () => {
+  return (
+    <Head>
+      <title>Next Typescript Starter</title>
+    </Head>
+  )
+}
 
 const IndexPage: NextPageWithLayout = () => {
   return (
     <>
-      <SEO title='Never Skip Leg Day' />
+      <MetaTags />
       <main
         style={{
           backgroundColor: '#333',
