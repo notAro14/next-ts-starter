@@ -2,6 +2,13 @@
   "name": "next-ts-starter",
   "description": "Next Typescript Starter Code",
   "private": true,
+  "license": "MIT",
+  "author": "Aro Andriamaro <ni.aro.aina@gmail.com>",
+  "keywords": [
+    "next js template",
+    "react template",
+    "react typescript"
+  ],
   "scripts": {
     "dev": "next dev -p 4000",
     "build": "next build",
