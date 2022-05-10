@@ -14,6 +14,7 @@
     "build": "next build",
     "start": "next start -p 4000",
     "lint": "eslint --fix --cache .",
+    "type:check": "tsc --noEmit",
     "format": "prettier --write --ignore-unknown .",
     "prepare": "husky install",
     "test": "jest --watch"
