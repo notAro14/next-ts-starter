@@ -14,13 +14,13 @@
     "build": "next build",
     "start": "next start -p 4000",
     "lint": "next lint",
-    "format": "prettier --check --ignore-unknown .",
+    "format": "prettier --write --ignore-unknown .",
     "prepare": "husky install",
     "test": "jest --watch"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,scss,sass,md,mdx,html,json}": [
-      "prettier --check --ignore-unknown"
+      "prettier --write --ignore-unknown"
     ],
     "*.{jsx,js,ts,tsx}": [
       "eslint --cache"
