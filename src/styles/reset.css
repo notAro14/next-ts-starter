@@ -1,5 +1,5 @@
 /*
-  Josh Comeau's Custom CSS Reset
+  Based on Josh Comeau's CSS Reset
   Source: https://www.joshwcomeau.com/css/custom-css-reset/
 */
 *,
@@ -9,9 +9,11 @@
 }
 * {
   margin: 0;
+  padding: 0;
 }
 html,
-body {
+body,
+#__next {
   height: 100%;
 }
 body {
@@ -44,15 +46,4 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
-}
-
-/* Mine */
-#__next {
-  height: 100%;
-}
-* {
-  padding: 0;
-}
-ul {
-  list-style-type: none;
 }

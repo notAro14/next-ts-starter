@@ -1,6 +1,4 @@
 {
-  "jsxSingleQuote": true,
   "semi": false,
-  "singleQuote": true,
   "quoteProps": "consistent"
 }

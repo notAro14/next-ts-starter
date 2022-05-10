@@ -1,19 +1,16 @@
-import { FC, useEffect, useState } from 'react'
+// PACKAGES
+import { FC, useEffect, useState } from "react"
 
-import { styled } from 'src/styles/stitches.config'
+// COMPONENTS
+import Text from "src/shared/text"
 
-const Text = styled('p', {
-  color: '$blue12',
-  fontFamily: 'sans-serif',
-})
-
-const Loading = () => <Text role='progressbar'>Loading...</Text>
+const Loading = () => <Text role="progressbar">Loading...</Text>
 const Error = () => (
   <Text
     css={{
-      color: '$red9',
+      color: "$red9",
     }}
-    role='alert'
+    role="alert"
   >
     Failed to fetch data
   </Text>
@@ -24,26 +21,26 @@ const Success: FC<{
 
 const Hello: FC = () => {
   const [state, setState] = useState<{
-    status: 'success' | 'error' | 'pending' | 'idle'
+    status: "success" | "error" | "pending" | "idle"
     data: null | { message: string }
-  }>({ data: null, status: 'idle' })
+  }>({ data: null, status: "idle" })
 
   useEffect(() => {
     ;(async () => {
       setState({
-        status: 'pending',
+        status: "pending",
         data: null,
       })
       try {
-        const res = await fetch('/api/hello')
+        const res = await fetch("/api/hello")
         const data = (await res.json()) as { message: string }
         setState({
-          status: 'success',
+          status: "success",
           data,
         })
       } catch (e) {
         setState({
-          status: 'error',
+          status: "error",
           data: null,
         })
         console.error(e)
@@ -53,9 +50,9 @@ const Hello: FC = () => {
 
   return (
     <>
-      {state.status === 'pending' && <Loading />}
-      {state.status === 'error' && <Error />}
-      {state.status === 'success' && state.data && (
+      {state.status === "pending" && <Loading />}
+      {state.status === "error" && <Error />}
+      {state.status === "success" && state.data && (
         <Success data={state.data.message} />
       )}
     </>
