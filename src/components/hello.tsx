@@ -26,7 +26,7 @@ const Hello: FC = () => {
   }>({ data: null, status: "idle" })
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       setState({
         status: "pending",
         data: null,
