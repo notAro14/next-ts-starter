@@ -14,7 +14,7 @@ const IndexPage: NextPageWithLayout = () => {
       </Head>
 
       <main>
-        <Heading as="h1" css={{ marginBottom: "$base" }}>
+        <Heading as="h1" css={{ mb: "$base" }}>
           Next Typescript Starter
         </Heading>
         <Hello />
