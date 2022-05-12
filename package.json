@@ -14,10 +14,11 @@
     "build": "next build",
     "start": "next start -p 4000",
     "lint": "eslint --fix --cache .",
-    "type:check": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "format": "prettier --write --ignore-unknown .",
     "prepare": "husky install",
-    "test": "jest --watch"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,scss,sass,md,mdx,html,json}": [

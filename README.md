@@ -3,9 +3,7 @@
 I use this starter every time I want to setup a Next.js code. To use it, you can
 
 ```shell
-yarn create next-app --example https://github.com/notAro14/next-ts-starter
-# or
-npx create-next-app --example https://github.com/notAro14/next-ts-starter
+pnpm create next-app your-app-name -- --example https://github.com/notAro14/next-ts-starter
 ```
 
 ## Features
