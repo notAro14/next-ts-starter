@@ -1,10 +1,10 @@
 import { createStitches } from "@stitches/react"
-import { blue, red, blackA, whiteA } from "@radix-ui/colors"
+import { blueDark, red, blackA, whiteA } from "@radix-ui/colors"
 
 export const { styled, getCssText } = createStitches({
   theme: {
     colors: {
-      ...blue,
+      ...blueDark,
       ...red,
       ...blackA,
       ...whiteA,
