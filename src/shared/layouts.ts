@@ -1,5 +1,5 @@
 // FUNCTIONS
-import { styled } from "src/styles/stitches.config"
+import { styled } from "src/lib/stitches.config"
 
 export const Global = styled("div", {
   backgroundColor: "$bg-app",
