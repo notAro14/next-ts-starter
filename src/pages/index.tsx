@@ -4,6 +4,7 @@ import Head from "next/head"
 import type { NextPageWithLayout } from "src/types"
 // COMPONENTS
 import Heading from "src/shared/heading"
+import UserList from "src/components/user-list"
 
 const IndexPage: NextPageWithLayout = () => {
   return (
@@ -16,6 +17,7 @@ const IndexPage: NextPageWithLayout = () => {
         <Heading as="h1" css={{ mb: "$base" }}>
           Next Typescript Starter
         </Heading>
+        <UserList />
       </main>
     </>
   )

@@ -1,4 +1,6 @@
 // PACKAGES
+import { QueryClient, QueryClientProvider } from "react-query"
+import { useState } from "react"
 // TYPES
 import type { AppType } from "next/dist/shared/lib/utils"
 import type { AppPropsWithLayout } from "src/types"
@@ -14,7 +16,13 @@ const MyApp = (({ Component, pageProps }: AppPropsWithLayout) => {
       return <Layout.Global>{page}</Layout.Global>
     })
 
-  return getLayout(<Component {...pageProps} />)
+  const [queryClient] = useState(() => new QueryClient())
+
+  return getLayout(
+    <QueryClientProvider client={queryClient}>
+      <Component {...pageProps} />
+    </QueryClientProvider>
+  )
 }) as AppType
 
 export default MyApp
