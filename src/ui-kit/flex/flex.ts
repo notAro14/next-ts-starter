@@ -23,7 +23,7 @@ const Flex = styled(Box, {
         gap: "$sm",
       },
       "4": {
-        gap: "$base",
+        gap: "$md",
       },
       "5": {
         gap: "$lg",
