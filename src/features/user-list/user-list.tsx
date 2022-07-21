@@ -1,7 +1,7 @@
 import { useQuery } from "react-query"
 
-import Flex from "src/shared/flex"
-import Text from "src/shared/text"
+import Flex from "src/ui-kit/flex"
+import Text from "src/ui-kit/text"
 import { fetchUsers } from "./user-list.helpers"
 
 const UserList = () => {

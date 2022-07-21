@@ -1,4 +1,4 @@
-import { styled } from "src/lib/stitches.config"
+import { styled } from "src/ui-kit/stitches.config"
 import Box from "../box"
 
 const Flex = styled(Box, {
