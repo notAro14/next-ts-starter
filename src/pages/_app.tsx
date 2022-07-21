@@ -4,10 +4,13 @@ import { useState } from "react"
 // TYPES
 import type { AppType } from "next/dist/shared/lib/utils"
 import type { AppPropsWithLayout } from "src/types"
-// CSS
-import "src/styles/reset.css"
+// FUNCTIONS
+import { globalStyles } from "src/ui-kit/stitches.config"
 
 const MyApp = (({ Component, pageProps }: AppPropsWithLayout) => {
+  // inject global reset style
+  globalStyles()
+
   const getLayout =
     Component.getLayout ??
     ((page) => {
