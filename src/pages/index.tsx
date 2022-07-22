@@ -1,4 +1,5 @@
 // PACKAGES
+import { useEffect, useReducer } from "react"
 import Head from "next/head"
 import { useTheme } from "next-themes"
 // TYPES & CONSTANTS
@@ -12,8 +13,8 @@ import Flex from "src/ui-kit/flex"
 import Text from "src/ui-kit/text"
 
 const IndexPage: NextPageWithLayout = () => {
-  //const [isDark, toggle] = useReducer((state) => !state, false)
-  const { theme, setTheme } = useTheme()
+  const [mounted, toggleMounted] = useReducer(() => true, false)
+  const { theme, setTheme, themes } = useTheme()
   const switchTheme = () => {
     let nextTheme = ""
     switch (theme) {
@@ -31,6 +32,10 @@ const IndexPage: NextPageWithLayout = () => {
     }
     setTheme(nextTheme)
   }
+  useEffect(() => {
+    toggleMounted()
+  }, [])
+  if (mounted === false) return null
   return (
     <>
       <Head>
@@ -38,6 +43,23 @@ const IndexPage: NextPageWithLayout = () => {
       </Head>
 
       <Flex as="main" direction="column" gap="4">
+        <label htmlFor="theme-switcher">
+          Select theme
+          <select
+            id="theme-switcher"
+            onChange={(evt) => setTheme(evt.target.value)}
+            value={theme}
+            style={{
+              accentColor: "tomato",
+            }}
+          >
+            {themes.map((t) => (
+              <option value={t} key={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+        </label>
         <Heading as="h1" css={{ fontSize: "$4xl" }}>
           Next Typescript Starter
         </Heading>
