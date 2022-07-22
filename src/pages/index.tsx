@@ -1,5 +1,6 @@
 // PACKAGES
 import Head from "next/head"
+import { useTheme } from "next-themes"
 // TYPES & CONSTANTS
 import type { NextPageWithLayout } from "src/types"
 // COMPONENTS
@@ -11,6 +12,25 @@ import Flex from "src/ui-kit/flex"
 import Text from "src/ui-kit/text"
 
 const IndexPage: NextPageWithLayout = () => {
+  //const [isDark, toggle] = useReducer((state) => !state, false)
+  const { theme, setTheme } = useTheme()
+  const switchTheme = () => {
+    let nextTheme = ""
+    switch (theme) {
+      case "dark":
+        nextTheme = "light"
+        break
+      case "light":
+        nextTheme = "dark"
+        break
+      case "system":
+        nextTheme = "light"
+        break
+      default:
+        nextTheme = "system"
+    }
+    setTheme(nextTheme)
+  }
   return (
     <>
       <Head>
@@ -30,8 +50,10 @@ const IndexPage: NextPageWithLayout = () => {
         </Heading>
         <Text size="lg">Ready to use UI components</Text>
         <Flex>
-          <Button>This is a filled button</Button>
-          <Button variant="outline">This is an outlined button</Button>
+          <Button onClick={() => switchTheme()}>Switch theme</Button>
+          <Button variant="outline" onClick={() => switchTheme()}>
+            Switch theme
+          </Button>
         </Flex>
         <Flex
           direction="column"

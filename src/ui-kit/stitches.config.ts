@@ -1,5 +1,13 @@
 import { createStitches } from "@stitches/react"
-import { plum, tomato, whiteA, mauve } from "@radix-ui/colors"
+import {
+  plum,
+  tomato,
+  whiteA,
+  mauve,
+  plumDark,
+  tomatoDark,
+  mauveDark,
+} from "@radix-ui/colors"
 
 export const { styled, getCssText, globalCss, createTheme } = createStitches({
   theme: {
@@ -74,6 +82,15 @@ export const { styled, getCssText, globalCss, createTheme } = createStitches({
     radii: {
       big: "9999px",
     },
+  },
+})
+
+export const lightTheme = createTheme("light-theme")
+export const darkTheme = createTheme("dark-theme", {
+  colors: {
+    ...plumDark,
+    ...tomatoDark,
+    ...mauveDark,
   },
 })
 
