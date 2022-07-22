@@ -4,11 +4,11 @@ import Head from "next/head"
 import type { NextPageWithLayout } from "src/types"
 // COMPONENTS
 import Heading from "src/ui-kit/heading"
-import UserList from "src/features/user-list"
 // FUNCTIONS
 import { styled } from "src/ui-kit/stitches.config"
 import Button from "src/ui-kit/button"
 import Flex from "src/ui-kit/flex"
+import Text from "src/ui-kit/text"
 
 const IndexPage: NextPageWithLayout = () => {
   return (
@@ -17,28 +17,37 @@ const IndexPage: NextPageWithLayout = () => {
         <title>Next starter code</title>
       </Head>
 
-      <main>
-        <Heading as="h1">Next Typescript Starter</Heading>
-        <Heading as="h2" css={{ marginTop: "$lg" }}>
-          List of users from API
+      <Flex as="main" direction="column" gap="4">
+        <Heading as="h1" css={{ fontSize: "$4xl" }}>
+          Next Typescript Starter
         </Heading>
-        <UserList />
-        <Heading as="h2" css={{ marginTop: "$lg" }}>
+        <Text size="lg">
+          This is a next.js starter code I use to bootstrap quickly a react
+          project
+        </Text>
+        <Heading as="h2" css={{ fontSize: "$3xl" }}>
           Shared UI Kit
         </Heading>
-        <Flex css={{ marginTop: "$md" }} gap="4">
-          <Button>Filled</Button>
-          <Button variant="outline">Outlined</Button>
+        <Text size="lg">Ready to use UI components</Text>
+        <Flex>
+          <Button>This is a filled button</Button>
+          <Button variant="outline">This is an outlined button</Button>
         </Flex>
         <Flex
           direction="column"
-          css={{ marginTop: "$md", alignItems: "flex-start" }}
-          gap="4"
+          css={{
+            lineHeight: 1,
+          }}
         >
-          <Button>Very long text on button element</Button>
-          <Button variant="outline">Very long text on button element</Button>
+          <Text size="4xl">A visual type scale</Text>
+          <Text size="3xl">A visual type scale</Text>
+          <Text size="2xl">A visual type scale</Text>
+          <Text size="xl">A visual type scale</Text>
+          <Text size="lg">A visual type scale</Text>
+          <Text>A visual type scale</Text>
+          <Text size="sm">A visual type scale</Text>
         </Flex>
-      </main>
+      </Flex>
     </>
   )
 }

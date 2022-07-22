@@ -39,7 +39,7 @@ export const { styled, getCssText, globalCss, createTheme } = createStitches({
       "core-cursive": "cursive",
 
       "semantic-primary": "$core-sans",
-      "semantic-secondary": "$core-cursive",
+      "semantic-secondary": "$core-mono",
 
       "component-heading-default": "$semantic-secondary",
       "component-text-default": "$semantic-primary",
