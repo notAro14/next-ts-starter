@@ -1,10 +1,36 @@
 import { useTheme } from "next-themes"
-import { useReducer, useEffect } from "react"
+import { useReducer, useEffect, Fragment } from "react"
 import Box from "src/ui-kit/box"
 
-import Flex from "src/ui-kit/flex"
-import Label from "src/ui-kit/label"
-import Select from "src/ui-kit/select"
+import Select, {
+  SelectItem,
+  SelectItemText,
+  SelectItemIndicator,
+  SelectContent,
+  SelectTrigger,
+  SelectValue,
+  SelectIcon,
+  SelectCheckIcon,
+  SelectChevronDownIcon,
+  SelectChevronUpIcon,
+  SelectViewport,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectGroup,
+  SelectLabel,
+  StyledSeparator,
+} from "src/ui-kit/select"
+
+const DISABLED_THEMES = [
+  {
+    name: "adventure-time",
+    display: "Adventure time",
+  },
+  {
+    name: "dc-comics",
+    display: "DC comics",
+  },
+]
 
 const SelectTheme = () => {
   const [mounted, toggleMounted] = useReducer(() => true, false)
@@ -25,25 +51,50 @@ const SelectTheme = () => {
     )
 
   return (
-    <Flex
-      direction="column"
-      css={{
-        alignItems: "start",
-      }}
-    >
-      <Label htmlFor="theme-switcher">Select theme</Label>
-      <Select
-        id="theme-switcher"
-        onChange={(evt) => setTheme(evt.target.value)}
-        value={theme}
-      >
-        {themes.map((t) => (
-          <option value={t} key={t}>
-            {t}
-          </option>
-        ))}
-      </Select>
-    </Flex>
+    <Select onValueChange={(newValue) => setTheme(newValue)} value={theme}>
+      <SelectTrigger aria-label="Theme">
+        <SelectValue placeholder="Select a theme" />
+        <SelectIcon>
+          <SelectChevronDownIcon />
+        </SelectIcon>
+      </SelectTrigger>
+      <SelectContent>
+        <SelectScrollUpButton>
+          <SelectChevronUpIcon />
+        </SelectScrollUpButton>
+        <SelectViewport>
+          <SelectGroup>
+            <SelectLabel>Available themes</SelectLabel>
+            {themes.map((t) => (
+              <Fragment key={t}>
+                <SelectItem value={t}>
+                  <SelectItemIndicator>
+                    <SelectCheckIcon />
+                  </SelectItemIndicator>
+                  <SelectItemText>{t}</SelectItemText>
+                </SelectItem>
+              </Fragment>
+            ))}
+          </SelectGroup>
+          <StyledSeparator />
+          {/* TEST */}
+          <SelectGroup>
+            <SelectLabel>Disabled themes</SelectLabel>
+            {DISABLED_THEMES.map((t) => (
+              <SelectItem value={t.name} key={t.name} disabled>
+                <SelectItemIndicator>
+                  <SelectCheckIcon />
+                </SelectItemIndicator>
+                <SelectItemText>{t.display}</SelectItemText>
+              </SelectItem>
+            ))}
+          </SelectGroup>
+        </SelectViewport>
+        <SelectScrollDownButton>
+          <SelectChevronDownIcon />
+        </SelectScrollDownButton>
+      </SelectContent>
+    </Select>
   )
 }
 

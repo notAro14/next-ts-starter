@@ -32,6 +32,7 @@ export const { styled, getCssText, globalCss, createTheme } = createStitches({
       "semantic-text-hi-gray": "$mauve12",
 
       "semantic-text-lo-error": "$tomato11",
+      "semantic-text-disabled": "$mauve8",
     },
     fonts: {
       "core-mono": "monospace",
