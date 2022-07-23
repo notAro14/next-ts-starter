@@ -32,13 +32,6 @@ export const { styled, getCssText, globalCss, createTheme } = createStitches({
       "semantic-text-hi-gray": "$mauve12",
 
       "semantic-text-lo-error": "$tomato11",
-
-      "component-heading-vibrant": "$semantic-text-hi",
-      "component-text-vibrant": "$semantic-text-hi",
-      "component-heading-functional": "$semantic-text-hi-gray",
-      "component-text-functional": "$semantic-text-hi-gray",
-      "component-text-error-default": "$semantic-text-lo-error",
-      "component-app-bg-default": "$semantic-bg",
     },
     fonts: {
       "core-mono": "monospace",
@@ -48,9 +41,6 @@ export const { styled, getCssText, globalCss, createTheme } = createStitches({
 
       "semantic-primary": "$core-sans",
       "semantic-secondary": "$core-mono",
-
-      "component-heading-default": "$semantic-secondary",
-      "component-text-default": "$semantic-primary",
     },
     fontSizes: {
       sm: "clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem)",

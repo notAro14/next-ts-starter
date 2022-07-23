@@ -2,8 +2,11 @@
 import { styled } from "src/ui-kit/stitches.config"
 
 const Text = styled("p", {
-  color: "$component-text-functional",
-  fontFamily: "$component-text-default",
+  "$$component-text-color-vibrant": "$colors$semantic-text-hi",
+  "$$component-text-color-functional": "$colors$semantic-text-hi-gray",
+  "$$component-text-font": "$fonts$semantic-primary",
+  color: "$$component-text-color-functional",
+  fontFamily: "$$component-text-font",
   variants: {
     size: {
       sm: {
@@ -30,7 +33,8 @@ const Text = styled("p", {
     },
     error: {
       true: {
-        color: "$component-text-error-default",
+        "$$component-text-color-error": "$colors$semantic-text-lo-error",
+        color: "$$component-text-color-error",
       },
     },
   },
