@@ -1,5 +1,6 @@
 import { useTheme } from "next-themes"
 import { useReducer, useEffect } from "react"
+import Box from "src/ui-kit/box"
 
 import Flex from "src/ui-kit/flex"
 import Label from "src/ui-kit/label"
@@ -12,7 +13,16 @@ const SelectTheme = () => {
   useEffect(() => {
     toggleMounted()
   }, [])
-  if (mounted === false) return null
+  if (mounted === false)
+    return (
+      <Box
+        role="progressbar"
+        css={{
+          width: 62,
+          height: 62,
+        }}
+      />
+    )
 
   return (
     <Flex
