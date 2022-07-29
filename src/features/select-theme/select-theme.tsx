@@ -1,5 +1,5 @@
 import { useTheme } from "next-themes"
-import { useReducer, useEffect, Fragment } from "react"
+import { useReducer, useEffect, Fragment, FC } from "react"
 import Box from "src/ui-kit/box"
 
 import Select, {
@@ -32,7 +32,7 @@ const DISABLED_THEMES = [
   },
 ]
 
-const SelectTheme = () => {
+const SelectTheme: FC<{ className?: string }> = ({ className }) => {
   const [mounted, toggleMounted] = useReducer(() => true, false)
   const { theme, setTheme, themes } = useTheme()
 
@@ -52,7 +52,7 @@ const SelectTheme = () => {
 
   return (
     <Select onValueChange={(newValue) => setTheme(newValue)} value={theme}>
-      <SelectTrigger aria-label="Theme">
+      <SelectTrigger className={className} aria-label="Theme">
         <SelectValue placeholder="Select a theme" />
         <SelectIcon>
           <SelectChevronDownIcon />

@@ -24,8 +24,6 @@ const StyledContent = styled(SelectPrimitive.SelectContent, {
     "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
 })
 const StyledTrigger = styled(SelectPrimitive.SelectTrigger, {
-  all: "unset",
-
   "$$component-select-font": "$fonts$semantic-primary",
   "$$component-select-bg": "$colors$semantic-ui-bg",
   "$$component-select-bg-hovered": "$colors$semantic-ui-bg-hovered",
@@ -37,6 +35,7 @@ const StyledTrigger = styled(SelectPrimitive.SelectTrigger, {
   lineHeight: 1,
   height: 35,
   borderRadius: 6,
+  border: "none",
   backgroundColor: "$$component-select-bg",
   color: "$$component-select-color",
   alignItems: "center",

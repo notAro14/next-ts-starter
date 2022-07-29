@@ -7,9 +7,8 @@ import Heading from "src/ui-kit/heading"
 import Button from "src/ui-kit/button"
 import Flex from "src/ui-kit/flex"
 import Text from "src/ui-kit/text"
-import SelectTheme from "src/features/select-theme"
 import SwitchTheme from "src/features/switch-theme"
-import Layout from "src/shared/layout"
+import Box from "src/ui-kit/box"
 
 const IndexPage: NextPageWithLayout = () => {
   return (
@@ -17,9 +16,7 @@ const IndexPage: NextPageWithLayout = () => {
       <Head>
         <title>Next Typescript starter code</title>
       </Head>
-
-      <Flex as="main" direction="column" gap="4">
-        <SelectTheme />
+      <Box as="main">
         <Heading as="h1" css={{ fontSize: "$4xl" }}>
           Next Typescript Starter Code
         </Heading>
@@ -49,13 +46,9 @@ const IndexPage: NextPageWithLayout = () => {
           <Text>A visual type scale</Text>
           <Text size="sm">A visual type scale</Text>
         </Flex>
-      </Flex>
+      </Box>
     </>
   )
-}
-
-IndexPage.getLayout = (page) => {
-  return <Layout>{page}</Layout>
 }
 
 export default IndexPage
