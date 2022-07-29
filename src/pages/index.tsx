@@ -28,7 +28,7 @@ const IndexPage: NextPageWithLayout = () => {
           Shared UI Kit
         </Heading>
         <Text size="lg">Ready to use UI components</Text>
-        <Flex>
+        <Flex gap="4">
           <SwitchTheme />
           <Button variant="outline">Outline button</Button>
         </Flex>

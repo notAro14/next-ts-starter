@@ -71,6 +71,8 @@ export const { styled, getCssText, globalCss, createTheme } = createStitches({
       "11xl": "768px",
     },
     radii: {
+      sm: "3px",
+      md: "6px",
       big: "9999px",
     },
   },
