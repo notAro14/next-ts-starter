@@ -1,20 +1,17 @@
 import type { NextPage } from "next"
-import { useReducer, useEffect, useRef } from "react"
+import { useReducer } from "react"
 import Head from "next/head"
-import autoAnimate from "@formkit/auto-animate"
 
 import UserList from "src/features/user-list"
 import Box from "src/ui-kit/box"
 import Button from "src/ui-kit/button"
 import Flex from "src/ui-kit/flex"
 import Heading from "src/ui-kit/heading"
+import useAutoAnimation from "src/utils/hooks/use-autoanimation"
 
 const UserListPage: NextPage = () => {
   const [show, enable] = useReducer(() => true, false)
-  const parent = useRef<HTMLUListElement | null>(null)
-  useEffect(() => {
-    parent.current && autoAnimate(parent.current)
-  }, [parent])
+  const ulRef = useAutoAnimation<HTMLUListElement>()
 
   return (
     <>
@@ -26,7 +23,7 @@ const UserListPage: NextPage = () => {
       </Heading>
       <Box as="main">
         <Flex
-          ref={parent}
+          ref={ulRef}
           direction="column"
           as="ul"
           css={{ listStyleType: "none", marginBottom: "$lg" }}
