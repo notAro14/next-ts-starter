@@ -1,13 +1,14 @@
-// PACKAGES
+// VENDORS
 import { QueryClient, QueryClientProvider } from "react-query"
 import { useState } from "react"
 import { ThemeProvider } from "next-themes"
-// TYPES
 import type { AppType } from "next/dist/shared/lib/utils"
+// TYPES
 import type { AppPropsWithLayout } from "src/types"
 // FUNCTIONS
 import { globalStyles, lightTheme, darkTheme } from "src/ui-kit/stitches.config"
-import Layout from "src/shared/layout"
+// COMPONENTS
+import Layout from "src/components/layout"
 
 const MyApp = (({ Component, pageProps }: AppPropsWithLayout) => {
   // inject global reset style

@@ -1,6 +1,4 @@
-// PACKAGES
-import Head from "next/head"
-// TYPES & CONSTANTS
+// TYPES
 import type { NextPageWithLayout } from "src/types"
 // COMPONENTS
 import Heading from "src/ui-kit/heading"
@@ -9,13 +7,13 @@ import Flex from "src/ui-kit/flex"
 import Text from "src/ui-kit/text"
 import SwitchTheme from "src/features/switch-theme"
 import Box from "src/ui-kit/box"
+import SEO from "src/components/seo"
 
 const IndexPage: NextPageWithLayout = () => {
   return (
     <>
-      <Head>
-        <title>Next Typescript starter code</title>
-      </Head>
+      <SEO>Next Typescript starter code</SEO>
+
       <Box as="main">
         <Heading as="h1" css={{ fontSize: "$4xl" }}>
           Next Typescript Starter Code
