@@ -49,9 +49,13 @@ const IndexPage: NextPageWithLayout = () => {
           <Heading as="h3" css={{ fontSize: "$lg" }}>
             Button
           </Heading>
-          <Flex gap="4">
+          <Flex gap="4" css={{ alignItems: "flex-end" }}>
             <SwitchTheme />
             <Button variant="outline">Outline button</Button>
+            <Button size="small">Small Filled</Button>
+            <Button size="small" variant="outline">
+              Small Outline
+            </Button>
           </Flex>
         </Flex>
         <Flex gap="3" direction="column" as="section">
