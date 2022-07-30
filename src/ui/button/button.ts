@@ -3,11 +3,13 @@ import { styled } from "src/ui/stitches.config"
 const Button = styled("button", {
   "$$component-button-font": "$fonts$semantic-primary",
   "$$component-button-font-size": "$fontSizes$md",
-  "$$component-button-radius": "$radii$md",
+  "$$component-button-radius": "$radii$sm",
+  "$$component-button-sizing": "$space$xs $space$lg",
+
   borderRadius: "$$component-button-radius",
   fontFamily: "$$component-button-font",
   fontSize: "$$component-button-font-size",
-  padding: "$sm $md",
+  padding: "$$component-button-sizing",
 
   variants: {
     variant: {
