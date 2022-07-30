@@ -8,6 +8,7 @@ import Button from "src/ui-kit/button"
 import Flex from "src/ui-kit/flex"
 import Heading from "src/ui-kit/heading"
 import SEO from "src/components/seo"
+import Link from "src/ui-kit/link"
 // FUNCTIONS
 import useAutoAnimation from "src/utils/hooks/use-autoanimation"
 
@@ -19,6 +20,7 @@ const UserListPage: NextPage = () => {
     <>
       <SEO>User List</SEO>
 
+      <Link href="/">Go Home</Link>
       <Heading as="h1" css={{ fontSize: "$4xl" }}>
         User list
       </Heading>
