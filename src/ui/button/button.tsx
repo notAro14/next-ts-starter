@@ -1,4 +1,4 @@
-import { styled } from "src/ui-kit/stitches.config"
+import { styled } from "src/ui/stitches.config"
 
 const Button = styled("button", {
   "$$component-button-font": "$fonts$semantic-primary",

@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react"
 
-import { styled } from "src/ui-kit/stitches.config"
+import { styled } from "src/ui/stitches.config"
 import SelectTheme from "src/features/select-theme"
 
 const StyledSelectTheme = styled(SelectTheme, {

@@ -1,6 +1,6 @@
 import NextLink from "next/link"
 
-import { styled } from "src/ui-kit/stitches.config"
+import { styled } from "src/ui/stitches.config"
 
 export const StyledLink = styled("a", {
   "$$component-link-color": "$colors$semantic-text-lo",

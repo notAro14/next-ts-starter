@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes"
 import { useReducer, useEffect, Fragment, FC } from "react"
-import Box from "src/ui-kit/box"
+import Box from "src/ui/box"
 
 import Select, {
   SelectItem,
@@ -19,7 +19,7 @@ import Select, {
   SelectGroup,
   SelectLabel,
   StyledSeparator,
-} from "src/ui-kit/select"
+} from "src/ui/select"
 
 const DISABLED_THEMES = [
   {

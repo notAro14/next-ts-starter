@@ -1,6 +1,6 @@
 import { useQuery } from "react-query"
 
-import Text from "src/ui-kit/text"
+import Text from "src/ui/text"
 import { fetchUsers } from "./user-list.helpers"
 
 const UserList = () => {

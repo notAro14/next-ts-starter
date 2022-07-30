@@ -1,5 +1,5 @@
 // FUNCTIONS
-import { styled } from "src/ui-kit/stitches.config"
+import { styled } from "src/ui/stitches.config"
 
 const Heading = styled("h2", {
   "$$component-heading-color-primary": "$colors$semantic-text-hi-gray",

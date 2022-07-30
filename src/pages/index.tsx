@@ -1,12 +1,12 @@
 // TYPES
 import type { NextPageWithLayout } from "src/types"
 // COMPONENTS
-import Heading from "src/ui-kit/heading"
-import Button from "src/ui-kit/button"
-import Flex from "src/ui-kit/flex"
-import Text from "src/ui-kit/text"
+import Heading from "src/ui/heading"
+import Button from "src/ui/button"
+import Flex from "src/ui/flex"
+import Text from "src/ui/text"
 import SwitchTheme from "src/features/switch-theme"
-import Box from "src/ui-kit/box"
+import Box from "src/ui/box"
 import SEO from "src/components/seo"
 
 const IndexPage: NextPageWithLayout = () => {

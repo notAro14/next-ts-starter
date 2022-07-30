@@ -6,7 +6,7 @@ import type { AppType } from "next/dist/shared/lib/utils"
 // TYPES
 import type { AppPropsWithLayout } from "src/types"
 // FUNCTIONS
-import { globalStyles, lightTheme, darkTheme } from "src/ui-kit/stitches.config"
+import { globalStyles, lightTheme, darkTheme } from "src/ui/stitches.config"
 // COMPONENTS
 import Layout from "src/components/layout"
 

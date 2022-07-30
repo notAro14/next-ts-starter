@@ -1,5 +1,5 @@
 // FUNCTIONS
-import { styled } from "src/ui-kit/stitches.config"
+import { styled } from "src/ui/stitches.config"
 
 const Text = styled("p", {
   "$$component-text-color-vibrant": "$colors$semantic-text-hi",

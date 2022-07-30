@@ -3,12 +3,12 @@ import type { NextPage } from "next"
 import { useReducer } from "react"
 // COMPONENTS
 import UserList from "src/features/user-list"
-import Box from "src/ui-kit/box"
-import Button from "src/ui-kit/button"
-import Flex from "src/ui-kit/flex"
-import Heading from "src/ui-kit/heading"
+import Box from "src/ui/box"
+import Button from "src/ui/button"
+import Flex from "src/ui/flex"
+import Heading from "src/ui/heading"
 import SEO from "src/components/seo"
-import Link from "src/ui-kit/link"
+import Link from "src/ui/link"
 // FUNCTIONS
 import useAutoAnimation from "src/utils/hooks/use-autoanimation"
 

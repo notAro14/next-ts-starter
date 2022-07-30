@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes"
 
-import Button from "src/ui-kit/button"
+import Button from "src/ui/button"
 
 const SwitchTheme = () => {
   const { theme, setTheme } = useTheme()

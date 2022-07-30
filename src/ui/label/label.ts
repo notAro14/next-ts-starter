@@ -1,4 +1,4 @@
-import { styled } from "src/ui-kit/stitches.config"
+import { styled } from "src/ui/stitches.config"
 
 const Label = styled("label", {
   "$$component-label-color": "$colors$semantic-text-lo-gray",
