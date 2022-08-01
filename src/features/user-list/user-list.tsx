@@ -1,10 +1,10 @@
-import { useQuery } from "react-query"
+import { useQuery } from "@tanstack/react-query"
 
 import Text from "src/ui/text"
 import { fetchUsers } from "./user-list.helpers"
 
 const UserList = () => {
-  const { status, data: users } = useQuery("user/all", fetchUsers)
+  const { status, data: users } = useQuery(["users"], fetchUsers)
   return (
     <>
       {status === "loading" && <Text role="progressbar">Loading users...</Text>}

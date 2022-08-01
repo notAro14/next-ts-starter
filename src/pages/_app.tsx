@@ -1,5 +1,5 @@
 // VENDORS
-import { QueryClient, QueryClientProvider } from "react-query"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { useState } from "react"
 import { ThemeProvider } from "next-themes"
 import type { AppType } from "next/dist/shared/lib/utils"

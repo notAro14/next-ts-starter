@@ -23,6 +23,7 @@ const UserListPage: NextPage = () => {
       <Heading as="h1" css={{ fontSize: "$2xl" }}>
         User list
       </Heading>
+      <Link href="/">Go to index page</Link>
       <Box as="main">
         <Flex
           ref={ulRef}
@@ -32,17 +33,14 @@ const UserListPage: NextPage = () => {
         >
           {show && <UserList />}
         </Flex>
-        <Flex direction="column" css={{ alignItems: "flex-start" }} gap="4">
-          <Button
-            variant="outline"
-            onClick={() => {
-              enable()
-            }}
-          >
-            Fetch users
-          </Button>
-          <Link href="/">Go to index page</Link>
-        </Flex>
+        <Button
+          variant="outline"
+          onClick={() => {
+            enable()
+          }}
+        >
+          Fetch users
+        </Button>
       </Box>
     </>
   )
