@@ -20,8 +20,7 @@ const UserListPage: NextPage = () => {
     <>
       <SEO>User List</SEO>
 
-      <Link href="/">Go Home</Link>
-      <Heading as="h1" css={{ fontSize: "$4xl" }}>
+      <Heading as="h1" css={{ fontSize: "$2xl" }}>
         User list
       </Heading>
       <Box as="main">
@@ -33,14 +32,17 @@ const UserListPage: NextPage = () => {
         >
           {show && <UserList />}
         </Flex>
-        <Button
-          variant="outline"
-          onClick={() => {
-            enable()
-          }}
-        >
-          Fetch users
-        </Button>
+        <Flex direction="column" css={{ alignItems: "flex-start" }} gap="4">
+          <Button
+            variant="outline"
+            onClick={() => {
+              enable()
+            }}
+          >
+            Fetch users
+          </Button>
+          <Link href="/">Go to index page</Link>
+        </Flex>
       </Box>
     </>
   )
