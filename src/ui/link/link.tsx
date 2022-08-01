@@ -12,6 +12,7 @@ export const StyledLink = styled("a", {
   fontFamily: "$$component-link-font",
   fontSize: "$$component-link-font-size",
   textDecoration: "underline",
+  width: "fit-content",
   "&:hover": {
     cursor: "pointer",
     color: "$$component-link-color-hovered",

@@ -6,13 +6,14 @@ import type { AppType } from "next/dist/shared/lib/utils"
 // TYPES
 import type { AppPropsWithLayout } from "src/types"
 // FUNCTIONS
-import { globalStyles, lightTheme, darkTheme } from "src/ui/stitches.config"
+import { injectGlobalStyles } from "src/ui/stitches.config"
+import { light, dark } from "src/ui/theme"
 // COMPONENTS
 import Layout from "src/components/layout"
 
 const MyApp = (({ Component, pageProps }: AppPropsWithLayout) => {
   // inject global reset style
-  globalStyles()
+  injectGlobalStyles()
 
   const getLayout =
     Component.getLayout ??
@@ -27,8 +28,8 @@ const MyApp = (({ Component, pageProps }: AppPropsWithLayout) => {
       attribute="class"
       defaultTheme="system"
       value={{
-        light: lightTheme.className,
-        dark: darkTheme.className,
+        light,
+        dark,
       }}
     >
       <QueryClientProvider client={queryClient}>

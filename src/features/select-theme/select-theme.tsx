@@ -17,20 +17,7 @@ import Select, {
   SelectScrollDownButton,
   SelectScrollUpButton,
   SelectGroup,
-  SelectLabel,
-  StyledSeparator,
 } from "src/ui/select"
-
-const DISABLED_THEMES = [
-  {
-    name: "adventure-time",
-    display: "Adventure time",
-  },
-  {
-    name: "dc-comics",
-    display: "DC comics",
-  },
-]
 
 const SelectTheme: FC<{ className?: string }> = ({ className }) => {
   const [mounted, toggleMounted] = useReducer(() => true, false)
@@ -44,8 +31,8 @@ const SelectTheme: FC<{ className?: string }> = ({ className }) => {
       <Box
         role="progressbar"
         css={{
-          width: 62,
-          height: 62,
+          width: 35,
+          height: 35,
         }}
       />
     )
@@ -64,7 +51,6 @@ const SelectTheme: FC<{ className?: string }> = ({ className }) => {
         </SelectScrollUpButton>
         <SelectViewport>
           <SelectGroup>
-            <SelectLabel>Available themes</SelectLabel>
             {themes.map((t) => (
               <Fragment key={t}>
                 <SelectItem value={t}>
@@ -74,19 +60,6 @@ const SelectTheme: FC<{ className?: string }> = ({ className }) => {
                   <SelectItemText>{t}</SelectItemText>
                 </SelectItem>
               </Fragment>
-            ))}
-          </SelectGroup>
-          <StyledSeparator />
-          {/* TEST */}
-          <SelectGroup>
-            <SelectLabel>Disabled themes</SelectLabel>
-            {DISABLED_THEMES.map((t) => (
-              <SelectItem value={t.name} key={t.name} disabled>
-                <SelectItemIndicator>
-                  <SelectCheckIcon />
-                </SelectItemIndicator>
-                <SelectItemText>{t.display}</SelectItemText>
-              </SelectItem>
             ))}
           </SelectGroup>
         </SelectViewport>

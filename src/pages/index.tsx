@@ -13,6 +13,9 @@ import SEO from "src/components/seo"
 import Link from "src/ui/link"
 import { styled } from "src/ui/stitches.config"
 
+const TEXT_VALUE = "Hello World"
+const TEXT_SIZES = ["sm", "md", "lg", "xl", "2xl", "3xl", "4xl"] as const
+
 const StyledSection = styled("section", {
   display: "flex",
   flexDirection: "column",
@@ -69,13 +72,11 @@ const IndexPage: NextPageWithLayout = () => {
               lineHeight: 1,
             }}
           >
-            <Text size="sm">A visual type scale sm</Text>
-            <Text>A visual type scale md</Text>
-            <Text size="lg">A visual type scale lg</Text>
-            <Text size="xl">A visual type scale xl</Text>
-            <Text size="2xl">A visual type scale 2xl</Text>
-            <Text size="3xl">A visual type scale 3xl</Text>
-            <Text size="4xl">A visual type scale 4xl</Text>
+            {TEXT_SIZES.map((size) => (
+              <Text key={size} size={size}>
+                {TEXT_VALUE}
+              </Text>
+            ))}
           </Flex>
         </Section>
       </Box>
