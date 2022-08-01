@@ -17,6 +17,11 @@ export const { styled, getCssText, globalCss, createTheme } = createStitches({
     radii,
     shadows,
   },
+  media: {
+    sm: "(max-width: 640px)",
+    md: "(min-width: 641px) and (max-width: 768px)",
+    lg: "(min-width: 769px)",
+  },
 })
 
 export const injectGlobalStyles = globalCss({

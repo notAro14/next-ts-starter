@@ -1,6 +1,6 @@
 export const radii = {
   sm: "3px",
   md: "6px",
-  big: "9999px",
+  lg: "12px",
 } as const
 export default radii

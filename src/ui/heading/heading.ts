@@ -8,6 +8,16 @@ const Heading = styled("h2", {
   lineHeight: "1",
   color: "$$component-heading-color-primary",
   fontFamily: "$$component-heading-font",
+  variants: {
+    vibrant: {
+      true: {
+        color: "$$component-heading-color-secondary",
+      },
+    },
+  },
+  defaultVariants: {
+    vibrant: false,
+  },
 })
 
 export default Heading

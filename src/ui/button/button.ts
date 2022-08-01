@@ -12,19 +12,23 @@ const Button = styled("button", {
   fontSize: "$$component-button-font-size",
   padding: "$$component-button-sizing",
   fontWeight: "$$component-button-font-weight",
+  border: "1px solid",
 
   variants: {
     variant: {
       filled: {
         "$$component-button-bg": "$colors$semantic-solid",
+        "$$component-button-border": "$$component-button-bg",
         "$$component-button-color": "$colors$whiteA12",
         "$$component-button-bg-hovered": "$colors$semantic-solid-hovered",
+        "$$component-button-border-hovered": "$$component-button-bg-hovered",
 
         backgroundColor: "$$component-button-bg",
-        border: "none",
+        borderColor: "$$component-button-border",
         color: "$$component-button-color",
         "&:hover": {
           backgroundColor: "$$component-button-bg-hovered",
+          borderColor: "$$component-button-border-hovered",
           cursor: "pointer",
         },
       },
@@ -36,7 +40,6 @@ const Button = styled("button", {
         "$$component-button-font-weight": 500,
 
         backgroundColor: "transparent",
-        border: "1px solid",
         borderColor: "$$component-button-border",
         color: "$$component-button-color",
         "&:hover": {

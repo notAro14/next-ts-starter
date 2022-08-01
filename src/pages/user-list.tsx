@@ -5,12 +5,28 @@ import { useReducer } from "react"
 import UserList from "src/features/user-list"
 import Box from "src/ui/box"
 import Button from "src/ui/button"
-import Flex from "src/ui/flex"
 import Heading from "src/ui/heading"
 import SEO from "src/components/seo"
 import Link from "src/ui/link"
 // FUNCTIONS
 import useAutoAnimation from "src/utils/hooks/use-autoanimation"
+import { styled } from "src/ui/stitches.config"
+
+const UserListContainer = styled("ul", {
+  listStyleType: "none",
+  marginBottom: "$lg",
+  display: "grid",
+  gap: "$xl",
+  "@sm": {
+    gridTemplateColumns: "1fr",
+  },
+  "@md": {
+    gridTemplateColumns: "1fr 1fr",
+  },
+  "@lg": {
+    gridTemplateColumns: "repeat(3, 1fr)",
+  },
+})
 
 const UserListPage: NextPage = () => {
   const [show, enable] = useReducer(() => true, false)
@@ -25,14 +41,9 @@ const UserListPage: NextPage = () => {
       </Heading>
       <Link href="/">Go to index page</Link>
       <Box as="main">
-        <Flex
-          ref={ulRef}
-          direction="column"
-          as="ul"
-          css={{ listStyleType: "none", marginBottom: "$lg" }}
-        >
+        <UserListContainer ref={ulRef}>
           {show && <UserList />}
-        </Flex>
+        </UserListContainer>
         <Button
           variant="outline"
           onClick={() => {

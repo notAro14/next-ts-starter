@@ -7,6 +7,7 @@ import Heading from "src/ui/heading"
 import Button from "src/ui/button"
 import Flex from "src/ui/flex"
 import Text from "src/ui/text"
+import Paper from "src/ui/paper"
 import SwitchTheme from "src/features/switch-theme"
 import Box from "src/ui/box"
 import SEO from "src/components/seo"
@@ -15,6 +16,7 @@ import { styled } from "src/ui/stitches.config"
 
 const TEXT_VALUE = "Hello World"
 const TEXT_SIZES = ["sm", "md", "lg", "xl", "2xl", "3xl", "4xl"] as const
+const PAPER_ELEVATIONS = ["low", "medium", "high"] as const
 
 const StyledSection = styled("section", {
   display: "flex",
@@ -55,10 +57,12 @@ const IndexPage: NextPageWithLayout = () => {
         <Section title="Button">
           <Flex gap="4" css={{ alignItems: "flex-end" }}>
             <SwitchTheme />
-            <Button variant="outline">Outline button</Button>
-            <Button size="small">Small Filled</Button>
+            <Button variant="outline">Outline</Button>
+          </Flex>
+          <Flex gap="4" css={{ alignItems: "flex-end" }}>
+            <Button size="small">Filled</Button>
             <Button size="small" variant="outline">
-              Small Outline
+              Outline
             </Button>
           </Flex>
         </Section>
@@ -76,6 +80,30 @@ const IndexPage: NextPageWithLayout = () => {
               <Text key={size} size={size}>
                 {TEXT_VALUE}
               </Text>
+            ))}
+          </Flex>
+        </Section>
+        <Section title="Paper (elevation on light mode)">
+          <Flex
+            gap="4"
+            css={{
+              flexWrap: "wrap",
+              $$size: "100px",
+            }}
+          >
+            {PAPER_ELEVATIONS.map((elevation) => (
+              <Paper
+                key={elevation}
+                elevation={elevation}
+                css={{
+                  width: "$$size",
+                  height: "$$size",
+                  display: "grid",
+                  placeItems: "center",
+                }}
+              >
+                <Text>{elevation}</Text>
+              </Paper>
             ))}
           </Flex>
         </Section>
