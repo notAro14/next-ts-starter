@@ -6,6 +6,7 @@ const lightTheme = createTheme("light-theme", {
     ...plum,
     ...tomato,
     ...mauve,
+    "semantic-shadow": "280deg 25% 63%",
   },
 })
 

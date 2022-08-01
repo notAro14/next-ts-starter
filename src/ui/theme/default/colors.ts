@@ -1,10 +1,7 @@
-import { plum, tomato, whiteA, mauve } from "@radix-ui/colors"
+import { whiteA } from "@radix-ui/colors"
 
 export const colors = {
-  ...plum,
-  ...tomato,
   ...whiteA,
-  ...mauve,
   "semantic-bg": "$plum1",
   "semantic-bg-subtle": "$plum2",
   "semantic-ui-bg": "$plum3",

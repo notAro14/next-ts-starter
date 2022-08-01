@@ -1,5 +1,12 @@
 import { createStitches } from "@stitches/react"
-import { colors, fonts, fontSizes, space, radii } from "./theme/default"
+import {
+  colors,
+  fonts,
+  fontSizes,
+  space,
+  radii,
+  shadows,
+} from "./theme/default"
 
 export const { styled, getCssText, globalCss, createTheme } = createStitches({
   theme: {
@@ -8,6 +15,7 @@ export const { styled, getCssText, globalCss, createTheme } = createStitches({
     fontSizes,
     space,
     radii,
+    shadows,
   },
 })
 
