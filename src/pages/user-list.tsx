@@ -1,6 +1,5 @@
 // VENDORS
 import type { NextPage } from "next"
-import { useReducer } from "react"
 // COMPONENTS
 import UserList from "src/features/user-list"
 import Box from "src/ui/box"
@@ -10,6 +9,7 @@ import SEO from "src/components/seo"
 import Link from "src/ui/link"
 // FUNCTIONS
 import useAutoAnimation from "src/utils/hooks/use-autoanimation"
+import useEnableOnce from "src/utils/hooks/use-enable-once"
 import { styled } from "src/ui/stitches.config"
 
 const UserListContainer = styled("ul", {
@@ -29,7 +29,7 @@ const UserListContainer = styled("ul", {
 })
 
 const UserListPage: NextPage = () => {
-  const [show, enable] = useReducer(() => true, false)
+  const [isEnable, enableOnce] = useEnableOnce()
   const ulRef = useAutoAnimation<HTMLUListElement>()
 
   return (
@@ -42,12 +42,12 @@ const UserListPage: NextPage = () => {
       <Link href="/">Go to index page</Link>
       <Box as="main">
         <UserListContainer ref={ulRef}>
-          {show && <UserList />}
+          {isEnable && <UserList />}
         </UserListContainer>
         <Button
           variant="outline"
           onClick={() => {
-            enable()
+            enableOnce()
           }}
         >
           Fetch users

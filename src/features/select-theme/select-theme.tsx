@@ -1,6 +1,8 @@
 import { useTheme } from "next-themes"
-import { useReducer, useEffect, Fragment, FC } from "react"
+import { useEffect, Fragment, FC } from "react"
+
 import Box from "src/ui/box"
+import useEnableOnce from "src/utils/hooks/use-enable-once"
 
 import Select, {
   SelectItem,
@@ -20,13 +22,13 @@ import Select, {
 } from "src/ui/select"
 
 const SelectTheme: FC<{ className?: string }> = ({ className }) => {
-  const [mounted, toggleMounted] = useReducer(() => true, false)
+  const [isEnable, enableOnce] = useEnableOnce()
   const { theme, setTheme, themes } = useTheme()
 
   useEffect(() => {
-    toggleMounted()
-  }, [])
-  if (mounted === false)
+    enableOnce()
+  }, [enableOnce])
+  if (isEnable === false)
     return (
       <Box
         role="progressbar"
