@@ -54,8 +54,7 @@ Open http://localhost:4000/
 
 - lang: [typescript](https://www.typescriptlang.org/)
 - styling: [stitches](https://stitches.dev/), [radix UI colors](https://www.radix-ui.com/colors)
-- dark mode support
+- multiple theming support: [next-themes](https://github.com/pacocoursey/next-themes)
 - data fetching: [react query](https://react-query.tanstack.com/)
-- test: [jest](https://jestjs.io/), [react testing library](https://testing-library.com/docs/react-testing-library/intro/), [mock service worker](https://mswjs.io/)
 - pre commit hook: [husky](https://typicode.github.io/husky/#/) and [lint staged](https://github.com/okonet/lint-staged) configured to run [prettier](https://prettier.io/) and [eslint](https://eslint.org/)
 - `_app` component configured to accept [Single shared layout](https://nextjs.org/docs/basic-features/layouts#single-shared-layout-with-custom-app) and [Per-page layouts](https://nextjs.org/docs/basic-features/layouts#per-page-layouts)
