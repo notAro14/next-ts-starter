@@ -96,7 +96,7 @@ const IndexPage: NextPageWithLayout = () => {
                 key={elevation}
                 elevation={elevation}
                 css={{
-                  width: "$$size",
+                  minWidth: "$$size",
                   height: "$$size",
                   display: "grid",
                   placeItems: "center",
