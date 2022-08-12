@@ -107,6 +107,21 @@ const IndexPage: NextPageWithLayout = () => {
             ))}
           </Flex>
         </Section>
+        <Section title="Paper on loading state">
+          <Paper
+            elevation="medium"
+            css={{
+              height: 100,
+              "@md": {
+                maxWidth: "50%",
+              },
+              "@lg": {
+                maxWidth: "30%",
+              },
+            }}
+            loading
+          />
+        </Section>
       </Box>
     </>
   )

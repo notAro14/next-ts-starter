@@ -11,7 +11,15 @@ const UserList = () => {
     useErrorBoundary: true,
   })
   if (users === undefined)
-    return <Text role="progressbar">Loading users...</Text>
+    return (
+      <Paper
+        loading
+        role="progressbar"
+        css={{
+          height: 110,
+        }}
+      />
+    )
 
   return (
     <>
