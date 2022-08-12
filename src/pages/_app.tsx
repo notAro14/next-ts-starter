@@ -1,3 +1,5 @@
+// STYLES
+import "src/ui/reset.css"
 // VENDORS
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { useState } from "react"
@@ -6,15 +8,11 @@ import type { AppType } from "next/dist/shared/lib/utils"
 // TYPES
 import type { AppPropsWithLayout } from "src/types"
 // FUNCTIONS
-import { injectGlobalStyles } from "src/ui/stitches.config"
 import { light, dark } from "src/ui/theme"
 // COMPONENTS
 import Layout from "src/components/layout"
 
 const MyApp = (({ Component, pageProps }: AppPropsWithLayout) => {
-  // inject global reset style
-  injectGlobalStyles()
-
   const getLayout =
     Component.getLayout ??
     ((page) => {
