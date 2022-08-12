@@ -12,6 +12,8 @@ import SwitchTheme from "src/features/switch-theme"
 import Box from "src/ui/box"
 import SEO from "src/components/seo"
 import Link from "src/ui/link"
+import Spinner from "src/ui/spinner"
+// FUNCTIONS
 import { styled } from "src/ui/stitches.config"
 
 const TEXT_VALUE = "Hello World"
@@ -121,6 +123,13 @@ const IndexPage: NextPageWithLayout = () => {
             }}
             loading
           />
+        </Section>
+        <Section title="Loading spinner">
+          <Flex css={{ alignItems: "center" }} gap={6}>
+            <Spinner role="progressbar" size="lg" />
+            <Spinner role="progressbar" size="md" />
+            <Spinner role="progressbar" />
+          </Flex>
         </Section>
       </Box>
     </>
