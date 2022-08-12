@@ -13,6 +13,7 @@ import Box from "src/ui/box"
 import SEO from "src/components/seo"
 import Link from "src/ui/link"
 import Spinner from "src/ui/spinner"
+import { Input, Label, FormControl } from "src/ui/input"
 // FUNCTIONS
 import { styled } from "src/ui/stitches.config"
 
@@ -111,7 +112,6 @@ const IndexPage: NextPageWithLayout = () => {
         </Section>
         <Section title="Paper on loading state">
           <Paper
-            elevation="medium"
             css={{
               height: 100,
               "@md": {
@@ -130,6 +130,40 @@ const IndexPage: NextPageWithLayout = () => {
             <Spinner role="progressbar" size="md" />
             <Spinner role="progressbar" />
           </Flex>
+        </Section>
+        <Section title="Forms">
+          <form onSubmit={(evt) => evt.preventDefault()}>
+            <Paper
+              css={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "$md",
+                padding: "$md",
+                "@sm": {
+                  width: "100%",
+                },
+                "@md": {
+                  maxWidth: 400,
+                },
+                "@lg": {
+                  maxWidth: 400,
+                },
+              }}
+            >
+              <FormControl>
+                <Label htmlFor="email">Email</Label>
+                <Input value="aro@mail.com" type="email" id="email" />
+              </FormControl>
+              <FormControl>
+                <Label htmlFor="pwd">Password</Label>
+                <Input value="123" type="password" id="pwd" />
+              </FormControl>
+              <Button type="submit" variant="outline">
+                Sign In
+              </Button>
+              <Button>Sign Up</Button>
+            </Paper>
+          </form>
         </Section>
       </Box>
     </>
