@@ -1,5 +1,7 @@
 // VENDORS
 import type { NextPage } from "next"
+import { ErrorBoundary } from "react-error-boundary"
+import { useQueryErrorResetBoundary } from "@tanstack/react-query"
 // COMPONENTS
 import UserList from "src/features/user-list"
 import Box from "src/ui/box"
@@ -7,6 +9,8 @@ import Button from "src/ui/button"
 import Heading from "src/ui/heading"
 import SEO from "src/components/seo"
 import Link from "src/ui/link"
+import Text from "src/ui/text"
+import Flex from "src/ui/flex"
 // FUNCTIONS
 import useAutoAnimation from "src/utils/hooks/use-autoanimation"
 import useEnableOnce from "src/utils/hooks/use-enable-once"
@@ -31,6 +35,7 @@ const UserListContainer = styled("ul", {
 const UserListPage: NextPage = () => {
   const [isEnable, enableOnce] = useEnableOnce()
   const ulRef = useAutoAnimation<HTMLUListElement>()
+  const { reset } = useQueryErrorResetBoundary()
 
   return (
     <>
@@ -40,19 +45,31 @@ const UserListPage: NextPage = () => {
         User list
       </Heading>
       <Link href="/">Go to index page</Link>
-      <Box as="main">
-        <UserListContainer ref={ulRef}>
-          {isEnable && <UserList />}
-        </UserListContainer>
-        <Button
-          variant="outline"
-          onClick={() => {
-            enableOnce()
-          }}
-        >
-          Fetch users
-        </Button>
-      </Box>
+      <ErrorBoundary
+        onReset={reset}
+        fallbackRender={({ resetErrorBoundary }) => (
+          <Flex direction="column">
+            <Text role="alert" error>
+              Failed to get users
+            </Text>
+            <Button onClick={() => resetErrorBoundary()}>Try Again</Button>
+          </Flex>
+        )}
+      >
+        <Box as="main">
+          <UserListContainer ref={ulRef}>
+            {isEnable && <UserList />}
+          </UserListContainer>
+          <Button
+            variant="outline"
+            onClick={() => {
+              enableOnce()
+            }}
+          >
+            Fetch users
+          </Button>
+        </Box>
+      </ErrorBoundary>
     </>
   )
 }
