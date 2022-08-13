@@ -8,7 +8,6 @@ const glow = keyframes({
 
 const Paper = styled(Box, {
   backgroundColor: "$semantic-ui-bg",
-  borderRadius: "$lg",
   padding: "$md",
   variants: {
     elevation: {

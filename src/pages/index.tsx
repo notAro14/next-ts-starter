@@ -1,5 +1,7 @@
 // VENDORS
 import { ReactNode } from "react"
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+import { CheckIcon } from "@radix-ui/react-icons"
 // TYPES
 import type { NextPageWithLayout } from "src/types"
 // COMPONENTS
@@ -14,6 +16,7 @@ import Link from "src/ui/link"
 import Ring from "src/ui/ring"
 import Momentum from "src/ui/momentum"
 import { Input, Label, FormControl } from "src/ui/input"
+import { Root, List, Trigger, Content } from "src/ui/tabs"
 // FUNCTIONS
 import { styled } from "src/ui/stitches.config"
 import useThemeSwitcher from "src/utils/hooks/use-theme-switcher"
@@ -142,43 +145,141 @@ const IndexPage: NextPageWithLayout = () => {
             <Momentum size="lg" />
           </Flex>
         </Section>
-        <Section title="Forms">
-          <form onSubmit={(evt) => evt.preventDefault()}>
-            <Paper
-              css={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "$md",
-                padding: "$md",
-                "@sm": {
-                  width: "100%",
-                },
-                "@md": {
-                  maxWidth: 400,
-                },
-                "@lg": {
-                  maxWidth: 400,
-                },
-              }}
-            >
-              <FormControl>
-                <Label htmlFor="email">Email</Label>
-                <Input defaultValue="aro@mail.com" type="email" id="email" />
-              </FormControl>
-              <FormControl>
-                <Label htmlFor="pwd">Password</Label>
-                <Input defaultValue="123" type="password" id="pwd" />
-              </FormControl>
-              <Button type="submit" variant="outline">
-                Sign In
-              </Button>
-              <Button>Sign Up</Button>
-            </Paper>
-          </form>
+        <Section title="Form, Inputs and Tabs">
+          <StyledTabs defaultValue="signin">
+            <StyledList>
+              <StyledTrigger value="signin">Sign In</StyledTrigger>
+              <StyledTrigger value="signup">Create An Account</StyledTrigger>
+            </StyledList>
+            <Content value="signup">
+              <StyledForm onSubmit={(evt) => evt.preventDefault()}>
+                <Paper
+                  css={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "$md",
+                    padding: "$md",
+                  }}
+                >
+                  <FormControl>
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      placeholder="We will never spam you, We promise"
+                      type="email"
+                      id="email"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <Label htmlFor="pwd1">Password</Label>
+                    <Input
+                      placeholder="Choose a strong password"
+                      type="password"
+                      id="pwd1"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <Label htmlFor="pwd2">Password confirmation</Label>
+                    <Input
+                      placeholder="Confirm password"
+                      type="password"
+                      id="pwd2"
+                    />
+                  </FormControl>
+                  <Flex css={{ alignItems: "center" }} gap={4}>
+                    <StyledCheckbox required id="cgv">
+                      <StyledCheckboxIndicator>
+                        <CheckIcon />
+                      </StyledCheckboxIndicator>
+                    </StyledCheckbox>
+                    <Label htmlFor="cgv">Accept terms and conditions</Label>
+                  </Flex>
+                  <Button type="submit">Create Account</Button>
+                </Paper>
+              </StyledForm>
+            </Content>
+            <Content value="signin">
+              <StyledForm onSubmit={(evt) => evt.preventDefault()}>
+                <Paper
+                  css={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "$md",
+                    padding: "$md",
+                  }}
+                >
+                  <FormControl>
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      defaultValue="aro@mail.com"
+                      type="email"
+                      id="email"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <Label htmlFor="pwd">Password</Label>
+                    <Input defaultValue="123" type="password" id="pwd" />
+                  </FormControl>
+                  <Button type="submit">Sign In</Button>
+                </Paper>
+              </StyledForm>
+            </Content>
+          </StyledTabs>
         </Section>
       </Box>
     </>
   )
 }
+
+const StyledCheckbox = styled(CheckboxPrimitive.Root, {
+  all: "unset",
+  backgroundColor: "$semantic-bg",
+  height: 25,
+  width: 25,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  alignSelf: "flex-start",
+  borderRadius: "$sm",
+  "&:focus": {
+    outline: "1px solid",
+    outlineColor: "$semantic-solid",
+  },
+})
+const StyledCheckboxIndicator = styled(CheckboxPrimitive.CheckboxIndicator, {
+  color: "$semantic-solid",
+})
+
+const StyledTabs = styled(Root, {
+  display: "flex",
+  flexDirection: "column",
+  "@sm": {
+    width: "100%",
+  },
+  "@md": {
+    maxWidth: 400,
+  },
+  "@lg": {
+    maxWidth: 400,
+  },
+})
+const StyledTrigger = styled(Trigger, {
+  all: "unset",
+  color: "$semantic-text-hi",
+  textTransform: "uppercase",
+  '&[data-state="active"]': {
+    color: "$semantic-text-lo",
+  },
+})
+const StyledList = styled(List, {
+  display: "flex",
+  backgroundColor: "$semantic-ui-bg",
+  padding: "$md",
+  alignItems: "center",
+  justifyContent: "space-between",
+  borderBottom: "1px solid",
+  borderBottomColor: "$semantic-ui-border",
+  fontFamily: "$semantic-primary",
+})
+const StyledForm = styled("form", {})
 
 export default IndexPage

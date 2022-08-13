@@ -10,6 +10,7 @@ export const Label = styled("label", {
   color: "$semantic-text-hi",
   fontSize: "$sm",
   fontFamily: "$semantic-primary",
+  userSelect: "none",
 })
 
 export const Input = styled("input", {
