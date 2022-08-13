@@ -116,7 +116,7 @@ const IndexPage: NextPageWithLayout = () => {
             ))}
           </Flex>
         </Section>
-        <Section title="Paper on loading state">
+        <Section title="Paper Skeleton">
           <Paper
             css={{
               height: 100,
