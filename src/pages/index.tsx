@@ -158,11 +158,11 @@ const IndexPage: NextPageWithLayout = () => {
             >
               <FormControl>
                 <Label htmlFor="email">Email</Label>
-                <Input value="aro@mail.com" type="email" id="email" />
+                <Input defaultValue="aro@mail.com" type="email" id="email" />
               </FormControl>
               <FormControl>
                 <Label htmlFor="pwd">Password</Label>
-                <Input value="123" type="password" id="pwd" />
+                <Input defaultValue="123" type="password" id="pwd" />
               </FormControl>
               <Button type="submit" variant="outline">
                 Sign In

@@ -7,9 +7,12 @@ const StyledSelectTheme = styled(SelectTheme, {
   alignSelf: "flex-end",
 })
 
+const appBgDefault = "$$app-bg-default"
+
 const StyledLayout = styled("div", {
-  "$$component-app-bg-default": "$colors$semantic-bg",
-  backgroundColor: "$$component-app-bg-default",
+  [appBgDefault]: "$colors$semantic-bg",
+
+  backgroundColor: appBgDefault,
   minHeight: "100%",
   padding: "$md",
   display: "flex",

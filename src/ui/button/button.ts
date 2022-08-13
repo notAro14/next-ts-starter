@@ -1,57 +1,66 @@
 import { styled } from "src/ui/stitches.config"
 
-const Button = styled("button", {
-  "$$component-button-font": "$fonts$semantic-primary",
-  "$$component-button-font-size": "$fontSizes$md",
-  "$$component-button-radius": "$radii$sm",
-  "$$component-button-sizing": "$space$xs $space$lg",
-  "$$component-button-font-weight": 400,
+const buttonFont = "$$button-font"
+const buttonFontSize = "$$button-font-size"
+const buttonFontWeight = "$$button-font-size"
+const buttonRadius = "$$button-radius"
+const buttonPadding = "$$button-padding"
+const buttonBgColor = "$$button-bg-color"
+const buttonBgColorHovered = "$$button-bg-color-hovered"
+const buttonBorderColor = "$$button-border-color"
+const buttonBorderColorHovered = "$$button-border-color-hovered"
+const buttonColor = "$$button-color"
 
-  borderRadius: "$$component-button-radius",
-  fontFamily: "$$component-button-font",
-  fontSize: "$$component-button-font-size",
-  padding: "$$component-button-sizing",
-  fontWeight: "$$component-button-font-weight",
+const Button = styled("button", {
+  [buttonFont]: "$fonts$semantic-primary",
+  [buttonFontSize]: "$fontSizes$md",
+  [buttonRadius]: "$radii$sm",
+  [buttonPadding]: "$space$xs $space$lg",
+  [buttonFontWeight]: 400,
+  [buttonBgColor]: "$colors$semantic-solid",
+  [buttonBorderColor]: buttonBgColor,
+  [buttonBorderColorHovered]: buttonBgColorHovered,
+  [buttonColor]: "$colors$whiteA12",
+  [buttonBgColorHovered]: "$colors$semantic-solid-hovered",
+
+  borderRadius: buttonRadius,
+  fontFamily: buttonFont,
+  fontSize: buttonFontSize,
+  padding: buttonPadding,
+  fontWeight: buttonFontWeight,
   border: "1px solid",
 
   variants: {
     variant: {
       filled: {
-        "$$component-button-bg": "$colors$semantic-solid",
-        "$$component-button-border": "$$component-button-bg",
-        "$$component-button-color": "$colors$whiteA12",
-        "$$component-button-bg-hovered": "$colors$semantic-solid-hovered",
-        "$$component-button-border-hovered": "$$component-button-bg-hovered",
-
-        backgroundColor: "$$component-button-bg",
-        borderColor: "$$component-button-border",
-        color: "$$component-button-color",
+        backgroundColor: buttonBgColor,
+        borderColor: buttonBorderColor,
+        color: buttonColor,
         "&:hover": {
-          backgroundColor: "$$component-button-bg-hovered",
-          borderColor: "$$component-button-border-hovered",
+          backgroundColor: buttonBgColorHovered,
+          borderColor: buttonBorderColorHovered,
           cursor: "pointer",
         },
       },
       outline: {
-        "$$component-button-border": "$colors$semantic-ui-border",
-        "$$component-button-border-hovered":
-          "$colors$semantic-ui-border-hovered",
-        "$$component-button-color": "$colors$semantic-text-lo",
-        "$$component-button-font-weight": 500,
+        [buttonBorderColor]: "$colors$semantic-ui-border",
+        [buttonBorderColorHovered]: "$colors$semantic-ui-border-hovered",
+        [buttonColor]: "$colors$semantic-text-lo",
+        [buttonFontWeight]: 500,
 
         backgroundColor: "transparent",
-        borderColor: "$$component-button-border",
-        color: "$$component-button-color",
+        borderColor: buttonBorderColor,
+        color: buttonColor,
         "&:hover": {
-          borderColor: "$$component-button-border-hovered",
+          borderColor: buttonBorderColorHovered,
           cursor: "pointer",
         },
       },
     },
     size: {
       small: {
-        "$$component-button-font-size": "$fontSizes$sm",
-        "$$component-button-sizing": "$space$xxs $space$sm",
+        [buttonFontSize]: "$fontSizes$sm",
+        [buttonPadding]: "$space$xxs $space$sm",
       },
     },
   },

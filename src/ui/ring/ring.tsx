@@ -23,14 +23,17 @@ const stretch = keyframes({
   },
 })
 
+const ringColorKey = "$$ring-color"
+const ringSpeedKey = "$$ring-speed"
+
 const StyledRing = styled("svg", {
-  "$$ring-color": "$colors$semantic-solid",
-  "$$ring-speed": "2s",
+  [ringColorKey]: "$colors$semantic-solid",
+  [ringSpeedKey]: "2s",
 
   strokeWidth: 5,
   verticalAlign: "middle",
   transformOrigin: "center",
-  animation: `${rotate} $$ring-speed linear infinite`,
+  animation: `${rotate} ${ringSpeedKey} linear infinite`,
 
   circle: {
     fill: "none",
@@ -38,7 +41,7 @@ const StyledRing = styled("svg", {
     strokeDasharray: "1, 200",
     strokeDashoffset: 0,
     strokeLinecap: "round",
-    animation: `${stretch} calc($$ring-speed * 0.75) ease-in-out infinite`,
+    animation: `${stretch} calc(${ringSpeedKey} * 0.75) ease-in-out infinite`,
   },
 
   variants: {
