@@ -8,7 +8,7 @@ import {
   shadows,
 } from "./theme/default"
 
-export const { styled, getCssText, globalCss, createTheme, keyframes } =
+export const { styled, getCssText, globalCss, createTheme, keyframes, css } =
   createStitches({
     theme: {
       colors,

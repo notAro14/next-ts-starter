@@ -12,7 +12,7 @@ import SwitchTheme from "src/features/switch-theme"
 import Box from "src/ui/box"
 import SEO from "src/components/seo"
 import Link from "src/ui/link"
-import Spinner from "src/ui/spinner"
+import Ring from "src/ui/ring"
 import { Input, Label, FormControl } from "src/ui/input"
 // FUNCTIONS
 import { styled } from "src/ui/stitches.config"
@@ -124,11 +124,11 @@ const IndexPage: NextPageWithLayout = () => {
             loading
           />
         </Section>
-        <Section title="Loading spinner">
+        <Section title="Loaders">
           <Flex css={{ alignItems: "center" }} gap={6}>
-            <Spinner role="progressbar" size="lg" />
-            <Spinner role="progressbar" size="md" />
-            <Spinner role="progressbar" />
+            <Ring size="sm" />
+            <Ring size="md" />
+            <Ring size="lg" />
           </Flex>
         </Section>
         <Section title="Forms">

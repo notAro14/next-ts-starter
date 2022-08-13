@@ -4,14 +4,14 @@ import Flex from "src/ui/flex"
 import Heading from "src/ui/heading"
 import Paper from "src/ui/paper"
 import Text from "src/ui/text"
-import Spinner from "src/ui/spinner"
+import Ring from "src/ui/ring"
 import { fetchUsers } from "./user-list.helpers"
 
 const UserList = () => {
   const { data: users } = useQuery(["users"], fetchUsers, {
     useErrorBoundary: true,
   })
-  if (users === undefined) return <Spinner role="progressbar" size="md" />
+  if (users === undefined) return <Ring size="md" />
 
   return (
     <>
