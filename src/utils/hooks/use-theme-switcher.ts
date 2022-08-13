@@ -1,8 +1,6 @@
 import { useTheme } from "next-themes"
 
-import Button from "src/ui/button"
-
-const SwitchTheme = () => {
+export default function useThemeSwitcher() {
   const { theme, setTheme } = useTheme()
   const switchTheme = () => {
     let nextTheme = ""
@@ -21,7 +19,5 @@ const SwitchTheme = () => {
     }
     setTheme(nextTheme)
   }
-  return <Button onClick={() => switchTheme()}>Switch theme</Button>
+  return switchTheme
 }
-
-export default SwitchTheme

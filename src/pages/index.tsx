@@ -8,7 +8,6 @@ import Button from "src/ui/button"
 import Flex from "src/ui/flex"
 import Text from "src/ui/text"
 import Paper from "src/ui/paper"
-import SwitchTheme from "src/features/switch-theme"
 import Box from "src/ui/box"
 import SEO from "src/components/seo"
 import Link from "src/ui/link"
@@ -17,6 +16,7 @@ import Momentum from "src/ui/momentum"
 import { Input, Label, FormControl } from "src/ui/input"
 // FUNCTIONS
 import { styled } from "src/ui/stitches.config"
+import useThemeSwitcher from "src/utils/hooks/use-theme-switcher"
 
 const TEXT_VALUE = "Hello World"
 const TEXT_SIZES = ["sm", "md", "lg", "xl", "2xl", "3xl", "4xl"] as const
@@ -41,6 +41,7 @@ function Section({ children, title }: { children: ReactNode; title: string }) {
 }
 
 const IndexPage: NextPageWithLayout = () => {
+  const switchTheme = useThemeSwitcher()
   return (
     <>
       <SEO>Next Typescript starter code</SEO>
@@ -60,12 +61,16 @@ const IndexPage: NextPageWithLayout = () => {
         </Section>
         <Section title="Button">
           <Flex gap="4" css={{ alignItems: "flex-end" }}>
-            <SwitchTheme />
-            <Button variant="outline">Outline</Button>
+            <Button onClick={switchTheme}>Filled</Button>
+            <Button onClick={switchTheme} variant="outline">
+              Outline
+            </Button>
           </Flex>
           <Flex gap="4" css={{ alignItems: "flex-end" }}>
-            <Button size="small">Filled</Button>
-            <Button size="small" variant="outline">
+            <Button onClick={switchTheme} size="small">
+              Filled
+            </Button>
+            <Button onClick={switchTheme} size="small" variant="outline">
               Outline
             </Button>
           </Flex>
