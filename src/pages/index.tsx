@@ -13,6 +13,7 @@ import Box from "src/ui/box"
 import SEO from "src/components/seo"
 import Link from "src/ui/link"
 import Ring from "src/ui/ring"
+import Momentum from "src/ui/momentum"
 import { Input, Label, FormControl } from "src/ui/input"
 // FUNCTIONS
 import { styled } from "src/ui/stitches.config"
@@ -129,6 +130,11 @@ const IndexPage: NextPageWithLayout = () => {
             <Ring size="sm" />
             <Ring size="md" />
             <Ring size="lg" />
+          </Flex>
+          <Flex css={{ alignItems: "center" }} gap={6}>
+            <Momentum size="sm" />
+            <Momentum size="md" />
+            <Momentum size="lg" />
           </Flex>
         </Section>
         <Section title="Forms">
