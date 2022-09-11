@@ -9,8 +9,11 @@ const AppWrapper = styled("section", {
   display: "flex",
   flexDirection: "column",
   minHeight: "100%",
-  position: "relative",
   backgroundColor: theme.colors.bg,
+})
+
+const MainWrapper = styled("main", {
+  padding: theme.space.lg,
 })
 
 interface Props {
@@ -20,7 +23,7 @@ const PublicLayout: FC<Props> = ({ children }) => {
   return (
     <AppWrapper>
       <Header />
-      {children}
+      <MainWrapper>{children}</MainWrapper>
       <Footer />
     </AppWrapper>
   )

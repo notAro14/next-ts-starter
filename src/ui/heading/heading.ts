@@ -8,13 +8,13 @@ const Heading = styled("h1", {
   variants: {
     variant: {
       h1: {
-        fontSize: theme.fontSizes["4xl"],
+        fontSize: theme.fontSizes["2xl"],
       },
       h2: {
-        fontSize: theme.fontSizes["3xl"],
+        fontSize: theme.fontSizes.xl,
       },
       h3: {
-        fontSize: theme.fontSizes["2xl"],
+        fontSize: theme.fontSizes.lg,
       },
     },
     vibrant: {

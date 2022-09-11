@@ -39,6 +39,11 @@ const Text = styled("p", {
         lineHeight: 1,
       },
     },
+    vibrant: {
+      true: {
+        color: theme.colors["text-vibrant"],
+      },
+    },
   },
   defaultVariants: {
     fontSize: "md",

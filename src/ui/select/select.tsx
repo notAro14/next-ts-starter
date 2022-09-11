@@ -10,7 +10,7 @@ import { styled, theme } from "src/theme/stitches.config"
 
 const StyledContent = styled(SelectPrimitive.SelectContent, {
   overflow: "hidden",
-  borderRadius: theme.radii.lg,
+  borderRadius: theme.radii.sm,
   backgroundColor: theme.colors.ui,
   fontFamily: theme.fonts.sans,
   color: theme.colors["text-functional"],
@@ -21,7 +21,7 @@ const StyledTrigger = styled(SelectPrimitive.SelectTrigger, {
   padding: `0 ${theme.space.md}`,
   lineHeight: 1,
   height: 35,
-  borderRadius: theme.radii.lg,
+  borderRadius: theme.radii.sm,
   border: "none",
   backgroundColor: theme.colors.ui,
   color: theme.colors["text-functional"],
@@ -61,7 +61,7 @@ export const StyledItem = styled(SelectPrimitive.Item, {
   position: "relative",
   paddingLeft: theme.space.lg,
   paddingRight: theme.space.lg,
-  borderRadius: theme.radii.lg,
+  borderRadius: theme.radii.sm,
   display: "flex",
   alignItems: "center",
   lineHeight: 1,

@@ -13,6 +13,7 @@ export const semanticColors = {
   "text-lo": "var(--colors-brand11)",
   "text-hi": "var(--colors-brand12)",
 
+  "border-subtle": "var(--colors-brand4)",
   "text-lo-gray": "var(--colors-gray11)",
   "text-hi-gray": "var(--colors-gray12)",
 } as const
