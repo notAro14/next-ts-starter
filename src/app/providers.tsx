@@ -1,19 +1,20 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { FC, ReactNode, useState } from "react"
+import { FC, ReactNode } from "react"
 import { ThemeProvider } from "next-themes"
+import { Provider } from "react-redux"
 
 import { THEMES } from "src/theme"
+import { store } from "./store"
 
 interface Props {
   children: ReactNode
 }
 const Providers: FC<Props> = ({ children }) => {
-  const [queryClient] = useState(() => new QueryClient())
-
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" value={THEMES}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider attribute="class" defaultTheme="system" value={THEMES}>
+        {children}
+      </ThemeProvider>
+    </Provider>
   )
 }
 

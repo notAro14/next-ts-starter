@@ -3,7 +3,15 @@ import { styled, theme } from "src/theme/stitches.config"
 const Flex = styled("div", {
   display: "flex",
   variants: {
-    spacing: {
+    direction: {
+      column: {
+        flexDirection: "column",
+      },
+      row: {
+        flexDirection: "row",
+      },
+    },
+    gap: {
       xxs: {
         gap: theme.space.xxs,
       },
@@ -65,6 +73,9 @@ const Flex = styled("div", {
         flexWrap: "wrap",
       },
     },
+  },
+  defaultVariants: {
+    direction: "row",
   },
 })
 
