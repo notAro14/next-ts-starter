@@ -1,7 +1,7 @@
 import { useTheme } from "next-themes"
-import { useEffect, Fragment, FC } from "react"
+import { Fragment, FC } from "react"
 
-import useEnableOnce from "src/utils/hooks/use-enable-once"
+import { useIsBrowser } from "src/utils/hooks/use-is-browser"
 
 import Select, {
   SelectItem,
@@ -22,13 +22,10 @@ import Select, {
 } from "src/ui/select"
 
 const ThemeSelect: FC<{ className?: string }> = ({ className }) => {
-  const [isEnable, enableOnce] = useEnableOnce()
+  const isBrowser = useIsBrowser()
   const { theme, setTheme, themes } = useTheme()
 
-  useEffect(() => {
-    enableOnce()
-  }, [enableOnce])
-  if (isEnable === false) return null
+  if (isBrowser === false) return null
 
   return (
     <Select onValueChange={(newValue) => setTheme(newValue)} value={theme}>

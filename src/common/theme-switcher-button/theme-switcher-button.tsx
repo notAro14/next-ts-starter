@@ -1,18 +1,14 @@
-import { useEffect, FC } from "react"
+import { FC } from "react"
 
-import useEnableOnce from "src/utils/hooks/use-enable-once"
 import IconButton from "src/ui/icon-button"
 import { HiMoon, HiSun } from "src/icons/hero-icon"
 import useThemeSwitcher from "src/utils/hooks/use-theme-switcher"
+import { useIsBrowser } from "src/utils/hooks/use-is-browser"
 
 const ThemeSwitcherButton: FC = () => {
-  const [isEnable, enableOnce] = useEnableOnce()
   const { switchTheme, resolvedTheme } = useThemeSwitcher()
-
-  useEffect(() => {
-    enableOnce()
-  }, [enableOnce])
-  if (isEnable === false) return null
+  const isBrowser = useIsBrowser()
+  if (isBrowser === false) return null
 
   return (
     <IconButton variant="ghost" onClick={switchTheme}>
