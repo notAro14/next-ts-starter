@@ -1,22 +1,27 @@
-// FUNCTIONS
-import { styled } from "src/ui/stitches.config"
+import { styled, theme } from "src/theme/stitches.config"
 
-const Heading = styled("h2", {
-  "$$component-heading-color-primary": "$colors$semantic-text-hi-gray",
-  "$$component-heading-color-secondary": "$colors$semantic-text-hi",
-  "$$component-heading-font": "$fonts$semantic-secondary",
-  lineHeight: "1",
-  color: "$$component-heading-color-primary",
-  fontFamily: "$$component-heading-font",
+const Heading = styled("h1", {
+  color: theme.colors["text-functional"],
+  fontFamily: theme.fonts.sans,
+  fontWeight: theme.fontWeights.medium,
+  lineHeight: 1,
   variants: {
-    vibrant: {
-      true: {
-        color: "$$component-heading-color-secondary",
+    variant: {
+      h1: {
+        fontSize: theme.fontSizes["4xl"],
+      },
+      h2: {
+        fontSize: theme.fontSizes["3xl"],
+      },
+      h3: {
+        fontSize: theme.fontSizes["2xl"],
       },
     },
-  },
-  defaultVariants: {
-    vibrant: false,
+    vibrant: {
+      true: {
+        color: theme.colors["text-vibrant"],
+      },
+    },
   },
 })
 

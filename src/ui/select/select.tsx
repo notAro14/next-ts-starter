@@ -6,97 +6,81 @@ import {
   ChevronUpIcon,
 } from "@radix-ui/react-icons"
 
-import { styled } from "src/ui/stitches.config"
-import { dark } from "src/ui/theme"
+import { styled, theme } from "src/theme/stitches.config"
 
 const StyledContent = styled(SelectPrimitive.SelectContent, {
-  "$$component-select-content-bg": "$colors$semantic-ui-bg",
-  "$$component-select-content-font": "$fonts$semantic-primary",
-  "$$component-select-content-color": "$colors$semantic-text-lo",
-  "$$component-select-item-padding-x": "$space$lg",
-  "$$component-select-text-color-gray": "$colors$semantic-text-hi-gray",
-  "$$component-select-content-shadow": "$shadows$medium",
-
   overflow: "hidden",
-  borderRadius: "$md",
-  backgroundColor: "$$component-select-content-bg",
-  fontFamily: "$$component-select-content-font",
-  color: "$$component-select-content-color",
-  boxShadow: "$$component-select-content-shadow",
-  [`.${dark} &`]: {
-    boxShadow: "unset",
-  },
+  borderRadius: theme.radii.lg,
+  backgroundColor: theme.colors.ui,
+  fontFamily: theme.fonts.sans,
+  color: theme.colors["text-functional"],
+  boxShadow: theme.shadows.medium,
 })
 const StyledTrigger = styled(SelectPrimitive.SelectTrigger, {
-  "$$component-select-font": "$fonts$semantic-primary",
-  "$$component-select-bg": "$colors$semantic-ui-bg",
-  "$$component-select-bg-hovered": "$colors$semantic-ui-bg-hovered",
-  "$$component-select-color": "$colors$semantic-text-lo",
-  "$$component-select-focused": "$colors$semantic-ui-border-hovered",
-
-  fontFamily: "$$component-select-font",
-  padding: "0 $md",
+  fontFamily: theme.fonts.sans,
+  padding: `0 ${theme.space.md}`,
   lineHeight: 1,
   height: 35,
-  borderRadius: "$md",
+  borderRadius: theme.radii.lg,
   border: "none",
-  backgroundColor: "$$component-select-bg",
-  color: "$$component-select-color",
+  backgroundColor: theme.colors.ui,
+  color: theme.colors["text-functional"],
   alignItems: "center",
   display: "inline-flex",
-  gap: "$sm",
+  gap: theme.space.sm,
   textTransform: "capitalize",
   width: "fit-content",
+  boxShadow: theme.shadows.low,
   "&:hover": {
-    backgroundColor: "$$component-select-bg-hovered",
+    backgroundColor: theme.colors["ui-hovered"],
+    cursor: "pointer",
   },
   "&[data-placeholder]": {
-    color: "$$component-select-color",
+    color: theme.colors["text-functional-low"],
   },
   "&:focus": {
     outlineWidth: "2px",
-    outlineColor: "$$component-select-focused",
+    outlineColor: theme.colors["border-hovered"],
     outlineStyle: "solid",
   },
 })
 const StyledIcon = styled(SelectPrimitive.SelectIcon, {
-  color: "$$component-select-color",
+  color: theme.colors["text-functional"],
 })
 const StyledViewport = styled(SelectPrimitive.SelectViewport, {
-  padding: "$sm",
+  padding: theme.space.sm,
 })
 const StyledLabel = styled(SelectPrimitive.Label, {
-  padding: "0 $$component-select-item-padding-x",
-  color: "$$component-select-text-color-gray",
-  fontSize: "$sm",
+  padding: `0 ${theme.space.lg}`,
+  color: theme.colors["text-vibrant-low"],
+  fontSize: theme.fontSizes.sm,
 })
 export const StyledItem = styled(SelectPrimitive.Item, {
-  "$$component-select-item-disabled": "$colors$semantic-text-disabled",
   all: "unset",
   height: 35,
   position: "relative",
-  paddingLeft: "$$component-select-item-padding-x",
-  paddingRight: "$$component-select-item-padding-x",
-  borderRadius: "$sm",
+  paddingLeft: theme.space.lg,
+  paddingRight: theme.space.lg,
+  borderRadius: theme.radii.lg,
   display: "flex",
   alignItems: "center",
   lineHeight: 1,
   userSelect: "none",
   textTransform: "capitalize",
-  "&[data-disabled]": {
-    color: "$$component-select-item-disabled",
-    pointerEvents: "none",
-  },
+  //"&[data-disabled]": {
+  //  pointerEvents: "none",
+  //},
   "&[data-highlighted]": {
-    backgroundColor: "$semantic-solid",
-    color: "$whiteA12",
+    backgroundColor: theme.colors.solid,
+    color: theme.colors["text-fg-white"],
+    cursor: "pointer",
   },
 })
 export const StyledItemText = styled(SelectPrimitive.ItemText, {})
 export const StyledSeparator = styled(SelectPrimitive.Separator, {
   height: 1,
   margin: 5,
-  backgroundColor: "$semantic-line",
+  backgroundColor: theme.colors.line,
 })
 export const StyledItemIndicator = styled(SelectPrimitive.ItemIndicator, {
   position: "absolute",
@@ -111,8 +95,8 @@ const scrollButtonStyles = {
   alignItems: "center",
   justifyContent: "center",
   height: 25,
-  backgroundColor: "$$component-select-content-bg",
-  color: "$$component-select-color",
+  backgroundColor: theme.colors.ui,
+  color: theme.colors["text-functional"],
   cursor: "default",
 }
 const StyledScrollUpButton = styled(

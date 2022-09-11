@@ -1,7 +1,5 @@
-import { styled } from "src/ui/stitches.config"
+import { styled } from "src/theme/stitches.config"
 
-const Box = styled("div", {
-  display: "block",
-})
+const Box = styled("div", {})
 
 export default Box

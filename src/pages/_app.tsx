@@ -1,40 +1,17 @@
-// STYLES
-import "src/ui/reset.css"
-// VENDORS
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { useState } from "react"
-import { ThemeProvider } from "next-themes"
-import type { AppType } from "next/dist/shared/lib/utils"
-// TYPES
+import "src/styles/reset.css"
+import "src/styles/fonts.css"
+
 import type { AppPropsWithLayout } from "src/types"
-// FUNCTIONS
-import { light, dark } from "src/ui/theme"
-// COMPONENTS
-import Layout from "src/components/layout"
 
-const MyApp = (({ Component, pageProps }: AppPropsWithLayout) => {
-  const getLayout =
-    Component.getLayout ??
-    ((page) => {
-      return <Layout>{page}</Layout>
-    })
+import Layout from "src/common/layout"
+import Providers from "src/app/providers"
 
-  const [queryClient] = useState(() => new QueryClient())
+const getPublicLayout = (page: JSX.Element) => <Layout>{page}</Layout>
 
-  return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      value={{
-        light,
-        dark,
-      }}
-    >
-      <QueryClientProvider client={queryClient}>
-        {getLayout(<Component {...pageProps} />)}
-      </QueryClientProvider>
-    </ThemeProvider>
-  )
-}) as AppType
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const getLayout = Component.getLayout ?? getPublicLayout
+
+  return <Providers>{getLayout(<Component {...pageProps} />)}</Providers>
+}
 
 export default MyApp

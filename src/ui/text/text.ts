@@ -1,45 +1,15 @@
-// FUNCTIONS
-import { styled } from "src/ui/stitches.config"
+import { styled, theme } from "src/theme/stitches.config"
 
 const Text = styled("p", {
-  "$$component-text-color-vibrant": "$colors$semantic-text-hi",
-  "$$component-text-color-functional": "$colors$semantic-text-hi-gray",
-  "$$component-text-font": "$fonts$semantic-primary",
-  color: "$$component-text-color-functional",
-  fontFamily: "$$component-text-font",
+  color: theme.colors["text-functional"],
+  fontFamily: theme.fonts.sans,
+  fontWeight: theme.fontWeights["extra-light"],
   variants: {
-    size: {
-      sm: {
-        fontSize: "$sm",
-      },
-      md: {
-        fontSize: "$md",
-      },
-      lg: {
-        fontSize: "$lg",
-      },
-      xl: {
-        fontSize: "$xl",
-      },
-      "2xl": {
-        fontSize: "$2xl",
-      },
-      "3xl": {
-        fontSize: "$3xl",
-      },
-      "4xl": {
-        fontSize: "$4xl",
+    lineHeight: {
+      xxs: {
+        lineHeight: 1,
       },
     },
-    error: {
-      true: {
-        "$$component-text-color-error": "$colors$semantic-text-lo-error",
-        color: "$$component-text-color-error",
-      },
-    },
-  },
-  defaultVariants: {
-    size: "md",
   },
 })
 

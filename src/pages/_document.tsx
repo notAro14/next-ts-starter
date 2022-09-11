@@ -1,8 +1,7 @@
-// VENDORS
 import React from "react"
 import NextDocument, { Html, Head, Main, NextScript } from "next/document"
-// FUNCTIONS
-import { getCssText } from "src/ui/stitches.config"
+
+import { getCssText } from "src/theme/stitches.config"
 
 export default class Document extends NextDocument {
   render() {
