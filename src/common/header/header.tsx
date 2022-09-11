@@ -6,6 +6,7 @@ import ThemeSelect from "src/common/theme-select"
 import { HiHome } from "src/icons/hero-icon"
 import { Container, Nav } from "./header.styles"
 import { styled } from "src/theme/stitches.config"
+import Flex from "src/ui/flex"
 
 const GoToHome = () => (
   <Link href="/" passHref>
@@ -33,8 +34,10 @@ const GoToGH = () => (
 const Header = () => (
   <Container>
     <Nav>
-      <GoToHome />
-      <GoToGH />
+      <Flex spacing="md" align="center">
+        <GoToHome />
+        <GoToGH />
+      </Flex>
       <ThemeSelect />
     </Nav>
   </Container>
