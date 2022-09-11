@@ -4,8 +4,8 @@ import Heading from "src/ui/heading"
 
 import SEO from "src/common/seo"
 
-import ThemeSwitcher from "src/common/theme-switcher"
 import Text from "src/ui/text"
+import ThemeSelect from "src/common/theme-select"
 
 const HomePage: NextPageWithLayout = () => {
   return (
@@ -16,9 +16,7 @@ const HomePage: NextPageWithLayout = () => {
         Next TS starter code
       </Heading>
       <Text>Bootstrap quickly a Next TS project with this starter</Text>
-      <ThemeSwitcher size="small" variant="outline">
-        Change theme
-      </ThemeSwitcher>
+      <ThemeSelect />
     </>
   )
 }

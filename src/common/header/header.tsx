@@ -2,7 +2,7 @@ import Link from "next/link"
 import { IoLogoGithub } from "react-icons/io"
 
 import IconButton from "src/ui/icon-button"
-import ThemeSelect from "src/common/theme-select"
+import ThemeSwitcherButton from "src/common/theme-switcher-button"
 import { HiHome } from "src/icons/hero-icon"
 import { Container, Nav } from "./header.styles"
 import { styled, theme } from "src/theme/stitches.config"
@@ -38,7 +38,7 @@ const GoToGH = () => (
     target="_blank"
     textDecoration="none"
   >
-    <IconButton variant="outline" aria-label="Go to Repo" title="Repo">
+    <IconButton variant="ghost" aria-label="Go to Repo" title="Repo">
       <IoLogoGithub />
     </IconButton>
   </StyledLink>
@@ -54,7 +54,7 @@ const Header = () => (
           <StyledLink>`/users` endpoint</StyledLink>
         </Link>
       </Flex>
-      <ThemeSelect />
+      <ThemeSwitcherButton />
     </Nav>
   </Container>
 )

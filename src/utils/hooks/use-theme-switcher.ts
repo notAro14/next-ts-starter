@@ -1,7 +1,7 @@
 import { useTheme } from "next-themes"
 
 export default function useThemeSwitcher() {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme } = useTheme()
   const switchTheme = () => {
     let nextTheme = ""
     switch (theme) {
@@ -19,5 +19,5 @@ export default function useThemeSwitcher() {
     }
     setTheme(nextTheme)
   }
-  return switchTheme
+  return { switchTheme, theme, resolvedTheme }
 }

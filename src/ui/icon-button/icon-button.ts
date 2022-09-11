@@ -26,6 +26,16 @@ const IconButton = styled("button", {
           boxShadow: "unset",
         },
       },
+      ghost: {
+        border: "none",
+        backgroundColor: theme.colors.ui,
+        color: theme.colors["text-vibrant"],
+        boxShadow: theme.shadows.low,
+        "&:hover": {
+          backgroundColor: theme.colors["ui-hovered"],
+          cursor: "pointer",
+        },
+      },
     },
   },
   defaultVariants: {
