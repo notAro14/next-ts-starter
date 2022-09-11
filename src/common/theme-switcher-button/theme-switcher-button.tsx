@@ -16,8 +16,8 @@ const ThemeSwitcherButton: FC = () => {
 
   return (
     <IconButton variant="ghost" onClick={switchTheme}>
-      {resolvedTheme === "light" && <HiMoon />}
-      {resolvedTheme === "dark" && <HiSun />}
+      {resolvedTheme === "light" && <HiSun />}
+      {resolvedTheme === "dark" && <HiMoon />}
     </IconButton>
   )
 }
