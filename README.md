@@ -4,67 +4,45 @@ This is a next.js starter code I use to bootstrap quickly a react project
 
 ---
 
-## Getting started
+## Installation
 
-### Get the template
-
-#### Using `create-next-app`
+### With `create-next-app`
 
 ```shell
-pnpm create next-app -e https://github.com/notAro14/next-ts-starter your-app-name
+pnpm create next-app -e https://github.com/notAro14/next-ts-starter
 ```
 
-#### Using `degit`
+### With `degit`
 
 ```shell
-npx degit https://github.com/notAro14/next-ts-starter your-app-name
-```
-
-```shell
-cd your-app-name
-```
-
-```shell
+npx degit https://github.com/notAro14/next-ts-starter my-app
+cd my-app
 pnpm install
 ```
 
-### Development
-
-Run development server with
+## Development
 
 ```shell
 pnpm dev
 ```
 
-Open http://localhost:4000/
+> Server runs at http://localhost:4000
 
-### Production
-
-Run production server with
+## Production build
 
 ```shell
-pnpm build && pnpm start
+pnpm build
+pnpm start
 ```
 
-Open http://localhost:4000/
+## What's inside ?
 
----
-
-## Features
-
-- lang: [typescript](https://www.typescriptlang.org/)
-- styling: [stitches](https://stitches.dev/), [radix UI colors](https://www.radix-ui.com/colors)
-- multiple theming support: [next-themes](https://github.com/pacocoursey/next-themes)
-- data fetching: [react query](https://react-query.tanstack.com/)
-- pre commit hook: [husky](https://typicode.github.io/husky/#/) and [lint staged](https://github.com/okonet/lint-staged) configured to run [prettier](https://prettier.io/) and [eslint](https://eslint.org/)
-- `_app` component configured to accept [Single shared layout](https://nextjs.org/docs/basic-features/layouts#single-shared-layout-with-custom-app) and [Per-page layouts](https://nextjs.org/docs/basic-features/layouts#per-page-layouts)
-
----
-
-## Other templates
-
-### Vanilla Next Typescript
-
-```shell
-pnpm create next-app -e https://github.com/notAro14/next-ts-starter/tree/template-vanilla your-app-name
-```
+- [typescript](https://www.typescriptlang.org/)
+- [stitches](https://stitches.dev/)
+- [radix UI colors](https://www.radix-ui.com/colors)
+- [next-themes](https://github.com/pacocoursey/next-themes)
+- [rtk query](https://react-query.tanstack.com/)
+- [husky](https://typicode.github.io/husky/#/)
+- [lint staged](https://github.com/okonet/lint-staged)
+- [prettier](https://prettier.io/)
+- [eslint](https://eslint.org/)
