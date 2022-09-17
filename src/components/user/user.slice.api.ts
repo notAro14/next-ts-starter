@@ -1,12 +1,6 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react"
-import { fetchUsers } from "src/api/userApi"
 
-interface User {
-  id: string
-  name: string
-  username: string
-  email: string
-}
+import { fetchUsers, User } from "src/api/user.api"
 
 export const userSliceApi = createApi({
   reducerPath: "userApi",
