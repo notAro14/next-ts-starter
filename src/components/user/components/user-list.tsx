@@ -1,8 +1,8 @@
 import type { FC } from "react"
 
-import Heading from "src/components/common/ui/heading"
-import Text from "src/components/common/ui/text"
-import Flex from "src/components/common/ui/flex"
+import Heading from "src/components/common/heading"
+import Text from "src/components/common/text"
+import Flex from "src/components/common/flex"
 
 import { useGetUsersQuery } from "../user.slice.api"
 

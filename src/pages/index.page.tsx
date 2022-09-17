@@ -1,8 +1,8 @@
 import type { FC } from "react"
 
 import SEO from "src/components/common/seo"
-import Heading from "src/components/common/ui/heading"
-import Text from "src/components/common/ui/text"
+import Heading from "src/components/common/heading"
+import Text from "src/components/common/text"
 import ThemeSelect from "src/components/common/theme-select"
 
 const IndexPage: FC = () => {

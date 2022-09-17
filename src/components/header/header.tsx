@@ -1,12 +1,12 @@
 import Link from "next/link"
 import { IoLogoGithub } from "react-icons/io"
 
-import IconButton from "src/components/common/ui/icon-button"
+import IconButton from "src/components/common/icon-button"
 import ThemeSwitcherButton from "src/components/common/theme-switcher-button"
 import { HiHome } from "src/components/common/icons/hero-icon"
 import { Container, Nav } from "./header.styles"
 import { styled, theme } from "src/styles/theme/stitches.config"
-import Flex from "src/components/common/ui/flex"
+import Flex from "src/components/common/flex"
 
 const GoToHome = () => (
   <Link href="/" passHref>

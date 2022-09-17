@@ -19,7 +19,7 @@ import Select, {
   SelectScrollUpButton,
   SelectLabel,
   SelectGroup,
-} from "src/components/common/ui/select"
+} from "src/components/common/select"
 
 const ThemeSelect: FC<{ className?: string }> = ({ className }) => {
   const isBrowser = useIsBrowser()

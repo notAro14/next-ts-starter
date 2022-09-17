@@ -1,7 +1,7 @@
 import type { FC } from "react"
 
-import Link from "src/components/common/ui/link"
-import Text from "src/components/common/ui/text"
+import Link from "src/components/common/link"
+import Text from "src/components/common/text"
 
 import { Container } from "./footer.styles"
 
