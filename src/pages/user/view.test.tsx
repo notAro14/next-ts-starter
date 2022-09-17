@@ -8,7 +8,7 @@ import { Provider } from "react-redux"
 import { store } from "src/store"
 
 import ViewUsersPage from "./view.page"
-import { mockServer, getUsers } from "./view-page.mock"
+import { mockServer, mockUsers } from "./view-page.mock"
 
 const server = mockServer()
 beforeAll(function () {
@@ -28,5 +28,5 @@ it("renders a list of users", async () => {
     </Provider>
   )
   await waitForElementToBeRemoved(screen.getByRole("progressbar"))
-  expect(screen.queryAllByRole("listitem")).toHaveLength(getUsers().length)
+  expect(screen.queryAllByRole("listitem")).toHaveLength(mockUsers().length)
 })

@@ -3,7 +3,7 @@ import { setupServer } from "msw/node"
 
 import { User, URLS } from "src/api/user.api"
 
-export function getUsers(): User[] {
+export function mockUsers(): User[] {
   return [
     {
       id: "1",
@@ -17,7 +17,7 @@ export function getUsers(): User[] {
 export function mockServer() {
   return setupServer(
     rest.get(URLS.fetchUsersUrl, function (_req, res, ctx) {
-      return res(ctx.json(getUsers()))
+      return res(ctx.json(mockUsers()))
     })
   )
 }
