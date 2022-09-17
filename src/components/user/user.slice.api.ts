@@ -15,6 +15,7 @@ export const userSliceApi = createApi({
             data,
           }
         },
+        providesTags: ["Users"],
       }),
     }
   },
