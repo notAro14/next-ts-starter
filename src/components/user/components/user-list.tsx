@@ -26,7 +26,9 @@ const UserList: FC = () => {
         </Heading>
         <Flex as="ul" direction="column" gap="xxs">
           {users.map((u) => (
-            <Text key={u.id}>{u.name}</Text>
+            <Text as="li" key={u.id}>
+              {u.name}
+            </Text>
           ))}
         </Flex>
       </>

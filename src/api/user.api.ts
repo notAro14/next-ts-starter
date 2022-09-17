@@ -1,7 +1,7 @@
 import api from "./api"
 
-const URLS = {
-  fetchUsersUrl: "/users",
+export const URLS = {
+  fetchUsersUrl: "https://jsonplaceholder.typicode.com/users",
 }
 
 export interface User {
@@ -12,8 +12,6 @@ export interface User {
 }
 
 export async function fetchUsers() {
-  const response = await api.get<User[]>(URLS.fetchUsersUrl, {
-    baseURL: "https://jsonplaceholder.typicode.com",
-  })
+  const response = await api.get<User[]>(URLS.fetchUsersUrl)
   return response.data
 }
