@@ -1,5 +1,5 @@
 import type { FC } from "react"
-import { styled } from "src/styles/theme/stitches.config"
+import { styled } from "@nextui-org/react"
 
 const SVG = styled("svg", {
   width: "1em",

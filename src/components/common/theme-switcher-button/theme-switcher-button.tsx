@@ -1,9 +1,9 @@
 import { FC } from "react"
+import { Button, theme } from "@nextui-org/react"
 
-import IconButton from "src/components/common/icon-button"
-import { HiMoon, HiSun } from "src/components/common/icons/hero-icon"
 import useThemeSwitcher from "src/hooks/use-theme-switcher"
 import { useIsBrowser } from "src/hooks/use-is-browser"
+import { HiMoon, HiSun } from "src/components/common/icons/hero-icon"
 
 const ThemeSwitcherButton: FC = () => {
   const { switchTheme, resolvedTheme } = useThemeSwitcher()
@@ -11,10 +11,16 @@ const ThemeSwitcherButton: FC = () => {
   if (isBrowser === false) return null
 
   return (
-    <IconButton variant="ghost" onClick={switchTheme}>
-      {resolvedTheme === "light" && <HiSun />}
-      {resolvedTheme === "dark" && <HiMoon />}
-    </IconButton>
+    <Button
+      rounded
+      light
+      auto
+      icon={resolvedTheme === "dark" ? <HiMoon /> : <HiSun />}
+      onPress={switchTheme}
+      css={{
+        fontSize: theme.fontSizes["2xl"],
+      }}
+    />
   )
 }
 

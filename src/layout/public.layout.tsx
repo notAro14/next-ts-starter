@@ -1,6 +1,6 @@
 import type { FC } from "react"
 
-import { styled, theme } from "src/styles/theme/stitches.config"
+import { Container, styled } from "@nextui-org/react"
 
 import Footer from "src/components/footer"
 import Header from "src/components/header"
@@ -9,11 +9,7 @@ const AppWrapper = styled("section", {
   display: "flex",
   flexDirection: "column",
   minHeight: "100%",
-  backgroundColor: theme.colors.bg,
-})
-
-const MainWrapper = styled("main", {
-  padding: theme.space.lg,
+  backgroundColor: "$background",
 })
 
 interface Props {
@@ -23,7 +19,7 @@ export const PublicLayout: FC<Props> = ({ children }) => {
   return (
     <AppWrapper>
       <Header />
-      <MainWrapper>{children}</MainWrapper>
+      <Container fluid>{children}</Container>
       <Footer />
     </AppWrapper>
   )
