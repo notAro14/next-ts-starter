@@ -1,18 +1,16 @@
 import React from "react"
-import NextDocument, { Html, Head, Main, NextScript } from "next/document"
+import Document, { Html, Head, Main, NextScript } from "next/document"
+import { createGetInitialProps } from "@mantine/next"
 
-import { getCssText } from "src/styles/theme/stitches.config"
+const getInitialProps = createGetInitialProps()
 
-export default class Document extends NextDocument {
+export default class MyDocument extends Document {
+  static getInitialProps = getInitialProps
+
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <style
-            id="stitches"
-            dangerouslySetInnerHTML={{ __html: getCssText() }}
-          />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
