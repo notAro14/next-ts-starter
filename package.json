@@ -30,22 +30,14 @@
   },
   "dependencies": {
     "@nextui-org/react": "1.0.0-beta.10",
-    "@radix-ui/colors": "^0.1.8",
-    "@radix-ui/react-checkbox": "^1.0.0",
-    "@radix-ui/react-icons": "^1.1.1",
-    "@radix-ui/react-select": "^1.0.0",
-    "@radix-ui/react-tabs": "^1.0.0",
     "@reduxjs/toolkit": "^1.8.5",
-    "@stitches/react": "^1.2.8",
     "axios": "^0.27.2",
     "next": "^12.3.0",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-error-boundary": "^3.1.4",
-    "react-iconly": "^2.2.5",
-    "react-redux": "^8.0.2",
-    "tinycolor2": "^1.4.2"
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -54,7 +46,6 @@
     "@types/node": "^18.7.18",
     "@types/react": "^18.0.20",
     "@types/testing-library__jest-dom": "^5.14.5",
-    "@types/tinycolor2": "^1.4.3",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "eslint": "^8.23.1",
