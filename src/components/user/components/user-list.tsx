@@ -1,8 +1,5 @@
 import type { FC } from "react"
-
-import Heading from "src/components/common/heading"
-import Text from "src/components/common/text"
-import Flex from "src/components/common/flex"
+import { Text, User, Grid, Loading } from "@nextui-org/react"
 
 import { useGetUsersQuery } from "../user.slice.api"
 
@@ -13,24 +10,33 @@ const UserList: FC = () => {
     data: users,
   } = useGetUsersQuery()
 
-  if (isGetUsersLoading)
-    return <Text role="progressbar">Fetching users using RTK query</Text>
+  if (isGetUsersLoading) return <Loading role="progressbar" type="points" />
 
-  if (isGetUsersError) return <Text role="alert">Failure</Text>
+  if (isGetUsersError)
+    return (
+      <Text role="alert" color="error">
+        Failed to get users
+      </Text>
+    )
 
   if (users)
     return (
       <>
-        <Heading as="h1" variant="h1">
-          User list
-        </Heading>
-        <Flex as="ul" direction="column" gap="xxs">
+        <Text h1>User list</Text>
+        <Grid.Container gap={3} as="ul">
           {users.map((u) => (
-            <Text as="li" key={u.id}>
-              {u.name}
-            </Text>
+            <Grid key={u.id} as="li">
+              <User
+                src={`https://robohash.org/${u.name}`}
+                name={u.name}
+                size="xl"
+                zoomed
+                bordered
+                description={u.username}
+              />
+            </Grid>
           ))}
-        </Flex>
+        </Grid.Container>
       </>
     )
 

@@ -10,6 +10,7 @@ export function mockUsers(): User[] {
       name: "John",
       username: "john.doe",
       email: "john.doe@email.com",
+      website: "johndoe.com",
     },
   ]
 }
