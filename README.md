@@ -26,7 +26,7 @@ pnpm install
 pnpm dev
 ```
 
-> Server runs at http://localhost:4000
+> Server runs at http://localhost:3000
 
 ## Production build
 
@@ -38,10 +38,9 @@ pnpm start
 ## What's inside ?
 
 - [Typescript](https://www.typescriptlang.org/)
-- [Stitches](https://stitches.dev/)
-- [Radix UI colors](https://www.radix-ui.com/colors)
-- [Next-themes](https://github.com/pacocoursey/next-themes)
-- [RTK query](https://redux-toolkit.js.org/rtk-query/overview)
+- [Next UI](https://nextui.org/)
+- [Next themes](https://github.com/pacocoursey/next-themes)
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
 - [Husky](https://typicode.github.io/husky/#/)
 - [Lint staged](https://github.com/okonet/lint-staged)
 - [Prettier](https://prettier.io/)
