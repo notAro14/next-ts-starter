@@ -26,7 +26,7 @@ pnpm install
 pnpm dev
 ```
 
-> Server runs at http://localhost:4000
+> Server runs at http://localhost:3000
 
 ## Production build
 
