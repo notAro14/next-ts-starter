@@ -8,7 +8,7 @@ import { Container } from "./footer.styles"
 const Footer: FC = () => {
   return (
     <Container>
-      <Text fontSize="sm">
+      <Text fontSize="md">
         Made by <Link href="htpps://github.com/notAro14">Aro Andriamaro</Link>
       </Text>
     </Container>

@@ -19,7 +19,9 @@ export const colors = {
 export const lightColors = {
   ...coreColors.brand,
   ...coreColors.gray,
+  ...coreColors.background,
   brandA1: changeColorAlpha(coreColors.brand.brand1, 0.5),
+  // based on brand background color
   //shadow: "210deg 25% 63%",
   shadow: "0deg 0% 63%",
 }
@@ -27,5 +29,6 @@ export const lightColors = {
 export const darkColors = {
   ...coreColors.brandDark,
   ...coreColors.grayDark,
+  ...coreColors.backgroundDark,
   brandA1: changeColorAlpha(coreColors.brandDark.brand1, 0.5),
 }

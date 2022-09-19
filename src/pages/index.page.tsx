@@ -3,7 +3,6 @@ import type { FC } from "react"
 import SEO from "src/components/common/seo"
 import Heading from "src/components/common/heading"
 import Text from "src/components/common/text"
-import ThemeSelect from "src/components/common/theme-select"
 
 const IndexPage: FC = () => {
   return (
@@ -13,7 +12,6 @@ const IndexPage: FC = () => {
         Next TS starter code
       </Heading>
       <Text>Bootstrap quickly a Next TS project with this starter</Text>
-      <ThemeSelect />
     </>
   )
 }
