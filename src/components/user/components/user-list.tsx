@@ -1,8 +1,5 @@
 import type { FC } from "react"
-
-import Heading from "src/components/common/heading"
-import Text from "src/components/common/text"
-import Flex from "src/components/common/flex"
+import { Text, Loader, Title, List, Avatar, Box } from "@mantine/core"
 
 import { useGetUsersQuery } from "../user.slice.api"
 
@@ -13,24 +10,42 @@ const UserList: FC = () => {
     data: users,
   } = useGetUsersQuery()
 
-  if (isGetUsersLoading)
-    return <Text role="progressbar">Fetching users using RTK query</Text>
+  if (isGetUsersLoading) return <Loader role="progressbar" variant="dots" />
 
-  if (isGetUsersError) return <Text role="alert">Failure</Text>
+  if (isGetUsersError)
+    return (
+      <Text role="alert" color="red">
+        Failed to get users
+      </Text>
+    )
 
   if (users)
     return (
       <>
-        <Heading as="h1" variant="h1">
-          User list
-        </Heading>
-        <Flex as="ul" direction="column" gap="xxs">
+        <Title order={1}>User list</Title>
+
+        <List spacing="sm">
           {users.map((u) => (
-            <Text as="li" key={u.id}>
-              {u.name}
-            </Text>
+            <List.Item
+              key={u.id}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+              }}
+            >
+              <Avatar src={`https://robohash.org/${u.name}`} radius="xl" />
+              <Box>
+                <Text size="sm" weight={500}>
+                  {u.name}
+                </Text>
+                <Text color="dimmed" size="xs">
+                  {u.email}
+                </Text>
+              </Box>
+            </List.Item>
           ))}
-        </Flex>
+        </List>
       </>
     )
 
