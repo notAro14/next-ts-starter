@@ -39,9 +39,8 @@ pnpm start
 
 - [Nextjs](https://nextjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
-- [Next UI](https://nextui.org/)
-- [Next themes](https://github.com/pacocoursey/next-themes)
-- [RTK Query](https://react-query.tanstack.com/)
+- [Mantine](https://mantine.dev/)
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
 - [Husky](https://typicode.github.io/husky/#/)
 - [Lint staged](https://github.com/okonet/lint-staged)
 - [Prettier](https://prettier.io/)
