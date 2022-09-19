@@ -1,5 +1,5 @@
 import { DotPulse, Ping, DotSpinner } from "@uiball/loaders"
-import { FC } from "react"
+import { FC, useEffect, useState } from "react"
 
 import { Color, theme } from "src/styles/theme/stitches.config"
 import Box from "src/components/common/box"
@@ -43,6 +43,33 @@ const Loader: FC<Props> = ({
     default:
       throw new Error("Unknown loader type")
   }
+}
+
+export const LazyLoader: FC<
+  Props & {
+    show: boolean
+    delay?: number
+  }
+> = (props) => {
+  const { show, delay = 400 } = props
+  const [showLoader, setShowLoader] = useState(false)
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>
+    if (show === false) {
+      setShowLoader(false)
+      return
+    }
+    if (delay === 0) {
+      setShowLoader(true)
+    } else {
+      timeout = setTimeout(() => setShowLoader(true), delay)
+    }
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [show, delay])
+
+  return showLoader ? <Loader {...props} /> : null
 }
 
 export default Loader

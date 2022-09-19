@@ -3,7 +3,7 @@ import type { FC } from "react"
 import Heading from "src/components/common/heading"
 import Text from "src/components/common/text"
 import Flex from "src/components/common/flex"
-import Loader from "src/components/common/loader"
+import { LazyLoader } from "src/components/common/loader"
 
 import { useGetUsersQuery } from "../user.slice.api"
 
@@ -14,7 +14,8 @@ const UserList: FC = () => {
     data: users,
   } = useGetUsersQuery()
 
-  if (isGetUsersLoading) return <Loader type="ping" />
+  if (isGetUsersLoading)
+    return <LazyLoader show={isGetUsersLoading} type="ping" />
 
   if (isGetUsersError) return <Text role="alert">Failure</Text>
 
