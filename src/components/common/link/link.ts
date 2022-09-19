@@ -19,7 +19,6 @@ export const NavLink = styled(Link, {
     active: {
       true: {
         color: theme.colors["text-vibrant-low"],
-        fontWeight: theme.fontWeights.regular,
       },
     },
   },

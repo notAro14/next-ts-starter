@@ -1,5 +1,6 @@
 import type { FC } from "react"
 
+import * as Avatar from "src/components/common/avatar"
 import Box from "src/components/common/box"
 import Heading from "src/components/common/heading"
 import Text from "src/components/common/text"
@@ -23,33 +24,55 @@ const UserList: FC = () => {
   if (users)
     return (
       <>
-        <Heading as="h1" variant="h1">
+        <Heading
+          as="h1"
+          variant="h1"
+          css={{
+            marginBottom: theme.space.md,
+          }}
+        >
           User list
         </Heading>
         <Flex
           as="ul"
           direction="column"
-          gap="lg"
+          gap="2xl"
           justify="space-around"
           css={{
             listStyleType: "none",
-            padding: 0,
-            marginTop: theme.space.md,
           }}
         >
-          {users.map((u) => (
-            <Box as="li" key={u.id}>
-              <Text>{u.name}</Text>
-              <Text
-                fontWeight="regular"
-                as="small"
-                color="functional-low"
-                fontSize="sm"
-              >
-                {u.username}
-              </Text>
-            </Box>
-          ))}
+          {users.map((u) => {
+            const [fName, lName] = u.name.split(" ")
+            const fallback = fName.charAt(0) + lName.charAt(1)
+            return (
+              <Flex gap="md" align="center" as="li" key={u.id}>
+                <Avatar.Root
+                  rounded
+                  bordered
+                  borderColor="border-subtle"
+                  zoomed
+                >
+                  <Avatar.Image
+                    src={`https://robohash.org/${u.username}`}
+                    alt={u.name}
+                  />
+                  <Avatar.Fallback delayMs={600}>{fallback}</Avatar.Fallback>
+                </Avatar.Root>
+                <Box>
+                  <Text fontSize="lg">{u.name}</Text>
+                  <Text
+                    fontWeight="regular"
+                    as="small"
+                    color="functional-low"
+                    fontSize="sm"
+                  >
+                    {u.username}
+                  </Text>
+                </Box>
+              </Flex>
+            )
+          })}
         </Flex>
       </>
     )
