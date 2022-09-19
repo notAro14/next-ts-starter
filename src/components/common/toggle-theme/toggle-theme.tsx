@@ -11,7 +11,7 @@ const ToggleTheme: FC = () => {
   if (isBrowser === false) return null
 
   return (
-    <IconButton variant="ghost" onClick={switchTheme}>
+    <IconButton variant="ghost" rounded onClick={switchTheme}>
       {resolvedTheme === "light" && <SunIcon />}
       {resolvedTheme === "dark" && <MoonIcon />}
     </IconButton>

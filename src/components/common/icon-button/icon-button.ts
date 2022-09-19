@@ -11,7 +11,6 @@ const IconButton = styled("button", {
         color: theme.colors["text-fg-white"],
         "&:hover": {
           backgroundColor: theme.colors["solid-hovered"],
-          boxShadow: theme.shadows.medium,
           cursor: "pointer",
         },
       },
@@ -23,18 +22,21 @@ const IconButton = styled("button", {
           cursor: "pointer",
           border: `1px solid ${theme.colors["solid-hovered"]}`,
           backgroundColor: "transparent",
-          boxShadow: "unset",
         },
       },
       ghost: {
         border: "none",
         backgroundColor: theme.colors.ui,
-        color: theme.colors["text-vibrant"],
-        boxShadow: theme.shadows.low,
+        color: theme.colors["text-functional"],
         "&:hover": {
           backgroundColor: theme.colors["ui-hovered"],
           cursor: "pointer",
         },
+      },
+    },
+    rounded: {
+      true: {
+        borderRadius: "50%",
       },
     },
   },
