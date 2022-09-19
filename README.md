@@ -37,12 +37,12 @@ pnpm start
 
 ## What's inside ?
 
-- [typescript](https://www.typescriptlang.org/)
-- [stitches](https://stitches.dev/)
-- [radix UI colors](https://www.radix-ui.com/colors)
-- [next-themes](https://github.com/pacocoursey/next-themes)
-- [rtk query](https://react-query.tanstack.com/)
-- [husky](https://typicode.github.io/husky/#/)
-- [lint staged](https://github.com/okonet/lint-staged)
-- [prettier](https://prettier.io/)
-- [eslint](https://eslint.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Stitches](https://stitches.dev/)
+- [Radix UI colors](https://www.radix-ui.com/colors)
+- [Next-themes](https://github.com/pacocoursey/next-themes)
+- [RTK query](https://redux-toolkit.js.org/rtk-query/overview)
+- [Husky](https://typicode.github.io/husky/#/)
+- [Lint staged](https://github.com/okonet/lint-staged)
+- [Prettier](https://prettier.io/)
+- [Eslint](https://eslint.org/)
