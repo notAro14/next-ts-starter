@@ -1,62 +1,34 @@
-import Link from "next/link"
-import { IoLogoGithub } from "react-icons/io"
+import { useRouter } from "next/router"
+import NextLink from "next/link"
+import { Navbar } from "@nextui-org/react"
 
-import IconButton from "src/components/common/icon-button"
 import ThemeSwitcherButton from "src/components/common/theme-switcher-button"
-import { HiHome } from "src/components/common/icons/hero-icon"
-import { Container, Nav } from "./header.styles"
-import { styled, theme } from "src/styles/theme/stitches.config"
-import Flex from "src/components/common/flex"
 
-const GoToHome = () => (
-  <Link href="/" passHref>
-    <IconButton as="a" aria-label="Go to home" title="Home">
-      <HiHome />
-    </IconButton>
-  </Link>
-)
-
-const StyledLink = styled("a", {
-  color: theme.colors["text-vibrant-low"],
-  fontFamily: theme.fonts.sans,
-  "&:hover": {
-    color: theme.colors["text-vibrant"],
-    cursor: "pointer",
-  },
-  variants: {
-    textDecoration: {
-      none: {
-        textDecoration: "none",
-      },
-    },
-  },
-})
-const GoToGH = () => (
-  <StyledLink
-    href="https://github.com/notAro14/next-ts-starter"
-    rel="noreferrer"
-    target="_blank"
-    textDecoration="none"
-  >
-    <IconButton variant="ghost" aria-label="Go to Repo" title="Repo">
-      <IoLogoGithub />
-    </IconButton>
-  </StyledLink>
-)
-
-const Header = () => (
-  <Container>
-    <Nav>
-      <Flex gap="md" align="center">
-        <GoToHome />
-        <GoToGH />
-        <Link passHref href="/user/view">
-          <StyledLink>`/users` endpoint</StyledLink>
-        </Link>
-      </Flex>
-      <ThemeSwitcherButton />
-    </Nav>
-  </Container>
-)
+const Header = () => {
+  const { pathname } = useRouter()
+  return (
+    <Navbar isBordered variant="floating">
+      <Navbar.Content activeColor="primary">
+        <NextLink passHref href="/">
+          <Navbar.Link isActive={pathname === "/"}>Home</Navbar.Link>
+        </NextLink>
+        <NextLink passHref href="/user/view">
+          <Navbar.Link isActive={pathname === "/user/view"}>Users</Navbar.Link>
+        </NextLink>
+        <Navbar.Link
+          isExternal
+          href="https://github.com/notAro14/next-ts-starter"
+        >
+          Github
+        </Navbar.Link>
+      </Navbar.Content>
+      <Navbar.Content>
+        <Navbar.Item>
+          <ThemeSwitcherButton />
+        </Navbar.Item>
+      </Navbar.Content>
+    </Navbar>
+  )
+}
 
 export default Header

@@ -1,7 +1,7 @@
 import { FC } from "react"
+import { Button } from "@nextui-org/react"
+import { SunIcon, MoonIcon } from "@radix-ui/react-icons"
 
-import IconButton from "src/components/common/icon-button"
-import { HiMoon, HiSun } from "src/components/common/icons/hero-icon"
 import useThemeSwitcher from "src/hooks/use-theme-switcher"
 import { useIsBrowser } from "src/hooks/use-is-browser"
 
@@ -11,10 +11,15 @@ const ThemeSwitcherButton: FC = () => {
   if (isBrowser === false) return null
 
   return (
-    <IconButton variant="ghost" onClick={switchTheme}>
-      {resolvedTheme === "light" && <HiSun />}
-      {resolvedTheme === "dark" && <HiMoon />}
-    </IconButton>
+    <Button
+      rounded
+      flat
+      color="gradient"
+      auto
+      icon={resolvedTheme === "dark" ? <MoonIcon /> : <SunIcon />}
+      onPress={switchTheme}
+      title="Toogle theme"
+    />
   )
 }
 

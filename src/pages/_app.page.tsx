@@ -1,5 +1,4 @@
 import "src/styles/reset.css"
-import "src/styles/fonts.css"
 
 import type { AppPropsWithLayout } from "src/types/next"
 
