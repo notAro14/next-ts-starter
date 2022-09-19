@@ -1,6 +1,6 @@
 # Next Starter Code
 
-This is a next.js starter code I use to bootstrap quickly a react project
+Bootstrap a fullStack Nextjs app with this starter code
 
 ---
 
@@ -46,3 +46,18 @@ pnpm start
 - [Lint staged](https://github.com/okonet/lint-staged)
 - [Prettier](https://prettier.io/)
 - [Eslint](https://eslint.org/)
+
+## TODO
+
+### Sure
+
+- [ ] Add Authentication
+- [ ] Integrate Prisma
+- [ ] Integrate Cypress
+
+### Maybe
+
+- [ ] Integrate Sentry
+- [ ] Integrate Storybook
+- [ ] Transform into a monorepo (With Nx or Turborepo)
+  - [ ] Add React Native and Expo starter
