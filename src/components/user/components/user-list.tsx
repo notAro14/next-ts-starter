@@ -3,6 +3,7 @@ import type { FC } from "react"
 import Heading from "src/components/common/heading"
 import Text from "src/components/common/text"
 import Flex from "src/components/common/flex"
+import Loader from "src/components/common/loader"
 
 import { useGetUsersQuery } from "../user.slice.api"
 
@@ -13,8 +14,7 @@ const UserList: FC = () => {
     data: users,
   } = useGetUsersQuery()
 
-  if (isGetUsersLoading)
-    return <Text role="progressbar">Fetching users using RTK query</Text>
+  if (isGetUsersLoading) return <Loader type="ping" />
 
   if (isGetUsersError) return <Text role="alert">Failure</Text>
 

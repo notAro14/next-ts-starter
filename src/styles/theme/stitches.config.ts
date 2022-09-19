@@ -11,6 +11,8 @@ import {
 } from "src/styles/theme/tokens"
 import { media } from "src/styles/theme/breakpoints"
 
+export type Color = keyof typeof theme.colors
+
 export const { styled, getCssText, theme, createTheme } = createStitches({
   theme: {
     colors,
