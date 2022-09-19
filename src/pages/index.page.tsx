@@ -11,7 +11,9 @@ const IndexPage: FC = () => {
       <Heading as="h1" variant="h1">
         Next TS starter code
       </Heading>
-      <Text>Bootstrap quickly a Next TS project with this starter</Text>
+      <Text paragraph>
+        Bootstrap quickly a Next TS project with this starter
+      </Text>
     </>
   )
 }

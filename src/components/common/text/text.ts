@@ -4,6 +4,7 @@ const Text = styled("p", {
   color: theme.colors["text-functional"],
   fontFamily: theme.fonts.sans,
   fontWeight: theme.fontWeights["extra-light"],
+  lineHeight: 1,
   variants: {
     fontSize: {
       xxs: {
@@ -34,19 +35,34 @@ const Text = styled("p", {
         fontSize: theme.fontSizes["4xl"],
       },
     },
-    lineHeight: {
-      xxs: {
-        lineHeight: 1,
+    paragraph: {
+      true: {
+        lineHeight: 1.65,
       },
     },
-    vibrant: {
-      true: {
+    color: {
+      "functional-low": {
+        color: theme.colors["text-functional-low"],
+      },
+      functional: {
+        color: theme.colors["text-functional"],
+      },
+      vibrant: {
         color: theme.colors["text-vibrant"],
+      },
+      "vibrant-low": {
+        color: theme.colors["text-vibrant-low"],
+      },
+    },
+    fontWeight: {
+      regular: {
+        fontWeight: theme.fontWeights.regular,
       },
     },
   },
   defaultVariants: {
     fontSize: "md",
+    color: "functional",
   },
 })
 

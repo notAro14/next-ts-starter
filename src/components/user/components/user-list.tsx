@@ -1,11 +1,12 @@
 import type { FC } from "react"
 
+import Box from "src/components/common/box"
 import Heading from "src/components/common/heading"
 import Text from "src/components/common/text"
 import Flex from "src/components/common/flex"
 import { LazyLoader } from "src/components/common/loader"
-
 import { useGetUsersQuery } from "../user.slice.api"
+import { theme } from "src/styles/theme/stitches.config"
 
 const UserList: FC = () => {
   const {
@@ -25,11 +26,29 @@ const UserList: FC = () => {
         <Heading as="h1" variant="h1">
           User list
         </Heading>
-        <Flex as="ul" direction="column" gap="xxs">
+        <Flex
+          as="ul"
+          direction="column"
+          gap="lg"
+          justify="space-around"
+          css={{
+            listStyleType: "none",
+            padding: 0,
+            marginTop: theme.space.md,
+          }}
+        >
           {users.map((u) => (
-            <Text as="li" key={u.id}>
-              {u.name}
-            </Text>
+            <Box as="li" key={u.id}>
+              <Text>{u.name}</Text>
+              <Text
+                fontWeight="regular"
+                as="small"
+                color="functional-low"
+                fontSize="sm"
+              >
+                {u.username}
+              </Text>
+            </Box>
           ))}
         </Flex>
       </>
