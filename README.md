@@ -59,5 +59,8 @@ pnpm start
 
 - [ ] Integrate Sentry
 - [ ] Integrate Storybook
+
+### Big Maybe
+
 - [ ] Transform into a monorepo (With Nx or Turborepo)
   - [ ] Add React Native and Expo starter
