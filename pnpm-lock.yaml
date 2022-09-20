@@ -18,7 +18,6 @@ specifiers:
   '@types/tinycolor2': ^1.4.3
   '@typescript-eslint/eslint-plugin': ^5.37.0
   '@typescript-eslint/parser': ^5.37.0
-  '@uiball/loaders': ^1.2.6
   axios: ^0.27.2
   eslint: ^8.23.1
   eslint-config-next: ^12.3.0
@@ -49,7 +48,6 @@ dependencies:
   '@radix-ui/react-tabs': 1.0.0_biqbaboplfbrettd7655fr4n2y
   '@reduxjs/toolkit': 1.8.5_kkwg4cbsojnjnupd3btipussee
   '@stitches/react': 1.2.8_react@18.2.0
-  '@uiball/loaders': 1.2.6_biqbaboplfbrettd7655fr4n2y
   axios: 0.27.2
   next: 12.3.0_biqbaboplfbrettd7655fr4n2y
   next-themes: 0.2.1_c3hne4hwj64hb7tofigd3bvkji
@@ -1711,16 +1709,6 @@ packages:
       '@typescript-eslint/types': 5.37.0
       eslint-visitor-keys: 3.3.0
     dev: true
-
-  /@uiball/loaders/1.2.6_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-Db3be5pG9ciZa1Rxr6Iwv8bIwVP+g00m3GYQFsu3j7B9T16MpHhnGXLksuNtKlePdP3FCTFGpFrXbJz4GG/OOg==}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
 
   /@xmldom/xmldom/0.7.5:
     resolution: {integrity: sha512-V3BIhmY36fXZ1OtVcI9W+FxQqxVLsPKcNjWigIaa81dLC9IolJl5Mt4Cvhmr0flUnjSpTdrbMTSbXqYqV5dT6A==}

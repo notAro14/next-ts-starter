@@ -5,7 +5,7 @@ import Box from "src/components/common/box"
 import Heading from "src/components/common/heading"
 import Text from "src/components/common/text"
 import Flex from "src/components/common/flex"
-import { LazyLoader } from "src/components/common/loader"
+import { Loader } from "src/components/common/loader"
 import { useGetUsersQuery } from "../user.slice.api"
 import { theme } from "src/styles/theme/stitches.config"
 
@@ -16,8 +16,7 @@ const UserList: FC = () => {
     data: users,
   } = useGetUsersQuery()
 
-  if (isGetUsersLoading)
-    return <LazyLoader show={isGetUsersLoading} type="ping" />
+  if (isGetUsersLoading) return <Loader />
 
   if (isGetUsersError) return <Text role="alert">Failure</Text>
 
@@ -43,8 +42,7 @@ const UserList: FC = () => {
           }}
         >
           {users.map((u) => {
-            const [fName, lName] = u.name.split(" ")
-            const fallback = fName.charAt(0) + lName.charAt(1)
+            const fallback = u.name.charAt(0)
             return (
               <Flex gap="md" align="center" as="li" key={u.id}>
                 <Avatar.Root

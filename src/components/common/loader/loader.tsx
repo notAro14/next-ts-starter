@@ -1,45 +1,46 @@
-import { DotPulse, Ping, DotSpinner } from "@uiball/loaders"
+//import { DotPulse, Ping, DotSpinner } from "@uiball/loaders"
 import { FC, useEffect, useState } from "react"
 
-import { Color, theme } from "src/styles/theme/stitches.config"
+import { Color } from "src/styles/theme/stitches.config"
 import Box from "src/components/common/box"
+import { DotPulse } from "./dotpulse"
 
 interface Props {
   size?: number
   speed?: number
-  type?: "dotpulse" | "ping" | "dotspinner"
+  type?: "dotpulse"
   color?: Color
 }
-const Loader: FC<Props> = ({
+export const Loader: FC<Props> = ({
   type = "dotpulse",
-  size,
-  speed,
-  color: colorKey,
+  //size,
+  //speed,
+  //color: colorKey,
 }) => {
-  const { value: colorValue } = theme.colors[colorKey ?? "solid"]
+  //const { value: colorValue } = theme.colors[colorKey ?? "solid"]
   switch (type) {
     case "dotpulse":
       return (
         <Box role="progressbar">
-          <DotPulse size={size ?? 40} speed={speed ?? 1.3} color={colorValue} />
+          <DotPulse />
         </Box>
       )
-    case "dotspinner":
-      return (
-        <Box role="progressbar">
-          <DotSpinner
-            color={colorValue}
-            size={size ?? 40}
-            speed={speed ?? 0.9}
-          />
-        </Box>
-      )
-    case "ping":
-      return (
-        <Box role="progressbar">
-          <Ping color={colorValue} size={size ?? 45} speed={speed ?? 2} />
-        </Box>
-      )
+    //case "dotspinner":
+    //  return (
+    //    <Box role="progressbar">
+    //      <DotSpinner
+    //        color={colorValue}
+    //        size={size ?? 40}
+    //        speed={speed ?? 0.9}
+    //      />
+    //    </Box>
+    //  )
+    //case "ping":
+    //  return (
+    //    <Box role="progressbar">
+    //      <Ping color={colorValue} size={size ?? 45} speed={speed ?? 2} />
+    //    </Box>
+    //  )
     default:
       throw new Error("Unknown loader type")
   }

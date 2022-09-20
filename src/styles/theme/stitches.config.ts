@@ -13,15 +13,16 @@ import { media } from "src/styles/theme/breakpoints"
 
 export type Color = keyof typeof theme.colors
 
-export const { styled, getCssText, theme, createTheme } = createStitches({
-  theme: {
-    colors,
-    fonts,
-    fontSizes,
-    fontWeights,
-    radii,
-    space,
-    shadows,
-  },
-  media,
-})
+export const { styled, getCssText, theme, createTheme, keyframes } =
+  createStitches({
+    theme: {
+      colors,
+      fonts,
+      fontSizes,
+      fontWeights,
+      radii,
+      space,
+      shadows,
+    },
+    media,
+  })
