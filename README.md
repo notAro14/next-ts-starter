@@ -1,6 +1,6 @@
 # Next Starter Code
 
-Bootstrap a fullStack Nextjs app with this starter code
+Bootstrap a fullstack Nextjs app with this starter code
 
 ---
 
