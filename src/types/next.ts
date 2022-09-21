@@ -6,7 +6,6 @@ export type NextPageWithLayout = NextPage & {
   // eslint-disable-next-line no-unused-vars
   getLayout?: (page: JSX.Element) => ReactNode
 }
-
-export type AppPropsWithLayout = AppProps & {
+export type AppPropsWithLayout<T> = AppProps<T> & {
   Component: NextPageWithLayout
 }

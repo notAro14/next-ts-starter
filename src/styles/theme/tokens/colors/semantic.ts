@@ -16,4 +16,7 @@ export const semanticColors = {
   "border-subtle": "var(--colors-gray3)",
   "text-lo-gray": "var(--colors-gray11)",
   "text-hi-gray": "var(--colors-gray12)",
+
+  "solid-danger": "var(--colors-danger9)",
+  "solid-hovered-danger": "var(--colors-danger10)",
 } as const

@@ -3,7 +3,7 @@ import { styled, theme } from "src/styles/theme/stitches.config"
 export const Container = styled("header", {
   display: "grid",
   placeItems: "center",
-  height: 75,
+  height: 100,
   padding: `0 ${theme.space.lg}`,
   position: "sticky",
   top: theme.space.xs,
@@ -17,10 +17,16 @@ export const Nav = styled("nav", {
   border: "1px solid",
   borderColor: theme.colors["border-subtle"],
   display: "flex",
+  flexDirection: "column",
   alignItems: "center",
-  justifyContent: "space-between",
-  padding: theme.space.lg,
+  justifyContent: "space-around",
+  padding: theme.space.xxs,
   width: "100%",
   height: "100%",
   boxShadow: theme.shadows.low,
+  "@sm": {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: theme.space.md,
+  },
 })
