@@ -1,4 +1,4 @@
-import type { FC } from "react"
+import type { FC, ReactNode } from "react"
 
 import { styled, theme } from "src/styles/theme/stitches.config"
 
@@ -17,7 +17,7 @@ const MainWrapper = styled("main", {
 })
 
 interface Props {
-  children: JSX.Element
+  children: ReactNode
 }
 export const PublicLayout: FC<Props> = ({ children }) => {
   return (

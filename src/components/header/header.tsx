@@ -10,37 +10,43 @@ import Flex from "src/components/common/flex"
 import { NavLink } from "src/components/common/link"
 import Text from "src/components/common/text"
 import Button from "src/components/common/button"
+import { LazyLoader } from "src/components/common/loader"
 
 const Auth = () => {
-  const { data: session } = useSession()
-  if (session)
-    return (
-      <Flex align="baseline" gap="xs">
-        <Text fontSize="xs">
-          Signed in as {session.user?.name || session.user?.email}
-        </Text>
-        <Button
-          size="small"
-          css={{
-            backgroundColor: theme.colors["solid-danger"],
-            borderColor: theme.colors["solid-danger"],
-            "&:hover": {
-              backgroundColor: theme.colors["solid-hovered-danger"],
-              borderColor: theme.colors["solid-hovered-danger"],
-            },
-          }}
-          onClick={() => signOut()}
-        >
-          Sign out
-        </Button>
-      </Flex>
-    )
+  const { data: session, status } = useSession()
+  switch (status) {
+    case "loading":
+      return <LazyLoader show />
 
-  return (
-    <Button size="small" onClick={() => signIn()}>
-      Sign In
-    </Button>
-  )
+    case "unauthenticated":
+      return (
+        <Button size="small" onClick={() => signIn()}>
+          Sign In
+        </Button>
+      )
+    case "authenticated":
+      return (
+        <Flex align="baseline" gap="xs">
+          <Text fontSize="xs">
+            Signed in as {session.user?.name || session.user?.email}
+          </Text>
+          <Button
+            size="small"
+            css={{
+              backgroundColor: theme.colors["solid-danger"],
+              borderColor: theme.colors["solid-danger"],
+              "&:hover": {
+                backgroundColor: theme.colors["solid-hovered-danger"],
+                borderColor: theme.colors["solid-hovered-danger"],
+              },
+            }}
+            onClick={() => signOut({ callbackUrl: "/" })}
+          >
+            Sign out
+          </Button>
+        </Flex>
+      )
+  }
 }
 
 const Header = () => {
