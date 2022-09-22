@@ -7,29 +7,32 @@ import Flex from "src/components/common/flex"
 import Heading from "src/components/common/heading"
 import SEO from "src/components/common/seo"
 import Text from "src/components/common/text"
+import ToggleTheme from "src/components/common/toggle-theme"
 import { styled, theme } from "src/styles/theme/stitches.config"
 import type { NextPageWithLayout } from "src/types/next"
 
 const StyledForm = styled("form", {
   display: "flex",
   flexDirection: "column",
-  gap: theme.space.md,
+  gap: theme.space.xl,
   fontFamily: theme.fonts.sans,
 })
 const StyledLabel = styled("label", {
   color: theme.colors["text-functional-low"],
-  fontSize: theme.fontSizes.sm,
+  fontSize: theme.fontSizes.xs,
+  textTransform: "uppercase",
 })
 const StyledInput = styled("input", {
-  padding: theme.space.xs,
+  padding: theme.space.sm,
   backgroundColor: theme.colors.ui,
   border: "none",
   boxShadow: "inset 0 2px 6px hsla(0deg, 0%, 0%, 0.2)",
   color: theme.colors["text-functional"],
-  borderRadius: theme.radii.sm,
+  borderRadius: theme.radii.md,
   "&::placeholder": {
-    color: theme.colors["text-functional-low"],
+    color: theme.colors["text-vibrant-low"],
     fontSize: theme.fontSizes.sm,
+    fontWeight: theme.fontWeights.light,
   },
 })
 
@@ -45,10 +48,10 @@ const EmailSignIn: FC<{ callbackUrl?: string }> = ({ callbackUrl }) => {
         })
       }}
     >
-      <Flex direction="column">
+      <Flex direction="column" gap="xxs">
         <StyledLabel htmlFor="email">Email</StyledLabel>
         <StyledInput
-          placeholder="We promise we won't spam you 😁"
+          placeholder="We won't spam you 😁"
           type="email"
           ref={emailRef}
           id="email"
@@ -67,7 +70,17 @@ const SignIn: NextPageWithLayout = () => {
   return (
     <>
       <SEO title="Sign In" />
-      <Flex direction="column" gap="2xl">
+      <Flex
+        direction="column"
+        gap="2xl"
+        css={{
+          borderRadius: theme.radii.lg,
+          padding: theme.space.xl,
+          border: "1px solid",
+          borderColor: theme.colors["border-gray"],
+          boxShadow: theme.shadows.low,
+        }}
+      >
         <Heading
           variant="h1"
           vibrant
@@ -77,7 +90,14 @@ const SignIn: NextPageWithLayout = () => {
         >
           Next TS Starter
         </Heading>
-        <Flex direction="column" gap="md">
+        <ToggleTheme
+          css={{
+            position: "absolute",
+            top: 15,
+            right: 15,
+          }}
+        />
+        <Flex direction="column" gap="xl">
           <EmailSignIn callbackUrl={callbackUrl} />
           <Text
             as="small"

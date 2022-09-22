@@ -67,9 +67,9 @@ const Header = () => {
             Github <ExternalLinkIcon />
           </NavLink>
         </Flex>
-        <Flex align="center" gap="md">
-          <ToggleTheme />
+        <Flex align="center" gap="sm">
           <Auth />
+          <ToggleTheme />
         </Flex>
       </Nav>
     </Container>

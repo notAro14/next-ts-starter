@@ -8,6 +8,11 @@ export const Container = styled("header", {
   position: "sticky",
   top: theme.space.xs,
   marginBottom: theme.space.lg,
+  "@sm": {
+    margin: "0 auto",
+    width: 500,
+    padding: "unset",
+  },
 })
 
 export const Nav = styled("nav", {

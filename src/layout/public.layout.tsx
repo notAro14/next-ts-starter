@@ -14,6 +14,14 @@ const AppWrapper = styled("section", {
 
 const MainWrapper = styled("main", {
   padding: theme.space.lg,
+  "@sm": {
+    maxWidth: 500,
+    margin: "0 auto",
+  },
+  "@md": {
+    maxWidth: 750,
+    margin: "0 auto",
+  },
 })
 
 interface Props {

@@ -1,31 +1,30 @@
 import {
-  blue,
   slate,
-  blueDark,
   slateDark,
   whiteA,
   blackA,
   red,
   redDark,
+  mint,
+  mintDark,
 } from "@radix-ui/colors"
 
-const computeColors = (
-  colors: Record<string, string>,
-  type: "brand" | "gray" | "accent" | "background" | "danger"
-) =>
+type SEMANTIC = "brand" | "gray" | "accent" | "background" | "danger"
+
+const renameColors = (colors: Record<string, string>, key: SEMANTIC) =>
   Object.keys(colors).reduce((acc, k, idx) => {
-    acc[`${type}${idx + 1}`] = colors[k]
+    acc[`${key}${idx + 1}`] = colors[k]
     return acc
   }, {} as Record<string, string>)
 
-const brandColor = computeColors(blue, "brand")
-const brandDarkColor = computeColors(blueDark, "brand")
-const grayColor = computeColors(slate, "gray")
-const grayDarkColor = computeColors(slateDark, "gray")
-const whiteColor = computeColors(whiteA, "background")
-const blackColor = computeColors(blackA, "background")
-const redColor = computeColors(red, "danger")
-const redDarkColor = computeColors(redDark, "danger")
+const brandColor = renameColors(mint, "brand")
+const brandDarkColor = renameColors(mintDark, "brand")
+const grayColor = renameColors(slate, "gray")
+const grayDarkColor = renameColors(slateDark, "gray")
+const whiteColor = renameColors(whiteA, "background")
+const blackColor = renameColors(blackA, "background")
+const redColor = renameColors(red, "danger")
+const redDarkColor = renameColors(redDark, "danger")
 
 export const coreColors = {
   brand: brandColor,
