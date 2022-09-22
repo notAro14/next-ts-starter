@@ -60,7 +60,7 @@ const Header = () => {
             <NavLink active={pathname === "/"}>Home</NavLink>
           </NextLink>
           <NextLink passHref href="/user/view">
-            <NavLink active={pathname === "/user/view"}>Users</NavLink>
+            <NavLink active={pathname === "/user/view"}>Protected</NavLink>
           </NextLink>
           <NavLink
             href="https://github.com/notAro14/next-ts-starter"
