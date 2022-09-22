@@ -18,7 +18,7 @@ const Button = styled("button", {
       css: {
         backgroundColor: theme.colors.solid,
         borderColor: theme.colors.solid,
-        color: theme.colors["text-functional"],
+        color: theme.colors["text-fg-black"],
         "&:hover": {
           backgroundColor: theme.colors["solid-hovered"],
           borderColor: theme.colors["solid-hovered"],
@@ -32,7 +32,7 @@ const Button = styled("button", {
       css: {
         backgroundColor: theme.colors["solid-danger"],
         borderColor: theme.colors["solid-danger"],
-        color: theme.colors["text-functional"],
+        color: theme.colors["text-fg-black"],
         "&:hover": {
           backgroundColor: theme.colors["solid-hovered-danger"],
           borderColor: theme.colors["solid-hovered-danger"],

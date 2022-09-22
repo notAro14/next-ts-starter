@@ -1,7 +1,7 @@
-import { whiteA } from "@radix-ui/colors"
+import { whiteA, blackA } from "@radix-ui/colors"
 
 export const semanticColors = {
-  bg: "var(--colors-background1)",
+  bg: "var(--colors-brand1)",
   "bg-transparent": "var(--colors-brandA1)",
   "bg-subtle": "var(--colors-brand2)",
   ui: "var(--colors-brand3)",
@@ -32,6 +32,8 @@ export const semanticColors = {
   "solid-hovered-danger": "var(--colors-danger10)",
   "text-lo-danger": "var(--colors-danger11)",
   "text-hi-danger": "var(--colors-danger12)",
+
+  "text-fg-white": "var(--colors-white)",
 } as const
 
 export const colors = {
@@ -45,4 +47,5 @@ export const colors = {
   "text-danger": semanticColors["text-hi-danger"],
 
   "text-fg-white": whiteA.whiteA12,
+  "text-fg-black": blackA.blackA12,
 }
