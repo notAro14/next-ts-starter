@@ -1,6 +1,7 @@
 import * as AvatarPrimitive from "@radix-ui/react-avatar"
 
 import { styled, theme } from "src/styles/theme/stitches.config"
+import { THEMES } from "src/styles/theme"
 
 const StyledAvatar = styled(AvatarPrimitive.Root, {
   display: "inline-flex",
@@ -28,10 +29,10 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
         borderRadius: "100%",
       },
     },
-    borderColor: {
-      solid: {},
-      "border-gray": {},
-      border: {},
+    borderColorScheme: {
+      brand: {},
+      gray: {},
+      accent: {},
     },
     bordered: {
       true: {},
@@ -43,6 +44,15 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
           "&:hover": {
             transform: "scale(1.2)",
           },
+        },
+      },
+    },
+    withInsetShadow: {
+      true: {
+        boxShadow: "inset 0 2px 4px hsla(0deg, 0%, 0%, 0.1)",
+        [`.${THEMES.dark} &`]: {
+          border: "1px solid",
+          borderColor: theme.colors["border-gray"],
         },
       },
     },
@@ -64,28 +74,34 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   compoundVariants: [
     {
       bordered: true,
-      borderColor: "solid",
-      css: {
-        border: "2px solid",
-        borderColor: theme.colors.solid,
-      },
-    },
-    {
-      bordered: true,
-      borderColor: "border-gray",
-      css: {
-        border: "2px solid",
-        borderColor: theme.colors["border-gray"],
-      },
-    },
-    {
-      bordered: true,
-      borderColor: "border",
+      borderColorScheme: "brand",
       css: {
         border: "2px solid",
         borderColor: theme.colors.border,
         "&:hover": {
           borderColor: theme.colors["border-hovered"],
+        },
+      },
+    },
+    {
+      bordered: true,
+      borderColorScheme: "accent",
+      css: {
+        border: "2px solid",
+        borderColor: theme.colors["border-accent"],
+        "&:hover": {
+          borderColor: theme.colors["border-hovered-accent"],
+        },
+      },
+    },
+    {
+      bordered: true,
+      borderColorScheme: "gray",
+      css: {
+        border: "2px solid",
+        borderColor: theme.colors["border-gray"],
+        "&:hover": {
+          borderColor: theme.colors["border-gray-hovered"],
         },
       },
     },

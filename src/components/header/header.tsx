@@ -20,7 +20,7 @@ const Auth = () => {
 
     case "unauthenticated":
       return (
-        <Button size="small" onClick={() => signIn()}>
+        <Button size="small" colorScheme="accent" onClick={() => signIn()}>
           Sign In
         </Button>
       )

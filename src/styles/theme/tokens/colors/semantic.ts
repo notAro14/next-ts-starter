@@ -1,5 +1,3 @@
-import { whiteA, blackA } from "@radix-ui/colors"
-
 export const semanticColors = {
   bg: "var(--colors-brand1)",
   "bg-transparent": "var(--colors-brandA1)",
@@ -15,7 +13,8 @@ export const semanticColors = {
   "text-lo": "var(--colors-brand11)",
   "text-hi": "var(--colors-brand12)",
 
-  "border-gray": "var(--colors-gray3)",
+  "border-gray": "var(--colors-gray7)",
+  "border-gray-hovered": "var(--colors-gray8)",
   "text-lo-gray": "var(--colors-gray11)",
   "text-hi-gray": "var(--colors-gray12)",
 
@@ -33,7 +32,22 @@ export const semanticColors = {
   "text-lo-danger": "var(--colors-danger11)",
   "text-hi-danger": "var(--colors-danger12)",
 
-  "text-fg-white": "var(--colors-white)",
+  "bg-accent": "var(--colors-accent1)",
+  "bg-transparent-accent": "var(--colors-accentA1)",
+  "bg-subtle-accent": "var(--colors-accent2)",
+  "ui-accent": "var(--colors-accent3)",
+  "ui-hovered-accent": "var(--colors-accent4)",
+  "ui-selected-accent": "var(--colors-accent5)",
+  "line-accent": "var(--colors-accent6)",
+  "border-accent": "var(--colors-accent7)",
+  "border-hovered-accent": "var(--colors-accent8)",
+  "solid-accent": "var(--colors-accent9)",
+  "solid-hovered-accent": "var(--colors-accent10)",
+  "text-lo-accent": "var(--colors-accent11)",
+  "text-hi-accent": "var(--colors-accent12)",
+
+  "text-fg-white": "var(--colors-white12)",
+  "text-fg-black": "var(--colors-black12)",
 } as const
 
 export const colors = {
@@ -45,7 +59,6 @@ export const colors = {
   "text-vibrant-low": semanticColors["text-lo"],
   "text-danger-low": semanticColors["text-lo-danger"],
   "text-danger": semanticColors["text-hi-danger"],
-
-  "text-fg-white": whiteA.whiteA12,
-  "text-fg-black": blackA.blackA12,
+  "text-accent-low": semanticColors["text-lo-accent"],
+  "text-accent": semanticColors["text-hi-accent"],
 }

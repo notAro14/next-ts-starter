@@ -41,6 +41,20 @@ const Button = styled("button", {
       },
     },
     {
+      colorScheme: "accent",
+      variant: "filled",
+      css: {
+        backgroundColor: theme.colors["solid-accent"],
+        borderColor: theme.colors["solid-accent"],
+        color: theme.colors["text-fg-white"],
+        "&:hover": {
+          backgroundColor: theme.colors["solid-hovered-accent"],
+          borderColor: theme.colors["solid-hovered-accent"],
+          cursor: "pointer",
+        },
+      },
+    },
+    {
       colorScheme: "brand",
       variant: "outlined",
       css: {
@@ -68,11 +82,26 @@ const Button = styled("button", {
         },
       },
     },
+    {
+      colorScheme: "accent",
+      variant: "outlined",
+      css: {
+        backgroundColor: "transparent",
+        borderColor: theme.colors["border-accent"],
+        color: theme.colors["text-accent-low"],
+        fontWeight: theme.fontWeights["semi-bold"],
+        "&:hover": {
+          borderColor: theme.colors["border-hovered-accent"],
+          cursor: "pointer",
+        },
+      },
+    },
   ],
   variants: {
     colorScheme: {
       danger: {},
       brand: {},
+      accent: {},
     },
     variant: {
       filled: {},
