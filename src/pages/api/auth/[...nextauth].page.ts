@@ -4,8 +4,11 @@ import EmailProvider from "next-auth/providers/email"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { PrismaClient } from "@prisma/client"
 
-const { GITHUB_ID, GITHUB_SECRET, NEXTAUTH_SECRET, EMAIL_FROM, EMAIL_SERVER } =
-  process.env
+const GITHUB_ID = process.env.GITHUB_ID
+const GITHUB_SECRET = process.env.GITHUB_SECRET
+const NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET
+const EMAIL_FROM = process.env.EMAIL_FROM
+const EMAIL_SERVER = process.env.EMAIL_SERVER
 
 const prisma = new PrismaClient()
 
