@@ -31,6 +31,7 @@ const Button = styled("button", {
   padding: buttonPadding,
   fontWeight: buttonFontWeight,
   border: "1px solid",
+  boxShadow: theme.shadows.low,
 
   variants: {
     variant: {
@@ -63,6 +64,11 @@ const Button = styled("button", {
       small: {
         [buttonFontSize]: theme.fontSizes.sm,
         [buttonPadding]: `${theme.space.xxs} ${theme.space.sm}`,
+      },
+    },
+    fullWidth: {
+      true: {
+        width: "100%",
       },
     },
   },
