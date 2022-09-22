@@ -27,19 +27,11 @@ const Auth = () => {
     case "authenticated":
       return (
         <Flex align="baseline" gap="xs">
-          <Text fontSize="xs">
-            Signed in as {session.user?.name || session.user?.email}
-          </Text>
+          <Text fontSize="xs">{session.user?.name || session.user?.email}</Text>
           <Button
             size="small"
-            css={{
-              backgroundColor: theme.colors["solid-danger"],
-              borderColor: theme.colors["solid-danger"],
-              "&:hover": {
-                backgroundColor: theme.colors["solid-hovered-danger"],
-                borderColor: theme.colors["solid-hovered-danger"],
-              },
-            }}
+            colorScheme="danger"
+            variant="outlined"
             onClick={() => signOut({ callbackUrl: "/" })}
           >
             Sign out

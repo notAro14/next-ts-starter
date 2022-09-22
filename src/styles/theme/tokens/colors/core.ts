@@ -34,6 +34,6 @@ export const coreColors = {
   grayDark: grayDarkColor,
   backgroundDark: blackColor,
   background: whiteColor,
-  red: redColor,
-  redDark: redDarkColor,
+  danger: redColor,
+  dangerDark: redDarkColor,
 }

@@ -89,7 +89,7 @@ const SignIn: NextPageWithLayout = () => {
             or
           </Text>
           <Button
-            variant="outline"
+            variant="outlined"
             fullWidth
             onClick={() => signIn("github", { callbackUrl })}
           >

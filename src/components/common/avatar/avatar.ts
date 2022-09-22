@@ -30,7 +30,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
     },
     borderColor: {
       solid: {},
-      "border-subtle": {},
+      "border-gray": {},
       border: {},
     },
     bordered: {
@@ -72,10 +72,10 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
     },
     {
       bordered: true,
-      borderColor: "border-subtle",
+      borderColor: "border-gray",
       css: {
         border: "2px solid",
-        borderColor: theme.colors["border-subtle"],
+        borderColor: theme.colors["border-gray"],
       },
     },
     {

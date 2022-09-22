@@ -2,68 +2,86 @@ import type * as Stitches from "@stitches/react"
 
 import { styled, theme } from "src/styles/theme/stitches.config"
 
-const buttonFont = "$$button-font"
-const buttonFontSize = "$$button-font-size"
-const buttonFontWeight = "$$button-font-size"
-const buttonRadius = "$$button-radius"
-const buttonPadding = "$$button-padding"
-const buttonBgColor = "$$button-bg-color"
-const buttonBgColorHovered = "$$button-bg-color-hovered"
-const buttonBorderColor = "$$button-border-color"
-const buttonBorderColorHovered = "$$button-border-color-hovered"
-const buttonColor = "$$button-color"
-
 const Button = styled("button", {
-  [buttonFont]: theme.fonts.sans,
-  [buttonFontSize]: theme.fontSizes.md,
-  [buttonRadius]: theme.radii.sm,
-  [buttonPadding]: `${theme.space.xs} ${theme.space.lg}`,
-  [buttonFontWeight]: 400,
-  [buttonBgColor]: theme.colors.solid,
-  [buttonBorderColor]: buttonBgColor,
-  [buttonBorderColorHovered]: buttonBgColorHovered,
-  [buttonColor]: theme.colors["text-fg-white"],
-  [buttonBgColorHovered]: theme.colors["solid-hovered"],
-
-  borderRadius: buttonRadius,
-  fontFamily: buttonFont,
-  fontSize: buttonFontSize,
-  padding: buttonPadding,
-  fontWeight: buttonFontWeight,
+  borderRadius: 9999,
+  fontFamily: theme.fonts.sans,
+  fontSize: theme.fontSizes.md,
+  padding: `${theme.space.xs} ${theme.space.lg}`,
+  fontWeight: theme.fontWeights.medium,
   border: "1px solid",
   boxShadow: theme.shadows.low,
 
-  variants: {
-    variant: {
-      filled: {
-        backgroundColor: buttonBgColor,
-        borderColor: buttonBorderColor,
-        color: buttonColor,
+  compoundVariants: [
+    {
+      colorScheme: "brand",
+      variant: "filled",
+      css: {
+        backgroundColor: theme.colors.solid,
+        borderColor: theme.colors.solid,
+        color: theme.colors["text-fg-white"],
         "&:hover": {
-          backgroundColor: buttonBgColorHovered,
-          borderColor: buttonBorderColorHovered,
-          cursor: "pointer",
-        },
-      },
-      outline: {
-        [buttonBorderColor]: theme.colors.border,
-        [buttonBorderColorHovered]: theme.colors["border-hovered"],
-        [buttonColor]: theme.colors["text-vibrant-low"],
-        [buttonFontWeight]: 500,
-
-        backgroundColor: "transparent",
-        borderColor: buttonBorderColor,
-        color: buttonColor,
-        "&:hover": {
-          borderColor: buttonBorderColorHovered,
+          backgroundColor: theme.colors["solid-hovered"],
+          borderColor: theme.colors["solid-hovered"],
           cursor: "pointer",
         },
       },
     },
+    {
+      colorScheme: "danger",
+      variant: "filled",
+      css: {
+        backgroundColor: theme.colors["solid-danger"],
+        borderColor: theme.colors["solid-danger"],
+        color: theme.colors["text-fg-white"],
+        "&:hover": {
+          backgroundColor: theme.colors["solid-hovered-danger"],
+          borderColor: theme.colors["solid-hovered-danger"],
+          cursor: "pointer",
+        },
+      },
+    },
+    {
+      colorScheme: "brand",
+      variant: "outlined",
+      css: {
+        backgroundColor: "transparent",
+        borderColor: theme.colors.border,
+        color: theme.colors["text-vibrant-low"],
+        fontWeight: theme.fontWeights["semi-bold"],
+        "&:hover": {
+          borderColor: theme.colors["border-hovered"],
+          cursor: "pointer",
+        },
+      },
+    },
+    {
+      colorScheme: "danger",
+      variant: "outlined",
+      css: {
+        backgroundColor: "transparent",
+        borderColor: theme.colors["border-danger"],
+        color: theme.colors["text-danger-low"],
+        fontWeight: theme.fontWeights["semi-bold"],
+        "&:hover": {
+          borderColor: theme.colors["border-hovered-danger"],
+          cursor: "pointer",
+        },
+      },
+    },
+  ],
+  variants: {
+    colorScheme: {
+      danger: {},
+      brand: {},
+    },
+    variant: {
+      filled: {},
+      outlined: {},
+    },
     size: {
       small: {
-        [buttonFontSize]: theme.fontSizes.sm,
-        [buttonPadding]: `${theme.space.xxs} ${theme.space.sm}`,
+        fontSize: theme.fontSizes.sm,
+        padding: `${theme.space.xxs} ${theme.space.sm}`,
       },
     },
     fullWidth: {
@@ -74,6 +92,7 @@ const Button = styled("button", {
   },
   defaultVariants: {
     variant: "filled",
+    colorScheme: "brand",
   },
 })
 

@@ -45,12 +45,7 @@ const UserList: FC = () => {
             const fallback = u.name.charAt(0)
             return (
               <Flex gap="md" align="center" as="li" key={u.id}>
-                <Avatar.Root
-                  rounded
-                  bordered
-                  borderColor="border-subtle"
-                  zoomed
-                >
+                <Avatar.Root rounded bordered borderColor="border-gray" zoomed>
                   <Avatar.Image
                     src={`https://robohash.org/${u.username}`}
                     alt={u.name}

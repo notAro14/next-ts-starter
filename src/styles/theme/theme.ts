@@ -10,7 +10,7 @@ const darkTheme = createTheme("dark", {
     ...darkColors,
     "bg-transparent": "var(--colors-brandA1)",
     bg: "var(--colors-brand1)",
-    "border-subtle": "var(--colors-brand3)",
+    "border-gray": "var(--colors-brand3)",
   },
 })
 

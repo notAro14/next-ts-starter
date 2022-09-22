@@ -15,7 +15,7 @@ export const Nav = styled("nav", {
   backdropFilter: "blur(10px)",
   borderRadius: theme.radii.lg,
   border: "1px solid",
-  borderColor: theme.colors["border-subtle"],
+  borderColor: theme.colors["border-gray"],
   display: "flex",
   flexDirection: "column",
   alignItems: "center",

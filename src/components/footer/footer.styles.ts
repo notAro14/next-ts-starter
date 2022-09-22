@@ -7,5 +7,5 @@ export const Container = styled("footer", {
   placeItems: "center",
   height: 100,
   borderTop: "1px solid",
-  borderTopColor: theme.colors["border-subtle"],
+  borderTopColor: theme.colors["border-gray"],
 })
