@@ -28,7 +28,7 @@ const Paper = styled("div", {
     bordered: {
       true: {
         border: "1px solid",
-        borderColor: theme.colors["border-subtle"],
+        borderColor: theme.colors["border-gray"],
       },
     },
   },

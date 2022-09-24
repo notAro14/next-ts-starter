@@ -53,6 +53,12 @@ const Text = styled("p", {
       "vibrant-low": {
         color: theme.colors["text-vibrant-low"],
       },
+      accent: {
+        color: theme.colors["text-accent"],
+      },
+      "accent-low": {
+        color: theme.colors["text-accent-low"],
+      },
     },
     fontWeight: {
       regular: {

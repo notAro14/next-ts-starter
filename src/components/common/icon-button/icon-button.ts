@@ -8,7 +8,7 @@ const IconButton = styled("button", {
       filled: {
         border: "none",
         backgroundColor: theme.colors.solid,
-        color: theme.colors["text-fg-white"],
+        color: theme.colors["text-functional"],
         "&:hover": {
           backgroundColor: theme.colors["solid-hovered"],
           cursor: "pointer",

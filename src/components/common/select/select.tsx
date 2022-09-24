@@ -72,7 +72,7 @@ export const StyledItem = styled(SelectPrimitive.Item, {
   //},
   "&[data-highlighted]": {
     backgroundColor: theme.colors.solid,
-    color: theme.colors["text-fg-white"],
+    color: theme.colors["text-functional"],
     cursor: "pointer",
   },
 })

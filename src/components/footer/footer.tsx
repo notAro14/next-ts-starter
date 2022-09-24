@@ -1,4 +1,3 @@
-import { ExternalLinkIcon } from "@radix-ui/react-icons"
 import type { FC } from "react"
 
 import Link from "src/components/common/link"
@@ -19,20 +18,8 @@ const Footer: FC = () => {
         }}
       >
         <Text as="span">Made by</Text>
-        <Link
-          href="https://github.com/notAro14"
-          target="_blank"
-          rel="noreferrer"
-          css={{
-            display: "flex",
-            alignItems: "center",
-            gap: theme.space.xxs,
-          }}
-        >
-          <Text as="span" css={{ color: "inherit" }}>
-            Aro Andriamaro
-          </Text>
-          <ExternalLinkIcon />
+        <Link href="https://github.com/notAro14" isExternal>
+          Aro Andriamaro
         </Link>
       </Text>
     </Container>

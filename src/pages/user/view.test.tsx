@@ -7,7 +7,8 @@ import { Provider } from "react-redux"
 
 import { store } from "src/store"
 
-import ViewUsersPage from "./view.page"
+//import ViewUsersPage from "./view.page"
+import { UserList } from "src/components/user"
 import { mockServer, mockUsers } from "./view-page.mock"
 
 const server = mockServer()
@@ -24,7 +25,7 @@ afterEach(function () {
 it("renders a list of users", async () => {
   render(
     <Provider store={store}>
-      <ViewUsersPage />
+      <UserList />
     </Provider>
   )
   await waitForElementToBeRemoved(screen.getByRole("progressbar"))

@@ -28,6 +28,10 @@ const UserList: FC = () => {
           variant="h1"
           css={{
             marginBottom: theme.space.md,
+            textAlign: "center",
+            "@sm": {
+              textAlign: "unset",
+            },
           }}
         >
           User list
@@ -45,12 +49,7 @@ const UserList: FC = () => {
             const fallback = u.name.charAt(0)
             return (
               <Flex gap="md" align="center" as="li" key={u.id}>
-                <Avatar.Root
-                  rounded
-                  bordered
-                  borderColor="border-subtle"
-                  zoomed
-                >
+                <Avatar.Root rounded withInsetShadow>
                   <Avatar.Image
                     src={`https://robohash.org/${u.username}`}
                     alt={u.name}
@@ -58,11 +57,13 @@ const UserList: FC = () => {
                   <Avatar.Fallback delayMs={600}>{fallback}</Avatar.Fallback>
                 </Avatar.Root>
                 <Box>
-                  <Text fontSize="lg">{u.name}</Text>
+                  <Text fontSize="lg" color="functional">
+                    {u.name}
+                  </Text>
                   <Text
                     fontWeight="regular"
                     as="small"
-                    color="functional-low"
+                    color="accent-low"
                     fontSize="sm"
                   >
                     {u.username}
