@@ -1,8 +1,8 @@
-import type { FC } from "react"
+import Link from "next/link"
 
-import { useGetUsersQuery } from "../../../api/user/user.slice.api"
+import { useGetUsersQuery } from "src/api/user/user.slice.api"
 
-const ViewUsers: FC = () => {
+export default function ViewUsers() {
   const {
     isLoading: isGetUsersLoading,
     isError: isGetUsersError,
@@ -16,7 +16,7 @@ const ViewUsers: FC = () => {
   if (users)
     return (
       <>
-        <h1>User list</h1>
+        <h2>Users</h2>
         <ul
           style={{
             display: "flex",
@@ -26,8 +26,7 @@ const ViewUsers: FC = () => {
           {users.map((u) => {
             return (
               <li key={u.id}>
-                <p>{u.name}</p>
-                <small>{u.username}</small>
+                <Link href={`/users/${u.id}`}>{u.name}</Link>
               </li>
             )
           })}
@@ -37,5 +36,3 @@ const ViewUsers: FC = () => {
 
   return null
 }
-
-export default ViewUsers

@@ -1,4 +1,5 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react"
+import { AxiosError } from "axios"
 
 import UserService from "./user.service"
 import { USER_TAG } from "./user.constants"
@@ -26,9 +27,20 @@ export const userSliceApi = createApi({
         number
       >({
         async queryFn(id) {
-          const data = await UserService.getById(id)
-          return {
-            data,
+          try {
+            const data = await UserService.getById(id)
+            return {
+              data,
+            }
+          } catch (exception) {
+            return {
+              error: {
+                message:
+                  exception instanceof AxiosError
+                    ? exception.message
+                    : "Unknown Failure",
+              },
+            }
           }
         },
         providesTags: (result) => [{ type: USER_TAG, id: result?.id }],
