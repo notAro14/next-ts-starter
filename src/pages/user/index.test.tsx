@@ -6,9 +6,8 @@ import {
 import { Provider } from "react-redux"
 
 import { store } from "src/store"
-
-import ViewUsersPage from "./view.page"
-import { mockServer, mockUsers } from "./view-page.mock"
+import ViewUsersPage from "./index.page"
+import { mockServer, mockUsers } from "./mock"
 
 const server = mockServer()
 beforeAll(function () {

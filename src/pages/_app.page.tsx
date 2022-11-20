@@ -1,19 +1,14 @@
-import "src/styles/reset.css"
-import "src/styles/fonts.css"
+import { AppProps } from "next/app"
 
-import type { AppPropsWithLayout } from "src/types/next"
-
-import { PublicLayout } from "src/layout/public.layout"
 import Providers from "src/context"
+import "src/styles/reset.css"
 
-const getPublicLayout = (page: JSX.Element) => (
-  <PublicLayout>{page}</PublicLayout>
-)
-
-const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const getLayout = Component.getLayout ?? getPublicLayout
-
-  return <Providers>{getLayout(<Component {...pageProps} />)}</Providers>
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <Providers>
+      <Component {...pageProps} />
+    </Providers>
+  )
 }
 
 export default MyApp
