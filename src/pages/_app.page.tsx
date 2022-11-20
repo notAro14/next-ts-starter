@@ -1,19 +1,16 @@
+import type { AppPropsWithLayout } from "src/types/next.type"
+
 import "src/styles/reset.css"
-import "src/styles/fonts.css"
-
-import type { AppPropsWithLayout } from "src/types/next"
-
-import { PublicLayout } from "src/layout/public.layout"
 import Providers from "src/context"
+import RootLayout from "./layout"
 
-const getPublicLayout = (page: JSX.Element) => (
-  <PublicLayout>{page}</PublicLayout>
-)
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout =
+    Component.getLayout ?? ((page) => <RootLayout>{page}</RootLayout>)
 
-const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const getLayout = Component.getLayout ?? getPublicLayout
-
-  return <Providers>{getLayout(<Component {...pageProps} />)}</Providers>
+  return getLayout(
+    <Providers>
+      <Component {...pageProps} />
+    </Providers>
+  )
 }
-
-export default MyApp

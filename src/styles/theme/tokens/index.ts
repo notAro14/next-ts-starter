@@ -1,7 +1,0 @@
-export * from "./space"
-export * from "./colors"
-export * from "./shadows"
-export * from "./fonts"
-export * from "./fontSizes"
-export * from "./fontWeights"
-export * from "./radii"

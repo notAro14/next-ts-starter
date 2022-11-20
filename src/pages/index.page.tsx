@@ -1,28 +1,13 @@
-import type { FC } from "react"
+import Head from "next/head"
 
-import SEO from "src/components/common/seo"
-import Heading from "src/components/common/heading"
-import Text from "src/components/common/text"
-import { theme } from "src/styles/theme/stitches.config"
-
-const IndexPage: FC = () => {
+export default function Page() {
   return (
     <>
-      <SEO title="Next TS starter" />
-      <Heading
-        as="h1"
-        variant="h1"
-        css={{
-          marginBottom: theme.space.md,
-        }}
-      >
-        Next TS starter code
-      </Heading>
-      <Text paragraph fontSize="lg">
-        Bootstrap quickly a Next TS project with this starter
-      </Text>
+      <Head>
+        <title>Next TS starter</title>
+      </Head>
+      <h1>Next TS starter code</h1>
+      <p>Bootstrap quickly a Next TS project with this starter</p>
     </>
   )
 }
-
-export default IndexPage
