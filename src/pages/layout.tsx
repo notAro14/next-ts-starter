@@ -1,24 +1,26 @@
 import Link from "next/link"
 import { ReactNode } from "react"
+import { link } from "src/components/ui"
+import { main, nav, navbar } from "./styles.css"
 
 export default function RootLayout(props: { children: ReactNode }) {
   return (
-    <section>
-      <nav>
-        <ul>
+    <>
+      <nav className={nav}>
+        <ul className={navbar}>
           <li>
             <Link href="/">
-              <a>Home</a>
+              <a className={link()}>Home</a>
             </Link>
           </li>
           <li>
             <Link href="/users">
-              <a>Users</a>
+              <a className={link()}>Users</a>
             </Link>
           </li>
         </ul>
       </nav>
-      <main>{props.children}</main>
-    </section>
+      <main className={main}>{props.children}</main>
+    </>
   )
 }

@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { useGetUsersQuery } from "../../api/user/user.slice.api"
+import { useGetUsersQuery } from "src/api/user/user.slice.api"
+import { heading, link } from "src/components/ui"
 
 export default function ViewUsers() {
   const {
@@ -15,7 +16,7 @@ export default function ViewUsers() {
   if (users)
     return (
       <>
-        <h1>User list</h1>
+        <h1 className={heading()}>User list</h1>
         <ul
           style={{
             display: "flex",
@@ -26,7 +27,7 @@ export default function ViewUsers() {
             return (
               <li key={u.id}>
                 <Link href={`/users/${u.id}`}>
-                  <a>{u.name}</a>
+                  <a className={link()}>{u.name}</a>
                 </Link>
               </li>
             )
