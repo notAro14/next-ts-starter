@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { useGetUsersQuery } from "src/api/user/user.slice.api"
-import { heading, link } from "src/components/ui"
+import { heading, link, text } from "src/components/ui"
 
 export default function ViewUsers() {
   const {
@@ -9,9 +9,19 @@ export default function ViewUsers() {
     data: users,
   } = useGetUsersQuery()
 
-  if (isGetUsersLoading) return <p role="progressbar">Loading users...</p>
+  if (isGetUsersLoading)
+    return (
+      <p className={text()} role="progressbar">
+        Loading users...
+      </p>
+    )
 
-  if (isGetUsersError) return <p role="alert">Failure</p>
+  if (isGetUsersError)
+    return (
+      <p className={text()} role="alert">
+        Failure
+      </p>
+    )
 
   if (users)
     return (

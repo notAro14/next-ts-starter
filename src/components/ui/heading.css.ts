@@ -5,10 +5,10 @@ export const heading = recipe({
   variants: {
     color: {
       vibrant: {
-        color: vars.colors.brand["text-lo"],
+        color: vars.colors.brand["text-hi"],
       },
       functional: {
-        color: vars.colors.brand["text-hi"],
+        color: vars.colors.gray["text-hi"],
       },
     },
   },
