@@ -8,7 +8,9 @@ export default function ViewUser(props: { id: string }) {
   if (error)
     return (
       <p className={text()} role="alert">
-        Failed to get user
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore */}
+        {error?.status === 404 ? "User not found" : "Failed to get user"}
       </p>
     )
   if (isLoading)

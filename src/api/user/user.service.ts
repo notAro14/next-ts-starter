@@ -21,7 +21,8 @@ export async function getById(id: string): Promise<ServiceResponse<User>> {
     return { ok: true, data: response.data }
   } catch (e) {
     const msg = e instanceof AxiosError ? e.message : "Failed request"
-    return { ok: false, error: msg }
+    const status = e instanceof AxiosError ? e.response?.status : undefined
+    return { ok: false, error: msg, status }
   }
 }
 
