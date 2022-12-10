@@ -1,5 +1,5 @@
 import { blue } from "@radix-ui/colors"
-import { mapSemanticColors, mapColors, changeAlpha } from "src/utils/colors"
+import { mapSemanticColors, mapColors } from "src/utils/colors"
 
 describe("Color Utils", function () {
   it("should map color keys", function () {
@@ -17,14 +17,6 @@ describe("Color Utils", function () {
       brand11: blue.blue11,
       brand12: blue.blue12,
     })
-  })
-
-  it("should change a color's alpha", () => {
-    const base = "0, 10%, 10%"
-    const colorIn = `hsl(${base})`
-    const alpha = 0.5
-    const colorOut = `hsla(${base}, ${alpha})`
-    expect(changeAlpha(colorIn, alpha)).toEqual(colorOut)
   })
 
   it("should map semantic color keys", function () {

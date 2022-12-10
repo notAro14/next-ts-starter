@@ -1,23 +1,36 @@
 import { useTheme } from "next-themes"
+import { useCallback } from "react"
+
+const themeMachine = {
+  states: {
+    light: {
+      on: {
+        TOGGLE: {
+          target: "dark",
+        },
+      },
+    },
+    dark: {
+      on: {
+        TOGGLE: {
+          target: "light",
+        },
+      },
+    },
+  },
+} as const
+type Theme = "light" | "dark" | undefined
+const themeReducer = (prev: Theme) => {
+  if (typeof prev === "undefined") return "system"
+  return themeMachine.states[prev].on.TOGGLE.target ?? "system"
+}
 
 export default function useThemeSwitcher() {
   const { theme, setTheme, resolvedTheme } = useTheme()
-  const switchTheme = () => {
-    let nextTheme = ""
-    switch (theme) {
-      case "dark":
-        nextTheme = "light"
-        break
-      case "light":
-        nextTheme = "dark"
-        break
-      case "system":
-        nextTheme = "light"
-        break
-      default:
-        nextTheme = "system"
-    }
-    setTheme(nextTheme)
-  }
-  return { switchTheme, theme, resolvedTheme }
+
+  const toggle = useCallback(
+    () => setTheme(themeReducer(resolvedTheme as Theme)),
+    [resolvedTheme, setTheme]
+  )
+  return { toggle, theme, resolvedTheme }
 }

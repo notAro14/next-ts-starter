@@ -1,4 +1,3 @@
-import tinycolor from "tinycolor2"
 import type { MyColorKey } from "./colors.types"
 
 /**
@@ -20,10 +19,6 @@ export function mapColors<T extends string>(
       [`${newColorKey}${match[0]}`]: colorObject[originalColorKey],
     }
   }, {} as Record<T, string>)
-}
-
-export function changeAlpha(color: string, alpha: number) {
-  return tinycolor(color).setAlpha(alpha).toHslString()
 }
 
 const SEMANTIC_COLOR = {

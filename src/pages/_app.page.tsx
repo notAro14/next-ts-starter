@@ -8,9 +8,5 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout =
     Component.getLayout ?? ((page) => <RootLayout>{page}</RootLayout>)
 
-  return getLayout(
-    <Providers>
-      <Component {...pageProps} />
-    </Providers>
-  )
+  return <Providers>{getLayout(<Component {...pageProps} />)}</Providers>
 }

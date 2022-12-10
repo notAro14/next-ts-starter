@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ReactNode } from "react"
 import { link } from "src/components/ui"
+import ToggleTheme from "src/components/toggle-theme"
 import { main, nav, navbar } from "./styles.css"
 
 export default function RootLayout(props: { children: ReactNode }) {
@@ -17,6 +18,9 @@ export default function RootLayout(props: { children: ReactNode }) {
             <Link href="/users">
               <a className={link}>Users</a>
             </Link>
+          </li>
+          <li>
+            <ToggleTheme />
           </li>
         </ul>
       </nav>
