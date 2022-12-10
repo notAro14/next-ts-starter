@@ -19,6 +19,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.43.0
   '@typescript-eslint/parser': ^5.43.0
   '@vanilla-extract/css': ^1.9.2
+  '@vanilla-extract/jest-transform': ^1.0.1
   '@vanilla-extract/next-plugin': ^2.1.1
   '@vanilla-extract/recipes': ^0.3.0
   axios: ^1.1.3
@@ -73,6 +74,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.43.0_nqj4bdx4ekws7aecttskpih4py
   '@typescript-eslint/parser': 5.43.0_hsf322ms6xhhd4b5ne6lb74y4a
   '@vanilla-extract/css': 1.9.2
+  '@vanilla-extract/jest-transform': 1.0.1
   '@vanilla-extract/next-plugin': 2.1.1_next@12.3.0
   eslint: 8.28.0
   eslint-config-next: 12.3.0_hsf322ms6xhhd4b5ne6lb74y4a
@@ -1731,6 +1733,15 @@ packages:
       javascript-stringify: 2.1.0
       lodash: 4.17.21
       outdent: 0.8.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@vanilla-extract/jest-transform/1.0.1:
+    resolution: {integrity: sha512-xVwLozgKxByx7kYdMjZcpxS+XOdrQ0gyxGo+cNjWGX6WS9+mG3ixiKl2hNxv0y69vI7UGm1pz1YR2NVvsKNRlQ==}
+    dependencies:
+      '@vanilla-extract/integration': 6.0.1
+      esbuild: 0.11.23
     transitivePeerDependencies:
       - supports-color
     dev: true

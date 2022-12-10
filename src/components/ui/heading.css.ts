@@ -1,18 +1,6 @@
-import { recipe } from "@vanilla-extract/recipes"
+import { style } from "@vanilla-extract/css"
 import { vars } from "src/styles/theme/index.css"
 
-export const heading = recipe({
-  variants: {
-    color: {
-      vibrant: {
-        color: vars.colors.brand["text-hi"],
-      },
-      functional: {
-        color: vars.colors.gray["text-hi"],
-      },
-    },
-  },
-  defaultVariants: {
-    color: "functional",
-  },
+export const heading = style({
+  color: vars.colors.gray["text-hi"],
 })

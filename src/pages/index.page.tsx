@@ -7,8 +7,8 @@ export default function Page() {
       <Head>
         <title>Next TS starter</title>
       </Head>
-      <h1 className={heading()}>Next TS starter code</h1>
-      <p className={text()}>
+      <h1 className={heading}>Next TS starter code</h1>
+      <p className={text}>
         Bootstrap quickly a Next TS project with this starter
       </p>
     </>

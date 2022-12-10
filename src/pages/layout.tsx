@@ -10,12 +10,12 @@ export default function RootLayout(props: { children: ReactNode }) {
         <ul className={navbar}>
           <li>
             <Link href="/">
-              <a className={link()}>Home</a>
+              <a className={link}>Home</a>
             </Link>
           </li>
           <li>
             <Link href="/users">
-              <a className={link()}>Users</a>
+              <a className={link}>Users</a>
             </Link>
           </li>
         </ul>

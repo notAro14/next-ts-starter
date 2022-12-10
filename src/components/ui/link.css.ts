@@ -1,8 +1,6 @@
-import { recipe } from "@vanilla-extract/recipes"
+import { style } from "@vanilla-extract/css"
 import { vars } from "src/styles/theme/index.css"
 
-export const link = recipe({
-  base: {
-    color: vars.colors.gray["text-lo"],
-  },
+export const link = style({
+  color: vars.colors.brand["text-lo"],
 })

@@ -11,14 +11,14 @@ export default function ViewUsers() {
 
   if (isGetUsersLoading)
     return (
-      <p className={text()} role="progressbar">
+      <p className={text} role="progressbar">
         Loading users...
       </p>
     )
 
   if (isGetUsersError)
     return (
-      <p className={text()} role="alert">
+      <p className={text} role="alert">
         Failure
       </p>
     )
@@ -26,7 +26,7 @@ export default function ViewUsers() {
   if (users)
     return (
       <>
-        <h1 className={heading()}>User list</h1>
+        <h1 className={heading}>User list</h1>
         <ul
           style={{
             display: "flex",
@@ -37,7 +37,7 @@ export default function ViewUsers() {
             return (
               <li key={u.id}>
                 <Link href={`/users/${u.id}`}>
-                  <a className={link()}>{u.name}</a>
+                  <a className={link}>{u.name}</a>
                 </Link>
               </li>
             )

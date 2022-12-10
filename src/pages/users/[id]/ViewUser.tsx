@@ -7,7 +7,7 @@ export default function ViewUser(props: { id: string }) {
 
   if (error)
     return (
-      <p className={text()} role="alert">
+      <p className={text} role="alert">
         {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
         {/* @ts-ignore */}
         {error?.status === 404 ? "User not found" : "Failed to get user"}
@@ -15,10 +15,10 @@ export default function ViewUser(props: { id: string }) {
     )
   if (isLoading)
     return (
-      <p className={text()} role="progressbar">
+      <p className={text} role="progressbar">
         Loading...
       </p>
     )
-  if (user) return <h2 className={heading()}>{user?.name}</h2>
+  if (user) return <h2 className={heading}>{user?.name}</h2>
   return null
 }
