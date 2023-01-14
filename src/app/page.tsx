@@ -1,5 +1,7 @@
-import IndexPage from "./IndexPage";
+"use client";
+
+import HomePage from "src/adapters/primary/react/components/Home.page";
 
 export default function Page() {
-  return <IndexPage />;
+  return <HomePage />;
 }

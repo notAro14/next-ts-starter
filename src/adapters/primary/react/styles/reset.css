@@ -7,10 +7,10 @@
 }
 html,
 body,
-#__next {
+#__root {
   height: 100%;
 }
-#__next {
+#__root {
   isolation: isolate;
 }
 body {
