@@ -1,6 +1,6 @@
-import "src/styles/reset.css"
-import Link from "next/link"
-import Providers from "src/context"
+import "src/styles/reset.css";
+import Link from "next/link";
+import Providers from "src/context";
 
 function Navbar() {
   return (
@@ -14,10 +14,10 @@ function Navbar() {
         </li>
       </ul>
     </nav>
-  )
+  );
 }
 interface Props {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 export default function RootLayout({ children }: Props) {
   return (
@@ -28,5 +28,5 @@ export default function RootLayout({ children }: Props) {
         <Providers>{children}</Providers>
       </body>
     </html>
-  )
+  );
 }

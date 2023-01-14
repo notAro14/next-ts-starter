@@ -1,7 +1,7 @@
-import type { FC } from "react"
+import type { FC } from "react";
 
 const IndexPage: FC = () => {
-  return <h2>Home</h2>
-}
+  return <h2>Home</h2>;
+};
 
-export default IndexPage
+export default IndexPage;

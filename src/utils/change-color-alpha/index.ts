@@ -1,1 +1,1 @@
-export { default } from "./change-color-alpha"
+export { default } from "./change-color-alpha";

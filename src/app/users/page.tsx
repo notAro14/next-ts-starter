@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import ViewUsers from "./ViewUsers"
+import ViewUsers from "./ViewUsers";
 
 export default function Page() {
-  return <ViewUsers />
+  return <ViewUsers />;
 }

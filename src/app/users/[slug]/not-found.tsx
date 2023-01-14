@@ -1,3 +1,3 @@
 export default function NotFound() {
-  return <p role="alert">User doesn&apos;t exist</p>
+  return <p role="alert">User doesn&apos;t exist</p>;
 }

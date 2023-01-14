@@ -1,8 +1,8 @@
-import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react"
-import { AxiosError } from "axios"
+import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
+import { AxiosError } from "axios";
 
-import UserService from "./user.service"
-import { USER_TAG } from "./user.constants"
+import UserService from "./user.service";
+import { USER_TAG } from "./user.constants";
 
 export const userSliceApi = createApi({
   reducerPath: "userApi",
@@ -15,10 +15,10 @@ export const userSliceApi = createApi({
         void
       >({
         async queryFn() {
-          const data = await UserService.get()
+          const data = await UserService.get();
           return {
             data,
-          }
+          };
         },
         providesTags: [USER_TAG],
       }),
@@ -28,10 +28,10 @@ export const userSliceApi = createApi({
       >({
         async queryFn(id) {
           try {
-            const data = await UserService.getById(id)
+            const data = await UserService.getById(id);
             return {
               data,
-            }
+            };
           } catch (exception) {
             return {
               error: {
@@ -40,13 +40,13 @@ export const userSliceApi = createApi({
                     ? exception.message
                     : "Unknown Failure",
               },
-            }
+            };
           }
         },
         providesTags: (result) => [{ type: USER_TAG, id: result?.id }],
       }),
-    }
+    };
   },
-})
+});
 
-export const { useGetUsersQuery, useGetUserByIdQuery } = userSliceApi
+export const { useGetUsersQuery, useGetUserByIdQuery } = userSliceApi;

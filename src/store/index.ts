@@ -1,7 +1,7 @@
-import { configureStore } from "@reduxjs/toolkit"
+import { configureStore } from "@reduxjs/toolkit";
 // Or from '@reduxjs/toolkit/query/react'
-import { setupListeners } from "@reduxjs/toolkit/query/react"
-import { userSliceApi } from "src/api/user/user.slice.api"
+import { setupListeners } from "@reduxjs/toolkit/query/react";
+import { userSliceApi } from "src/api/user/user.slice.api";
 
 export const store = configureStore({
   reducer: {
@@ -10,9 +10,9 @@ export const store = configureStore({
   devTools: process.env.NODE_ENV === "development",
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(userSliceApi.middleware),
-})
+});
 
-setupListeners(store.dispatch)
+setupListeners(store.dispatch);
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

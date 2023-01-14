@@ -1,17 +1,17 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import { useGetUsersQuery } from "src/api/user/user.slice.api"
+import { useGetUsersQuery } from "src/api/user/user.slice.api";
 
 export default function ViewUsers() {
   const {
     isLoading: isGetUsersLoading,
     isError: isGetUsersError,
     data: users,
-  } = useGetUsersQuery()
+  } = useGetUsersQuery();
 
-  if (isGetUsersLoading) return <p role="progressbar">Loading users...</p>
+  if (isGetUsersLoading) return <p role="progressbar">Loading users...</p>;
 
-  if (isGetUsersError) return <p role="alert">Failure</p>
+  if (isGetUsersError) return <p role="alert">Failure</p>;
 
   if (users)
     return (
@@ -28,11 +28,11 @@ export default function ViewUsers() {
               <li key={u.id}>
                 <Link href={`/users/${u.id}`}>{u.name}</Link>
               </li>
-            )
+            );
           })}
         </ul>
       </>
-    )
+    );
 
-  return null
+  return null;
 }

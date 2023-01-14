@@ -1,11 +1,11 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 
-import useEnableOnce from "./use-enable-once"
+import useEnableOnce from "./use-enable-once";
 
 export const useIsBrowser = () => {
-  const [isEnable, enableOnce] = useEnableOnce()
+  const [isEnable, enableOnce] = useEnableOnce();
   useEffect(() => {
-    enableOnce()
-  }, [enableOnce])
-  return isEnable
-}
+    enableOnce();
+  }, [enableOnce]);
+  return isEnable;
+};
