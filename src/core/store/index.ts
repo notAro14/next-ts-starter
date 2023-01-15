@@ -1,21 +1,28 @@
-import { ThunkDispatch, Action, Store } from "@reduxjs/toolkit";
-import type { UserGateway } from "src/core/gateways";
-import type { ListUsersState } from "src/core/usecases/listUsers/listUsers.reducer";
+import { configureStore } from "@reduxjs/toolkit";
+import type { ArticleApi } from "./api/articleApi";
+import type { RootApi } from "./api/rootApi";
 
-export type Dependencies = Partial<{
-  userGateway: UserGateway;
-}>;
-
-export interface ThunkExtraArgument {
-  dependencies: Dependencies;
-}
-
-export type AppDispatch = ThunkDispatch<AppState, ThunkExtraArgument, Action>;
-
-export interface AppState {
-  listUsers: ListUsersState;
-}
-
-export type AppStore = Store<AppState> & {
-  dispatch: AppDispatch;
+export const configureAppStore = (dependencies: Dependencies) => {
+  const rootApi = dependencies.rootApi as RootApi;
+  return configureStore({
+    reducer: {
+      [rootApi.reducerPath]: rootApi.reducer,
+    },
+    middleware(gdm) {
+      return gdm({
+        thunk: {
+          extraArgument: {
+            dependencies,
+          },
+        },
+      }).concat(rootApi.middleware);
+    },
+  });
 };
+export type Dependencies = Partial<{
+  articleApi: ArticleApi;
+  rootApi: RootApi;
+}>;
+export type AppStore = ReturnType<typeof configureAppStore>;
+export type AppState = ReturnType<AppStore["getState"]>;
+export type AppDispatch = AppStore["dispatch"];

@@ -3,27 +3,25 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "src/adapters/primary/react/hooks/store";
-import { listUsers } from "src/core/usecases/listUsers";
+import { retrieveArticles } from "src/core/usecases/retrieveArticles/retrieveArticles";
+import { articleApi } from "src/adapters/primary/react/config/store";
+
+const articlesSelector = articleApi.endpoints.retrieveArticles.select();
 
 export default function HomePage() {
-  const { data, status } = useAppSelector((state) => state.listUsers);
   const dispatch = useAppDispatch();
-
+  const { isLoading, data, isError } = useAppSelector(articlesSelector);
   useEffect(() => {
-    dispatch(listUsers());
+    dispatch(retrieveArticles());
   }, [dispatch]);
 
-  if (status === "pending" || status === "idle")
-    return <p role="progressbar">Loading...</p>;
-
+  if (isError) return <p role="alert">Failed to get articles</p>;
+  if (isLoading) return <p role="progressbar">Loading...</p>;
   if (data)
     return (
       <ul>
-        {data.map((u) => (
-          <li key={u.id}>
-            <p>{u.name}</p>
-            <small>{u.email}</small>
-          </li>
+        {data.map(({ id, title }) => (
+          <li key={id}>{title}</li>
         ))}
       </ul>
     );

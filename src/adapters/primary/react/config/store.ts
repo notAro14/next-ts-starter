@@ -1,12 +1,21 @@
-import type { User } from "src/core/models";
-import { InMemoryUserGateway } from "src/adapters/secondary/gateways/inMemoryUserGateway";
-import { configureAppStore } from "src/core/store/configureAppStore";
+import { configureAppStore } from "src/core/store";
+import { InMemoryArticleGateway } from "src/adapters/secondary/gateways/inMemoryArticleGateway";
+import { makeArticleApi } from "src/core/store/api/articleApi";
+import type { Article } from "src/core/entities";
+import { makeRootApi } from "src/core/store/api/rootApi";
 
-const FAKE_USERS: User[] = [
-  { id: "123abc", name: "John Doe", email: "john.doe@email.com" },
+const FAKE_ARTICLES: Article[] = [
+  { id: "456abc", title: "TDD in frontend world" },
+  { id: "123abc", title: "Clean architecture in React" },
 ];
 
-const userGateway = new InMemoryUserGateway();
-userGateway.init = FAKE_USERS;
+const articleGateway = new InMemoryArticleGateway();
+articleGateway.init = FAKE_ARTICLES;
 
-export const store = configureAppStore({ userGateway });
+const rootApi = makeRootApi();
+export const articleApi = makeArticleApi(articleGateway, rootApi);
+
+export const store = configureAppStore({
+  rootApi,
+  articleApi,
+});
