@@ -1,19 +1,7 @@
-import { useEffect } from "react";
-import {
-  useAppDispatch,
-  useAppSelector,
-} from "src/adapters/primary/react/hooks/store";
-import { retrieveArticles } from "src/core/usecases/retrieveArticles/retrieveArticles";
-import { articleApi } from "src/adapters/primary/react/config/store";
-
-const articlesSelector = articleApi.endpoints.retrieveArticles.select();
+import { useRetrieveArticles } from "../hooks/useRetrieveArticlesQuery";
 
 export default function HomePage() {
-  const dispatch = useAppDispatch();
-  const { isLoading, data, isError } = useAppSelector(articlesSelector);
-  useEffect(() => {
-    dispatch(retrieveArticles());
-  }, [dispatch]);
+  const { isLoading, data, isError } = useRetrieveArticles();
 
   if (isError) return <p role="alert">Failed to get articles</p>;
   if (isLoading) return <p role="progressbar">Loading...</p>;

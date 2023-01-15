@@ -1,14 +1,10 @@
-import {
-  AppDispatch,
-  AppState,
-  AppStore,
-  configureAppStore,
-} from "src/core/store";
+import { AppState, AppStore, configureAppStore } from "src/core/store";
 import { QueryStatus as _QueryStatus } from "@reduxjs/toolkit/dist/query";
 
 import { InMemoryArticleGateway } from "src/adapters/secondary/gateways/inMemoryArticleGateway";
 import { ArticleApi, makeArticleApi } from "src/core/store/api/articleApi";
 import { RootApi, makeRootApi } from "src/core/store/api/rootApi";
+import { retrieveArticles as _retrieveArticles } from "./retrieveArticles";
 
 type QueryStatus = keyof typeof _QueryStatus;
 
@@ -34,12 +30,14 @@ describe("retrieve articles", () => {
     expect(data).toBeUndefined();
   });
   test("articles are being retrieved", () => {
-    retrieveArticles(store.dispatch, articleApi);
+    const retrieveArticles = _retrieveArticles(articleApi);
+    retrieveArticles(store.dispatch);
     const queryStatus = articlesSelector(store.getState(), articleApi).status;
     expect(queryStatus).toEqual<QueryStatus>("pending");
   });
   test("articles are retrieved", async () => {
-    await retrieveArticles(store.dispatch, articleApi);
+    const retrieveArticles = _retrieveArticles(articleApi);
+    await retrieveArticles(store.dispatch);
     const { status: queryStatus, data } = articlesSelector(
       store.getState(),
       articleApi
@@ -49,7 +47,8 @@ describe("retrieve articles", () => {
   });
   test("articles are not retrieved because of an error", async () => {
     articleGateway.error = new Error(ERROR_MESSAGE);
-    await retrieveArticles(store.dispatch, articleApi);
+    const retrieveArticles = _retrieveArticles(articleApi);
+    await retrieveArticles(store.dispatch);
     const { status: queryStatus, error } = articlesSelector(
       store.getState(),
       articleApi
@@ -61,7 +60,4 @@ describe("retrieve articles", () => {
 
 function articlesSelector(state: AppState, articleApi: ArticleApi) {
   return articleApi.endpoints.retrieveArticles.select()(state);
-}
-function retrieveArticles(dispatch: AppDispatch, articleApi: ArticleApi) {
-  return dispatch(articleApi.endpoints.retrieveArticles.initiate());
 }

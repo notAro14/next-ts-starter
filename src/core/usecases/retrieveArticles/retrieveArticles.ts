@@ -1,11 +1,7 @@
-import { createAppAsyncThunk } from "src/core/store/createAppAsyncThunk";
+import { AppDispatch } from "src/core/store";
+import { ArticleApi } from "src/core/store/api/articleApi";
 
-export const retrieveArticles = createAppAsyncThunk<void, void>(
-  "article/retrieveArticles",
-  async (_, { extra, dispatch }) => {
-    await dispatch(
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      extra.dependencies.articleApi!.endpoints.retrieveArticles.initiate()
-    );
-  }
-);
+export const retrieveArticles =
+  (articleApi: ArticleApi) => (dispatch: AppDispatch) => {
+    return dispatch(articleApi.endpoints.retrieveArticles.initiate());
+  };
