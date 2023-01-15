@@ -4,7 +4,7 @@ import { QueryStatus as _QueryStatus } from "@reduxjs/toolkit/dist/query";
 import { InMemoryArticleGateway } from "src/adapters/secondary/gateways/inMemoryArticleGateway";
 import { ArticleApi, makeArticleApi } from "src/core/store/api/articleApi";
 import { RootApi, makeRootApi } from "src/core/store/api/rootApi";
-import { retrieveArticles as _retrieveArticles } from "./retrieveArticles";
+import { retrieveArticles } from "./retrieveArticles";
 
 type QueryStatus = keyof typeof _QueryStatus;
 
@@ -25,39 +25,32 @@ describe("retrieve articles", () => {
   });
 
   test("there are no articles initially", () => {
-    const { status, data } = articlesSelector(store.getState(), articleApi);
-    expect(status).toEqual<QueryStatus>("uninitialized");
-    expect(data).toBeUndefined();
+    const articlesQuery = articlesSelector(articleApi)(store.getState());
+    expect(articlesQuery.status).toEqual<QueryStatus>("uninitialized");
+    expect(articlesQuery.data).toBeUndefined();
   });
   test("articles are being retrieved", () => {
-    const retrieveArticles = _retrieveArticles(articleApi);
-    retrieveArticles(store.dispatch);
-    const queryStatus = articlesSelector(store.getState(), articleApi).status;
-    expect(queryStatus).toEqual<QueryStatus>("pending");
+    retrieveArticles(articleApi)(store.dispatch);
+    const articlesQuery = articlesSelector(articleApi)(store.getState());
+    expect(articlesQuery.status).toEqual<QueryStatus>("pending");
   });
   test("articles are retrieved", async () => {
-    const retrieveArticles = _retrieveArticles(articleApi);
-    await retrieveArticles(store.dispatch);
-    const { status: queryStatus, data } = articlesSelector(
-      store.getState(),
-      articleApi
-    );
-    expect(queryStatus).toEqual<QueryStatus>("fulfilled");
-    expect(data).toEqual(FAKE_ARTICLES);
+    await retrieveArticles(articleApi)(store.dispatch);
+    const articlesQuery = articlesSelector(articleApi)(store.getState());
+    expect(articlesQuery.status).toEqual<QueryStatus>("fulfilled");
+    expect(articlesQuery.data).toEqual(FAKE_ARTICLES);
   });
   test("articles are not retrieved because of an error", async () => {
     articleGateway.error = new Error(ERROR_MESSAGE);
-    const retrieveArticles = _retrieveArticles(articleApi);
-    await retrieveArticles(store.dispatch);
-    const { status: queryStatus, error } = articlesSelector(
-      store.getState(),
-      articleApi
-    );
-    expect(queryStatus).toEqual<QueryStatus>("rejected");
-    expect(error).toEqual(ERROR_MESSAGE);
+    await retrieveArticles(articleApi)(store.dispatch);
+    const articlesQuery = articlesSelector(articleApi)(store.getState());
+    expect(articlesQuery.status).toEqual<QueryStatus>("rejected");
+    expect(articlesQuery.error).toEqual(ERROR_MESSAGE);
   });
 });
 
-function articlesSelector(state: AppState, articleApi: ArticleApi) {
-  return articleApi.endpoints.retrieveArticles.select()(state);
+function articlesSelector(articleApi: ArticleApi) {
+  return function (state: AppState) {
+    return articleApi.endpoints.retrieveArticles.select()(state);
+  };
 }

@@ -6,3 +6,4 @@ export const store = configureAppStore({
   rootApi,
   articleApi,
 });
+export const { dispatch } = store;
