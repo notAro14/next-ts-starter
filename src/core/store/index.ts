@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import type { ArticleApi } from "./api/articleApi";
 import type { RootApi } from "./api/rootApi";
 
 export const configureAppStore = (dependencies: Dependencies) => {
@@ -20,7 +19,6 @@ export const configureAppStore = (dependencies: Dependencies) => {
   });
 };
 export type Dependencies = Partial<{
-  articleApi: ArticleApi;
   rootApi: RootApi;
 }>;
 export type AppStore = ReturnType<typeof configureAppStore>;

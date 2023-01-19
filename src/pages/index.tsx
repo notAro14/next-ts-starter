@@ -1,13 +1,12 @@
 import Head from "next/head";
-import HomePage from "src/adapters/primary/react/components/HomePage";
 
 export default function Page() {
   return (
     <>
       <Head>
-        <title>Typescrit, React, Redux starter</title>
+        <title>Workout App</title>
       </Head>
-      <HomePage />
+      <div>Workout App</div>
     </>
   );
 }
