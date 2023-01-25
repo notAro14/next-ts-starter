@@ -20,8 +20,8 @@ describe("retrieve articles", () => {
     articleGateway = new InMemoryArticleGateway();
     articleGateway.init = FAKE_ARTICLES;
     rootApi = makeRootApi();
-    articleApi = makeArticleApi(articleGateway, rootApi);
-    store = configureAppStore({ articleApi, rootApi });
+    store = configureAppStore({ articleGateway, rootApi });
+    articleApi = makeArticleApi(rootApi);
   });
 
   test("there are no articles initially", () => {

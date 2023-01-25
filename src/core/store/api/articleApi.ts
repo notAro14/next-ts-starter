@@ -1,18 +1,25 @@
-import type { ArticleGateway } from "src/core/ports/gateways";
 import type { Article } from "src/core/entities";
 import type { RootApi } from "./rootApi";
+import { Dependencies } from "..";
 
-export const makeArticleApi = (
-  articleGateway: ArticleGateway,
-  rootApi: RootApi
-) =>
+interface Extra {
+  dependencies: Dependencies;
+}
+
+export const makeArticleApi = (rootApi: RootApi) =>
   rootApi.injectEndpoints({
     endpoints(build) {
       return {
         retrieveArticles: build.query<Article[], void>({
           providesTags: ["Article"],
-          queryFn: async () => {
-            const { data, error } = await articleGateway.retrieveAll();
+          queryFn: async (_, { extra }) => {
+            const { dependencies } = extra as Extra;
+            if (!dependencies.articleGateway)
+              return {
+                error: "Article Gateway must be defined",
+              };
+            const { data, error } =
+              await dependencies.articleGateway.retrieveAll();
             if (error) return { error: error.message };
             return {
               data,
