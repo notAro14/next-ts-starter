@@ -1,5 +1,5 @@
-import { AppDispatch } from "src/core/store";
-import { ArticleApi } from "src/core/store/api/articleApi";
+import { AppDispatch } from "src/store";
+import { ArticleApi } from "src/articles/articleApi";
 
 export const retrieveArticles =
   (articleApi: ArticleApi) => (dispatch: AppDispatch) => {

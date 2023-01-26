@@ -1,5 +1,5 @@
-import type { ArticleGateway } from "src/core/ports/gateways";
-import type { Article } from "src/core/entities";
+import type { ArticleGateway } from "src/articles/gateways/ArticleGateway";
+import type { Article } from "src/articles/entities/Article";
 
 export class InMemoryArticleGateway implements ArticleGateway {
   private _articles: Article[] | null = null;

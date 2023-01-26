@@ -1,10 +1,10 @@
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 
-import "src/adapters/primary/react/styles/reset.css";
+import "src/styles/reset.css";
 
-import RootLayout from "src/adapters/primary/react/components/RootLayout";
-import { store } from "src/adapters/config/store";
+import RootLayout from "src/components/RootLayout";
+import { store } from "src/config/store";
 
 export default function App(props: AppProps) {
   const { pageProps, Component } = props;

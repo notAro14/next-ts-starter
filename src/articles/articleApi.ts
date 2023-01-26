@@ -1,13 +1,13 @@
-import type { Article } from "src/core/entities";
-import type { RootApi } from "./rootApi";
-import { Dependencies } from "..";
+import type { Article } from "src/articles/entities/Article";
+import type { EmptyApi } from "src/store/emptyApi";
+import { Dependencies } from "src/store";
 
 interface Extra {
   dependencies: Dependencies;
 }
 
-export const makeArticleApi = (rootApi: RootApi) =>
-  rootApi.injectEndpoints({
+export const makeArticleApi = (emptyApi: EmptyApi) =>
+  emptyApi.injectEndpoints({
     endpoints(build) {
       return {
         retrieveArticles: build.query<Article[], void>({

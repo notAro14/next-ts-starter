@@ -1,7 +1,4 @@
-import {
-  styled,
-  theme,
-} from "src/adapters/primary/react/styles/stitches.config";
+import { styled, theme } from "src/styles/stitches.config";
 
 export const Root = styled("div", {
   backgroundColor: theme.colors.brand,

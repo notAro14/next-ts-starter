@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import type { ArticleGateway } from "src/core/ports/gateways";
-import type { ArticleApi } from "./api/articleApi";
-import type { RootApi } from "./api/rootApi";
+import type { ArticleGateway } from "src/articles/gateways/ArticleGateway";
+import type { ArticleApi } from "../articles/articleApi";
+import type { EmptyApi } from "./emptyApi";
 
 export const configureAppStore = (dependencies: Dependencies) => {
-  const rootApi = dependencies.rootApi as RootApi;
+  const emptyApi = dependencies.emptyApi as EmptyApi;
   return configureStore({
     reducer: {
-      [rootApi.reducerPath]: rootApi.reducer,
+      [emptyApi.reducerPath]: emptyApi.reducer,
     },
     middleware(gdm) {
       return gdm({
@@ -16,14 +16,14 @@ export const configureAppStore = (dependencies: Dependencies) => {
             dependencies,
           },
         },
-      }).concat(rootApi.middleware);
+      }).concat(emptyApi.middleware);
     },
   });
 };
 export type Dependencies = Partial<{
   articleApi: ArticleApi;
   articleGateway: ArticleGateway;
-  rootApi: RootApi;
+  emptyApi: EmptyApi;
 }>;
 export type AppStore = ReturnType<typeof configureAppStore>;
 export type AppState = ReturnType<AppStore["getState"]>;

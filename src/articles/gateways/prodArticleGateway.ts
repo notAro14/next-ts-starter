@@ -1,5 +1,5 @@
-import { Article } from "src/core/entities";
-import type { ArticleGateway } from "src/core/ports/gateways";
+import { Article } from "src/articles/entities/Article";
+import type { ArticleGateway } from "src/articles/gateways/ArticleGateway";
 
 const URL = "https://jsonplaceholder.typicode.com/posts";
 

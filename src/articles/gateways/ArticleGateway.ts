@@ -1,4 +1,4 @@
-import type { Article } from "src/core/entities";
+import type { Article } from "src/articles/entities/Article";
 
 type Response<T> =
   | {

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import HomePage from "src/adapters/primary/react/components/HomePage";
+import HomePage from "src/components/HomePage";
 
 export default function Page() {
   return (

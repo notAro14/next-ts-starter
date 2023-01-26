@@ -1,4 +1,4 @@
-import { useRetrieveArticles } from "../hooks/useRetrieveArticlesQuery";
+import { useRetrieveArticles } from "src/articles/usecases/retrieveArticles/useRetrieveArticlesQuery";
 
 export default function HomePage() {
   const { isLoading, data, isError } = useRetrieveArticles();
