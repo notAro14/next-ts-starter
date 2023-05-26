@@ -15,7 +15,7 @@
     "start": "next start",
     "lint": "eslint --fix --cache .",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write --ignore-unknown .",
+    "format": "prettier --write --ignore-unknown src",
     "prepare": "husky install",
     "test": "jest",
     "test:watch": "jest --watch"
